@@ -2,14 +2,20 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+// ORDEM CORRETA:
+// '-> Nome Completo
+// '-> E-Mail
+// '-> Senha
+// '-> Telefone 
+// '-> CPF 
+
 const CadastroForm = () => {
   const [formData, setFormData] = useState({
     nome: '',
     email: '',
-    cpf: '',
-    endereco: '',
+    senha: '',
     telefone: '',
-    senha: ''
+    cpf: ''
   });
 
   const handleChange = (e) => {
@@ -29,10 +35,9 @@ const CadastroForm = () => {
       setFormData({
         nome: '',
         email: '',
-        cpf: '',
-        endereco: '',
+        senha: '',
         telefone: '',
-        senha: ''
+        cpf: ''
       });
     } catch (error) {
       console.error('Erro ao criar cadastro:', error);
@@ -42,12 +47,11 @@ const CadastroForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" name="nome" placeholder="Nome" value={formData.nome} onChange={handleChange} />
-      <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} />
-      <input type="text" name="cpf" placeholder="CPF" value={formData.cpf} onChange={handleChange} />
-      <input type="text" name="endereco" placeholder="Endereço" value={formData.endereco} onChange={handleChange} />
-      <input type="number" name="telefone" placeholder="Telefone" value={formData.telefone} onChange={handleChange} />
+      <input type="text" name="nome" placeholder="Nome Completo" value={formData.nome} onChange={handleChange} />
+      <input type="email" name="email" placeholder="E-Mail" value={formData.email} onChange={handleChange} />
       <input type="password" name="senha" placeholder="Senha" value={formData.senha} onChange={handleChange} />
+      <input type="number" name="telefone" placeholder="Telefone" value={formData.telefone} onChange={handleChange} />
+      <input type="number" name="cpf" placeholder="CPF" value={formData.cpf} onChange={handleChange} />
       <button type="submit">Salvar</button>
     </form>
   );
