@@ -1,0 +1,16 @@
+
+.containerContainer {
+    padding-top: 100px;
+    display: flex;
+    justify-content: space-between; /* ou space-around, space-evenly, etc. */
+}
+
+.FormularioContato, .CardContato  {
+    flex: 1; /* Ajusta os componentes para ter tamanhos proporcionais */
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.ContatoCard{
+    width: 60%;
+}

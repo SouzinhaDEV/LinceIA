@@ -1,12 +1,16 @@
 //Contato
 import React from "react";
+import Card from "../Components/CardContato"
+import Formulario from "../Components/FormularioContato"
+import "../CSS/Contato.css";
+
 
 const Contato = () => {
   return (
     <>
-      <div>
-        <h2>Página Contato</h2>
-        {/* Conteúdo da página Contato */}
+      <div className="containerContainer">
+        <Formulario />
+        <Card />
       </div>
     </>
   );
