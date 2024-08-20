@@ -106,15 +106,17 @@ Antes de iniciar, você precisa ter o Node.js e o MySQL instalados na sua máqui
 
 ## Database:
 "
-   CREATE DATABASE linceia;
+CREATE DATABASE linceia;
 
-   USE linceia;
+USE linceia;
    
-   CREATE TABLE cadastro (
-      idCadastro INT AUTO_INCREMENT NOT NULL,
-      nome VARCHAR(150) NOT NULL,
-      email VARCHAR(150) NOT NULL,
-      telefone VARCHAR(20) NOT NULL,
-      CONSTRAINT PRIMARY KEY (idCadastro)
-   );
+CREATE TABLE cadastros (
+	idCadastro INT AUTO_INCREMENT NOT NULL,
+	nome VARCHAR(150) NOT NULL,
+	email VARCHAR(150) NOT NULL,
+   senha VARCHAR(150) NOT NULL,
+	telefone INT (20) NOT NULL,
+   cpf INT(11) NOT NULL,
+	CONSTRAINT PRIMARY KEY (idCadastro)
+);
 "
