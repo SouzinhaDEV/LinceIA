@@ -104,3 +104,17 @@ Antes de iniciar, você precisa ter o Node.js e o MySQL instalados na sua máqui
 ## Licença:
 > Este projeto está licenciado sob a Licença MIT - consulte o arquivo LICENSE.md para mais detalhes.
 
+## Database:
+"
+   CREATE DATABASE linceia;
+
+   USE linceia;
+   
+   CREATE TABLE cadastro (
+      idCadastro INT AUTO_INCREMENT NOT NULL,
+      nome VARCHAR(150) NOT NULL,
+      email VARCHAR(150) NOT NULL,
+      telefone VARCHAR(20) NOT NULL,
+      CONSTRAINT PRIMARY KEY (idCadastro)
+   );
+"
