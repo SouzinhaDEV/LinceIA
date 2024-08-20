@@ -86,7 +86,7 @@
   }
 /* Personalizando a seta para a esquerda */
 .carousel-control-prev-icon {
-  background-image: url('file:///C:/Users/dev2/Downloads/seta.png'); /* Substitua pelo caminho da sua imagem */
+  background-image: url('../Img/seta.png'); /* Substitua pelo caminho da sua imagem */
   background-size: contain; /* Garante que a imagem se ajuste dentro do botão */
   background-color: transparent; /* Remove o fundo padrão */
   width: 20px; /* Ajuste o tamanho conforme necessário */
@@ -96,7 +96,7 @@
 
 /* Personalizando a seta para a direita */
 .carousel-control-next-icon {
-  background-image: url('file:///C:/Users/dev2/Downloads/icone-de-seta-no-elegante-estilo-plano-isolado-simbolo-de-seta-para-seu-design-de-web-site-logotipo-app-interface-do-usuario-ilustracao-vetorial-700-125517622-removebg-preview.png'); /* Substitua pelo caminho da sua imagem */
+  background-image: url('../Img/icone-de-seta-no-elegante-estilo-plano-isolado-simbolo-de-seta-para-seu-design-de-web-site-logotipo-app-interface-do-usuario-ilustracao-vetorial-700-125517622-removebg-preview.png'); /* Substitua pelo caminho da sua imagem */
   background-size: contain;
   background-color: transparent;
   width: 20px;
