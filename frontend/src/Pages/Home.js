@@ -2,6 +2,7 @@
 import React from "react";
 import Carousel from 'react-bootstrap/Carousel';
 import { Image, Container, Row, Col } from "react-bootstrap";
+import '../CSS/Home.css';
 import foto from '../Img/ExCarousel.png';
 import foto2 from '../Img/celular.png';
 import foto3 from '../Img/ia.png';

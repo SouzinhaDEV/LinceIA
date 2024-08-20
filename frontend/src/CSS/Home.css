@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+.acesso{
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 30px;
+}
+.card {
+    width: 195px;
+    height: 235px;
+    background: transparent;
+    border-radius: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: 0.2s ease-in-out;
+  }
+  
+  .img {
+    height: 30%;
+    position: absolute;
+    transition: 0.2s ease-in-out;
+    z-index: 1;
+  }
+  
+  .textBox > .text {
+    font-weight: bold;
+  }
+  
+  .textBox > .head {
+    font-size: 20px;
+  }
+  
+  .textBox > .price {
+    font-size: 17px;
+  }
+  
+  .textBox > span {
+    font-size: 12px;
+    color: lightgrey;
+  }
+  
+  .card:hover > .textBox {
+    opacity: 1;
+  }
+  
+  .card:hover > .img {
+    height: 65%;
+    filter: blur(7px);
+    animation: anim 3s infinite;
+  }
+  
+  @keyframes anim {
+    0% {
+      transform: translateY(0);
+    }
+  
+    50% {
+      transform: translateY(-20px);
+    }
+  
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .card:hover {
+    transform: scale(1.04) rotate(-1deg);
+  }
+  
+  .card-list {
+    display: flex;
+    gap: 40px; /* Espaçamento entre os cartões */
+  }
+  
+  .card {
+    width: 100%; /* Faz com que o card ocupe 100% da largura da coluna */
+    max-width: 100%; /* Limita a largura máxima do card */
+  }
+  
+  .centered-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+/* Personalizando a seta para a esquerda */
+.carousel-control-prev-icon {
+  background-image: url('file:///C:/Users/dev2/Downloads/seta.png'); /* Substitua pelo caminho da sua imagem */
+  background-size: contain; /* Garante que a imagem se ajuste dentro do botão */
+  background-color: transparent; /* Remove o fundo padrão */
+  width: 20px; /* Ajuste o tamanho conforme necessário */
+  height: 20px;
+  
+}
+
+/* Personalizando a seta para a direita */
+.carousel-control-next-icon {
+  background-image: url('file:///C:/Users/dev2/Downloads/icone-de-seta-no-elegante-estilo-plano-isolado-simbolo-de-seta-para-seu-design-de-web-site-logotipo-app-interface-do-usuario-ilustracao-vetorial-700-125517622-removebg-preview.png'); /* Substitua pelo caminho da sua imagem */
+  background-size: contain;
+  background-color: transparent;
+  width: 20px;
+  height: 20px;
+  left: 5px;
+}
+
+.carousel-control-prev:hover, .carousel-control-next:hover {
+  opacity: 0.8; /* Reduz a opacidade ao passar o mouse */
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  border-radius: 50%; /* Torna as setas circulares */
+}
+
+.carousel-control-prev, .carousel-control-next {
+  top: 50%; /* Centraliza verticalmente */
+  transform: translateY(-50%); /* Ajusta para garantir que esteja perfeitamente centralizado */
+  opacity: 1; /* Garante que as setas sejam completamente visíveis */
+}
+
+.esp1{
+  padding-top: 50px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+p {
+  font-family: 'Work Sans', sans-serif;
+  font-size: large;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  padding: 35px;
+}
+
+.carousel1 .carousel-control-prev {
+  display: none;
+}
+
+.carousel1 .carousel-control-next {
+  display: none;
+}
