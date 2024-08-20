@@ -3,7 +3,7 @@ import React from "react";
 import Carousel from 'react-bootstrap/Carousel';
 import { Image, Container, Row, Col } from "react-bootstrap";
 import '../CSS/Home.css';
-import foto from '../Img/ExCarousel.png';
+import video from '../Img/video1.mp4';
 import foto2 from '../Img/celular.png';
 import foto3 from '../Img/ia.png';
 import foto4 from '../Img/batida.png'
@@ -16,21 +16,42 @@ function Home() {
       <div className="carousel-container carousel1">
         <Carousel interval={3000}>
           <Carousel.Item>
-            <Image src={foto} width="100%" />
+            <video
+              src={video}  // Caminho para o vídeo na pasta 'public'
+              autoPlay
+              loop
+              muted
+              width="100%"  // Ajuste o tamanho do vídeo conforme necessário
+              height="auto"
+            />
             <Carousel.Caption>
               <h2>First slide label</h2>
               <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
-            <Image src={foto} width="100%" />
+            <video
+              src={video}  // Caminho para o vídeo na pasta 'public'
+              autoPlay
+              loop
+              muted
+              width="100%"  // Ajuste o tamanho do vídeo conforme necessário
+              height="auto"
+            />
             <Carousel.Caption>
               <h2>Second slide label</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
-            <Image src={foto} width="100%" />
+            <video
+              src={video}  // Caminho para o vídeo na pasta 'public'
+              autoPlay
+              loop
+              muted
+              width="100%"  // Ajuste o tamanho do vídeo conforme necessário
+              height="auto"
+            />
             <Carousel.Caption>
               <h2>Third slide label</h2>
               <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
@@ -40,7 +61,7 @@ function Home() {
       </div>
 
       {/* Acesso Rápido */}
-      
+
       <div className="carousel-container carousel2">
         <Container>
           <Row>

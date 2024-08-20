@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Image } from "react-bootstrap";
-import logo from '../Img/Logo.png';
+import logo from '../Img/logo_branco.png';
 import '../CSS/Nav.css'
 
 const Header = () => {
