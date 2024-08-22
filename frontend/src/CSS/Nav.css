@@ -10,19 +10,19 @@
 header.shadow-fade {
   position: relative; /* Necessário para o posicionamento do pseudo-elemento */
   background: rgba(255, 255, 255, 0.8); /* Fundo com leve transparência (ajuste conforme necessário) */
-  backdrop-filter: blur(10px); /* Desfoque do fundo (opcional) */
+  backdrop-filter: blur(50px); /* Desfoque do fundo (opcional) */
   z-index: 1000; /* Certifique-se de que o header esteja acima de outros elementos */
 }
 
 /* Pseudo-elemento para criar o efeito de sombra vertical */
 header.shadow-fade::before {
   content: "";
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 180px; /* Altura da sombra (ajuste conforme necessário) */
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.53), rgba(0, 0, 0, 0)); /* Gradiente de sombra vertical */
+  height: 300px; /* Altura da sombra (ajuste conforme necessário) */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.799), rgba(0, 0, 0, 0)); /* Gradiente de sombra vertical */
   pointer-events: none; /* Garante que o pseudo-elemento não interfira com a interação do usuário */
-  z-index: -1; /* Coloca o pseudo-elemento atrás do conteúdo do header */
+  z-index: 1000; /* Coloca o pseudo-elemento atrás do conteúdo do header */
 }
