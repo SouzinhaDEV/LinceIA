@@ -125,5 +125,10 @@ CREATE TABLE cadastros (
 	CONSTRAINT PRIMARY KEY (idCadastro)
 );
 
-
+CREATE TABLE contato (
+nome VARCHAR(150) NOT NULL,
+email VARCHAR(150) NOT NULL,
+telefone INT (20) NOT NULL,
+CONSTRAINT PRIMARY KEY (nome)
+);
 "
