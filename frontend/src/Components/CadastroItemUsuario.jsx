@@ -7,17 +7,18 @@ import React from 'react';
 // '-> Telefone 
 // '-> CPF 
 
-const CadastroItem = ({ cadastro, onDelete }) => {
+// "cadastros", como está na tabela do MySQL.
+const CadastroItem = ({ cadastros, onDelete }) => {
   return (
     <tr>
-      <td>{cadastro.idCadastro}</td>
-      <td>{cadastro.nome}</td>
-      <td>{cadastro.email}</td>      
-      <td>{cadastro.senha}</td>
-      <td>{cadastro.telefone}</td>
-      <td>{cadastro.cpf}</td>
+      <td>{cadastros.idCadastro}</td>
+      <td>{cadastros.nome}</td>
+      <td>{cadastros.email}</td>      
+      <td>{cadastros.senha}</td>
+      <td>{cadastros.telefone}</td>
+      <td>{cadastros.cpf}</td>
       <td>
-        <button onClick={() => onDelete(cadastro.idCadastro)}>Excluir</button>
+        <button onClick={() => onDelete(cadastros.idCadastro)}>Excluir</button>
       </td>
     </tr>
   );

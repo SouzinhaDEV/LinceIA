@@ -1,4 +1,4 @@
-// CadastroForm.jsx
+// CadastroFormUsuario.jsx
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -31,7 +31,7 @@ const CadastroForm = () => {
     try {
       await axios.post('http://localhost:3001/cadastros', formData);
       alert('Cadastro criado com sucesso!');
-      // Limpar o formulário após o envio bem-sucedido
+      // Limpar o formulário após o envio bem-sucedido.
       setFormData({
         nome: '',
         email: '',

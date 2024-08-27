@@ -43,17 +43,17 @@ const TabelaContato = () => {
           </tr>
         </thead>
         <tbody>
-          {cadastros.map((cadastro) => (
-            <tr key={cadastro.idCadastro}>
-              <td>{cadastro.idCadastro}</td>
-              <td>{cadastro.nome}</td>
-              <td>{cadastro.email}</td>
-              <td>{cadastro.telefone}</td>
-              <td>{cadastro.senha}</td>
+          {cadastros.map((cadastros) => (
+            <tr key={cadastros.idCadastro}>
+              <td>{cadastros.idCadastro}</td>
+              <td>{cadastros.nome}</td>
+              <td>{cadastros.email}</td>
+              <td>{cadastros.telefone}</td>
+              <td>{cadastros.senha}</td>
               <td>
                 <button
                   variant="danger"
-                  onClick={() => handleExcluirUsuario(cadastro.idCadastro)}
+                  onClick={() => handleExcluirUsuario(cadastros.idCadastro)}
                 >
                   Excluir
                 </button>

@@ -64,7 +64,7 @@ router.post('/cadastros', (req, res) => {
 router.put('/cadastros/:id', (req, res) => {
   const { id } = req.params;
   const { nome, email, senha, telefone, cpf } = req.body;
-  connection.query('UPDATE cadastros SET nome = ?, email = ?, senha = ?,telefone = ? cpf = ?, WHERE id = ?',
+  connection.query('UPDATE cadastros SET nome = ?, email = ?, senha = ?, telefone = ? cpf = ?, WHERE id = ?',
     [nome, email, senha, telefone, cpf, id], (err, result) => {
       if (err) {
         console.error('Erro ao atualizar o registro:', err);
