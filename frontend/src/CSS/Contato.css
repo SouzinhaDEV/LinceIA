@@ -12,5 +12,28 @@
 }
 
 .ContatoCard{
-    width: 60%;
+    width: 500px;
+    height: 530px;
+    background-color: var(--bs-card-cap-bg);
 }
+.FormContato{
+    height: 500px;
+    border-top: 1px;
+}
+.estilizacaoButton{
+    width: 100%;
+}
+
+hr{
+    border-color:#aaa;
+    box-sizing:border-box;
+    width:100%;  
+  }
+
+h4{
+    font-family: 'Playfair Display', serif;
+}
+.Titulo{
+    padding: 0;
+}
+ 

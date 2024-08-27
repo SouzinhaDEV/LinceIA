@@ -6,14 +6,9 @@
     justify-content: center !important;
     padding: 30px;
 }
-<<<<<<< HEAD
-  
-  .img {
-=======
 
 .img {
->>>>>>> 95e465d37e5a80c9f5a0738fd44f4d7984d8b13b
-    height: 30%;
+  height: 30%;
     position: absolute;
     transition: 0.2s ease-in-out;
     z-index: 1;
@@ -34,7 +29,6 @@
 .textBox>span {
     font-size: 12px;
     color: lightgrey;
-<<<<<<< HEAD
   }
   
   @keyframes anim {
@@ -51,13 +45,9 @@
     }
   }
   
-  .centered-content {
-=======
-}
 
-.centered-content {
->>>>>>> 95e465d37e5a80c9f5a0738fd44f4d7984d8b13b
-    display: flex;
+
+.centered-content {  display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
