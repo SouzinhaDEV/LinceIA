@@ -152,6 +152,13 @@ function Home() {
           </Row>
         </Container>
       </div>
+
+      {/* Planos */}
+
+      <div>
+        
+      </div>
+
     </>
   );
 }

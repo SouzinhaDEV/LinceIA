@@ -163,6 +163,6 @@ h2 {
   }
   
   .mov:hover {
-    transform: scale(1.1); /* Aumenta a imagem em 10% */
+    transform: scale(1.25); /* Aumenta a imagem em 10% */
   }
   
