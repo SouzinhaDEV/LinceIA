@@ -1,5 +1,8 @@
 import React from "react";
 import {Routes, Route} from "react-router-dom";
+
+// Importar as páginas aqui.
+
 import Home from "./Pages/Home";
 import Contato from "./Pages/Contato";
 import Cadastro from "./Pages/Cadastro";

@@ -14,7 +14,6 @@
 .ContatoCard{
     width: 500px;
     height: 530px;
-    background-color: var(--bs-card-cap-bg);
 }
 .FormContato{
     height: 500px;

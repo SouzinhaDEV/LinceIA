@@ -14,7 +14,12 @@
     "bootstrap": "^5.3.3",
     "cors": "^2.8.5",
     "express": "^4.19.2",
+<<<<<<< HEAD
     "install": "^0.13.0",
     "mysql2": "^3.9.6"
+=======
+    "mysql2": "^3.9.6",
+    "react-input-mask": "^2.0.4"
+>>>>>>> 741ddd34280849eea962bbef464c09f5093a1b6a
   }
 }
