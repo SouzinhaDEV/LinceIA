@@ -104,7 +104,12 @@ Antes de iniciar, você precisa ter o Node.js e o MySQL instalados na sua máqui
 ## Licença:
 > Este projeto está licenciado sob a Licença MIT - consulte o arquivo LICENSE.md para mais detalhes.
 
+------------------------------------ AOS DEVS !!!
+
 ## Database:
+> Atenção, o DataBase é o "linceia", tudo minúsculo. A tabela do MySQL para os cadastros dos usuários se chama "cadastros", no plural. Já o ID de cada cadastro é no singular "idCadastro". NÃO CONFUNDIR!!!
+
+
 "
 CREATE DATABASE linceia;
 
@@ -119,4 +124,6 @@ CREATE TABLE cadastros (
    cpf INT(11) NOT NULL,
 	CONSTRAINT PRIMARY KEY (idCadastro)
 );
+
+
 "
