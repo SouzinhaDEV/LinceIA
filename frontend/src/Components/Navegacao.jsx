@@ -6,7 +6,7 @@ import '../CSS/Nav.css'
 
 const Header = () => {
   return (
-    <header class="shadow-fade">
+    <header className="shadow-fade">
       <nav className="navbar navbar-expand-lg navbar-custom fixed-top">
         <div className="container">
           <a className="navbar-brand" href="#"><Image src={logo} width={150} /></a>
