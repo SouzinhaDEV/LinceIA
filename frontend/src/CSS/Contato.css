@@ -1,5 +1,5 @@
 
-.containerContainer {
+.PaginaDeContato {
     padding-top: 100px;
     display: flex;
     justify-content: space-between; /* ou space-around, space-evenly, etc. */
@@ -14,10 +14,12 @@
 .ContatoCard{
     width: 500px;
     height: 530px;
+    padding: 16px;
 }
-.FormContato{
+.ContatoFormulario{
     height: 500px;
     border-top: 1px;
+    padding: 16px;
 }
 .estilizacaoButton{
     width: 100%;
@@ -35,4 +37,7 @@ h4{
 .Titulo{
     padding: 0;
 }
- 
+
+.FundoCardContato{
+    background-color: white;
+}

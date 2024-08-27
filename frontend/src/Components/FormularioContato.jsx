@@ -9,8 +9,8 @@ function FormularioContato() {
         <Container className='FormContato'>
             <Row className="justify-content-center">
                 <Col md={10}>
-                    <h2 className='Titulo'>Formulário de Contato </h2>
-                    <Form> 
+                    <Form className='ContatoFormulario'>
+                        <h2 className='Titulo'>Formulário de Contato </h2>
                         <Form.Group className="mb-3" controlId="formNomeCompleto">
                             <Form.Label as="p">Nome Completo</Form.Label>
                             <Form.Control
@@ -47,7 +47,7 @@ function FormularioContato() {
                                 as="p"
                                 required
                                 label="Concordo com os termos de serviço"
-                                feedback="You must agree before submitting."
+                                feedback="Você deve concordar antes de enviar."
                                 feedbackType="invalid"
                             />
                         </Form.Group>

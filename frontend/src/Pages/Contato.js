@@ -8,7 +8,7 @@ import "../CSS/Contato.css";
 const Contato = () => {
   return (
     <>
-      <div className="containerContainer">
+      <div className="PaginaDeContato">
         <Formulario />
         <Card />
       </div>
