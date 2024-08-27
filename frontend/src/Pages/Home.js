@@ -1,7 +1,7 @@
 // Home
 import React from "react";
 import Carousel from 'react-bootstrap/Carousel';
-import { Image, Container, Row, Col } from "react-bootstrap";
+import { Image, Container, Row, Col, Card } from "react-bootstrap";
 import '../CSS/Home.css';
 import video from '../Img/video1.mp4';
 import video2 from '../Img/video2.mp4';
@@ -35,6 +35,11 @@ function Home() {
     }
   ];
 
+  const cardsData = [
+    { id: 1, price:'200', title: 'Mensal', description: 'Descrição do Card Mensal' },
+    { id: 2, price:'1.200', title: 'Anual', description: 'Descrição do Card Anual' },
+    { id: 3, price:'400', title: 'Semestral', description: 'Descrição do Card Semestral' },
+  ];
 
 
   return (
@@ -63,10 +68,10 @@ function Home() {
 
       {/* Acesso Rapido */}
 
-      <Container className="esp1">
+      <Container className="esp1 shadow-fade-up">
         <Row className="d-flex justify-content-center">
           <Col xs={12} md={2}>
-            <Image src={arcamera} width={150} className="mov"/>
+            <Image src={arcamera} width={150} className="mov" />
             <div className="d-flex justify-content-center">
               <h5>Camera</h5>
             </div>
@@ -99,8 +104,9 @@ function Home() {
       </Container>
 
       {/* Sobre Coisas */}
+      <div className="shadow fade-up" />
 
-      <div className="carousel-container carousel2 fundo">
+      <div className="fundo carousel-container">
         <Container>
           <Row>
             <Carousel>
@@ -155,8 +161,14 @@ function Home() {
 
       {/* Planos */}
 
-      <div>
-        
+      <div className="card-stack-container">
+        {cardsData.map((card, index) => (
+          <div key={card.id} className={`card-item card-${index + 1}`}>
+            <h1>{card.price}</h1>
+            <h3 className="titulo">{card.title}</h3>
+            <p>{card.description}</p>
+          </div>
+        ))}
       </div>
 
     </>

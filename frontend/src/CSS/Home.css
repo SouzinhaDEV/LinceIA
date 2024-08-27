@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 .acesso {
     align-items: center !important;
@@ -41,13 +42,9 @@
 /* Personalizando a seta para a esquerda */
 .carousel-control-prev-icon {
     background-image: url('../Img/seta.png');
-    /* Substitua pelo caminho da sua imagem */
     background-size: contain;
-    /* Garante que a imagem se ajuste dentro do botão */
     background-color: transparent;
-    /* Remove o fundo padrão */
     width: 20px;
-    /* Ajuste o tamanho conforme necessário */
     height: 20px;
 
 }
@@ -61,28 +58,27 @@
     width: 20px;
     height: 20px;
     left: 5px;
+    z-index: 100;
 }
 
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
     opacity: 0.8;
-    /* Reduz a opacidade ao passar o mouse */
+    z-index: 100;
 }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    border-radius: 50%;
-    /* Torna as setas circulares */
+    z-index: 100;
+
 }
 
 .carousel-control-prev,
 .carousel-control-next {
     top: 50%;
-    /* Centraliza verticalmente */
     transform: translateY(-50%);
-    /* Ajusta para garantir que esteja perfeitamente centralizado */
     opacity: 1;
-    /* Garante que as setas sejam completamente visíveis */
+    z-index: 100;
 }
 
 .esp1 {
@@ -90,11 +86,13 @@
     padding-left: 100px;
     padding-right: 100px;
     padding-bottom: 50px;
+    z-index: 100;
 }
 
-p, h5 {
+p,
+h5{
     font-family: 'Work Sans', sans-serif;
-    font-size: large;
+    font-size: larger;
 }
 
 h2 {
@@ -150,19 +148,105 @@ h2 {
     /* Atraso de 1s */
 }
 
-.fundo{
+.fundo {
     background-color: rgb(36, 36, 36);
+    background: linear-gradient(to top, rgba(36, 36, 36), rgba(0, 0, 0, 0));
+    backdrop-filter: blur(50px);
 }
 
-.branco{
+.branco {
     color: white;
 }
 
 .mov {
     transition: transform 0.3s ease-in-out;
-  }
+}
+
+.mov:hover {
+    transform: scale(1.25);
+    /* Aumenta a imagem em 10% */
+}
+
+.card-stack-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    background-color: rgb(36, 36, 36);
+}
+
+.card-item {
+    margin: 0 -40px;
+    /* Sobreposição para formar o montinho */
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.459);
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.card-item:hover {
+    transform: scale(1.1);
+    /* Aumenta o card */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.493);
+    z-index: 2;
+    /* Coloca o card à frente dos outros */
+}
+
+.card-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.473);
+    z-index: 5;
+    /* Coloca o card à frente dos outros */
+}
+
+.card-1 {
+  left: -20px;
+  transform: translateY(20px);
+  z-index: 1;
+  width: 250px;
+  height: 350px;
+}
+
+.card-2 {
+  z-index: 2;
+  transform: translateY(20px);
+  width: 300px;
+  height: 450px;
   
-  .mov:hover {
-    transform: scale(1.25); /* Aumenta a imagem em 10% */
-  }
-  
+}
+
+.card-3 {
+  left: 20px;
+  transform: translateY(20px);
+  z-index: 1;
+  width: 250px;
+  height: 350px;
+}
+
+.card-item h3 {
+    margin-bottom: 5px;
+    font-size: 40px;
+    font-family: 'Playfair Display', serif;
+    top: 5px;
+}
+
+.card-item p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.card-item h1{
+    font-family: "Raleway", sans-serif;
+    color: darkorange;
+    font-size: 60px;
+}
+
