@@ -1,6 +1,6 @@
 //Contato
 import React from "react";
-import Card from "../Components/CardCadastro"
+import Card from "../Components/CardContato"
 import Formulario from "../Components/FormularioContato"
 import "../CSS/Contato.css";
 
@@ -8,7 +8,7 @@ import "../CSS/Contato.css";
 const Contato = () => {
   return (
     <>
-      <div className="containerContainer">
+      <div className="PaginaDeContato">
         <Formulario />
         <Card />
       </div>

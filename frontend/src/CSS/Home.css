@@ -9,7 +9,7 @@
 }
 
 .img {
-    height: 30%;
+  height: 30%;
     position: absolute;
     transition: 0.2s ease-in-out;
     z-index: 1;
@@ -30,10 +30,25 @@
 .textBox>span {
     font-size: 12px;
     color: lightgrey;
-}
+  }
+  
+  @keyframes anim {
+    0% {
+      transform: translateY(0);
+    }
+  
+    50% {
+      transform: translateY(-20px);
+    }
+  
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
 
-.centered-content {
-    display: flex;
+
+.centered-content {  display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;

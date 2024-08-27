@@ -6,13 +6,13 @@ import InputMask from 'react-input-mask';
 
 function FormularioContato() {
     return (
-        <Container>
+        <Container className='FormContato'>
             <Row className="justify-content-center">
                 <Col md={10}>
-                    <h1>Formulário de Contato </h1>
-                    <Form>
+                    <Form className='ContatoFormulario'>
+                        <h2 className='Titulo'>Formulário de Contato </h2>
                         <Form.Group className="mb-3" controlId="formNomeCompleto">
-                            <Form.Label>Nome Completo</Form.Label>
+                            <Form.Label as="p">Nome Completo</Form.Label>
                             <Form.Control
                                 type="text"
                                 placeholder="Seu nome completo"
@@ -23,7 +23,7 @@ function FormularioContato() {
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formEmail">
-                            <Form.Label>Endereço de Email</Form.Label>
+                            <Form.Label as="p">Endereço de Email</Form.Label>
                             <Form.Control
                                 type="email"
                                 placeholder="nome@exemplo.com"
@@ -32,25 +32,26 @@ function FormularioContato() {
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formTelefone">
-                            <Form.Label>Número de Telefone</Form.Label>
+                            <Form.Label as="p">Número de Telefone</Form.Label>
                             <InputMask mask="(99) 99999-9999" placeholder="(xx) xxxxx-xxxx">
                                 {(inputProps) => <Form.Control {...inputProps} type="text" required />}
                             </InputMask>
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formMensagem">
-                            <Form.Label>Mensagem</Form.Label>
+                            <Form.Label as="p">Mensagem</Form.Label>
                             <Form.Control as="textarea" rows={3} placeholder="Deixe sua mensagem" required />
                         </Form.Group>
                         <Form.Group className="mb-3">
                             <Form.Check
+                                as="p"
                                 required
                                 label="Concordo com os termos de serviço"
-                                feedback="You must agree before submitting."
+                                feedback="Você deve concordar antes de enviar."
                                 feedbackType="invalid"
                             />
                         </Form.Group>
-                        <Button className='estilizacaoButton' variant="primary" type="submit" >Enviar Mensagem</Button>
+                        <Button className='estilizacaoButton' variant="primary" type="submit" as="p">Enviar Mensagem</Button>
                     </Form>
                 </Col>
             </Row>
