@@ -26,3 +26,10 @@ header.shadow-fade::before {
   pointer-events: none; /* Garante que o pseudo-elemento não interfira com a interação do usuário */
   z-index: 1000; /* Coloca o pseudo-elemento atrás do conteúdo do header */
 }
+
+.navbar-custom {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1030; /* Certifique-se de que a navbar esteja acima de outros elementos */
+}

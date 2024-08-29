@@ -9,7 +9,7 @@
 }
 
 .img {
-  height: 30%;
+    height: 30%;
     position: absolute;
     transition: 0.2s ease-in-out;
     z-index: 1;
@@ -30,25 +30,26 @@
 .textBox>span {
     font-size: 12px;
     color: lightgrey;
-  }
-  
-  @keyframes anim {
+}
+
+@keyframes anim {
     0% {
-      transform: translateY(0);
+        transform: translateY(0);
     }
-  
+
     50% {
-      transform: translateY(-20px);
+        transform: translateY(-20px);
     }
-  
+
     100% {
-      transform: translateY(0);
+        transform: translateY(0);
     }
-  }
-  
+}
 
 
-.centered-content {  display: flex;
+
+.centered-content {
+    display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
@@ -105,7 +106,7 @@
 }
 
 p,
-h5{
+h5 {
     font-family: 'Work Sans', sans-serif;
     font-size: larger;
 }
@@ -166,7 +167,7 @@ h2 {
 .fundo {
     background-color: rgb(36, 36, 36);
     background: linear-gradient(to top, rgba(36, 36, 36), rgba(0, 0, 0, 0));
-    backdrop-filter: blur(50px);
+    backdrop-filter: blur(500px);
 }
 
 .branco {
@@ -224,27 +225,27 @@ h2 {
 }
 
 .card-1 {
-  left: -20px;
-  transform: translateY(20px);
-  z-index: 1;
-  width: 250px;
-  height: 350px;
+    left: -20px;
+    transform: translateY(20px);
+    z-index: 1;
+    width: 250px;
+    height: 350px;
 }
 
 .card-2 {
-  z-index: 2;
-  transform: translateY(20px);
-  width: 300px;
-  height: 450px;
-  
+    z-index: 2;
+    transform: translateY(20px);
+    width: 300px;
+    height: 450px;
+
 }
 
 .card-3 {
-  left: 20px;
-  transform: translateY(20px);
-  z-index: 1;
-  width: 250px;
-  height: 350px;
+    left: 20px;
+    transform: translateY(20px);
+    z-index: 1;
+    width: 250px;
+    height: 350px;
 }
 
 .card-item h3 {
@@ -259,9 +260,108 @@ h2 {
     color: #666;
 }
 
-.card-item h1{
+.card-item h1 {
     font-family: "Raleway", sans-serif;
     color: darkorange;
     font-size: 60px;
 }
 
+.carousel-center {
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 28%;
+    backdrop-filter: blur(2px);
+    border-radius: 50px !important;
+
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.carousel-center.anim h2,
+.carousel-center.anim p {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.carousel-center {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.carousel-item.active .carousel-center {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.carousel-center h2 {
+    font-size: 35px;
+}
+
+.font h2 {
+    color: darkorange;
+    padding-right: 200px;
+    font-family: 'Playfair Display', serif;
+    font-size: 35px;
+
+}
+
+.carousel-caption h2 {
+    font-size: 2.5rem;
+}
+
+.carousel-caption p {
+    font-size: 1.25rem;
+}
+
+@media (max-width: 768px) {
+    .carousel-caption h2 {
+        font-size: 1.8rem;
+    }
+
+    .carousel-caption p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-caption h2 {
+        font-size: 1.5rem;
+    }
+
+    .carousel-caption p {
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .title-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .card-stack-container {
+        flex-direction: column;
+    }
+
+    .title-container {
+        order: -1;
+        /* Garante que o título "Planos" fique acima dos cards */
+    }
+
+    .title-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
