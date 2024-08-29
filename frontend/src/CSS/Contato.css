@@ -1,6 +1,6 @@
 
 .PaginaDeContato {
-    padding-top: 100px;
+    padding-top: 150px;
     display: flex;
     justify-content: space-between; /* ou space-around, space-evenly, etc. */
 }

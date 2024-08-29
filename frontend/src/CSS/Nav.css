@@ -21,8 +21,8 @@ header.shadow-fade::before {
   top: 0;
   left: 0;
   right: 0;
-  height: 300px; /* Altura da sombra (ajuste conforme necessário) */
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.799), rgba(0, 0, 0, 0)); /* Gradiente de sombra vertical */
+  height: 120px; /* Altura da sombra (ajuste conforme necessário) */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.826), rgba(0, 0, 0, 0)); /* Gradiente de sombra vertical */
   pointer-events: none; /* Garante que o pseudo-elemento não interfira com a interação do usuário */
   z-index: 1000; /* Coloca o pseudo-elemento atrás do conteúdo do header */
 }
