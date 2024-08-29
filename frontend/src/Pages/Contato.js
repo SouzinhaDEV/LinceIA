@@ -1,7 +1,7 @@
 //Contato
 import React from "react";
 import Card from "../Components/CardContato"
-import Formulario from "../Components/FormularioContato"
+import Formulario from "../Components/ContatoForm"
 import "../CSS/Contato.css";
 
 

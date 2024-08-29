@@ -1,13 +1,13 @@
 //Cadastro
 import React from "react";
-import CadastroFormUsuario from "../Components/CadastroFormUsuario";
+import CadastroForm from "../Components/CadastroForm";
 
 const Cadastro = () => {
   return (
     <>
       <div>
         <h2>Página Cadastro</h2>
-        <CadastroFormUsuario />
+        <CadastroForm />
       </div>
     </>
   );

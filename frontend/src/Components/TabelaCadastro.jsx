@@ -29,6 +29,13 @@ const TabelaCadastro = () => {
     }
   };
 
+  // ORDEM CORRETA:
+  // '-> Nome Completo
+  // '-> E-Mail
+  // '-> Senha
+  // '-> Telefone 
+  // '-> CPF 
+
   return (
     <div>
       <table border={2} cellPadding={5} cellSpacing={5}>
@@ -37,10 +44,9 @@ const TabelaCadastro = () => {
             <th>ID</th>
             <th>Nome</th>
             <th>Email</th>
-            <th>CPF</th>
-            <th>Endereço</th>
-            <th>Telefone</th>
             <th>Senha</th>
+            <th>Telefone</th>
+            <th>CPF</th>
             <th>Ação</th>
             {/* Adicione mais colunas, se necessário */}
           </tr>
@@ -51,10 +57,9 @@ const TabelaCadastro = () => {
               <td>{cadastros.idCadastro}</td>
               <td>{cadastros.nome}</td>
               <td>{cadastros.email}</td>
-              <td>{cadastros.cpf}</td>
-              <td>{cadastros.endereco}</td>
-              <td>{cadastros.telefone}</td>
               <td>{cadastros.senha}</td>
+              <td>{cadastros.telefone}</td>
+              <td>{cadastros.cpf}</td>
               <td>
                 <button
                   variant="danger"
