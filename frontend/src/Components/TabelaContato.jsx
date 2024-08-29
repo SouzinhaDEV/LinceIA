@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const TabelaContato = () => {
-  const [cadastros, setCadastros] = useState([]);
+  const [contatos, setContatos] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data } = await axios.get("http://localhost:3001/cadastros");
-        setCadastros(data);
+        const { data } = await axios.get("http://localhost:3001/contatos");
+        setContatos(data);
       } catch (error) {
         console.error("Erro ao buscar usuários:", error); // Adiciona este log de erro
       }
@@ -17,12 +17,12 @@ const TabelaContato = () => {
     fetchData();
   }, []);
 
-  const handleExcluirUsuario = async (idCadastro) => {
+  const handleExcluirUsuario = async (idContato) => {
     try {
-      await axios.delete(`http://localhost:3001/cadastros/${idCadastro}`);
-      // Atualiza a lista de cadastros após a exclusão
-      const { data } = await axios.get("http://localhost:3001/cadastros");
-      setCadastros(data);
+      await axios.delete(`http://localhost:3001/contatos/${idContato}`);
+      // Atualiza a lista de contatos após a exclusão
+      const { data } = await axios.get("http://localhost:3001/contatos");
+      setContatos(data);
       console.log("Usuário excluído com sucesso!");
     } catch (error) {
       console.error("Erro ao excluir usuário:", error);
@@ -43,17 +43,16 @@ const TabelaContato = () => {
           </tr>
         </thead>
         <tbody>
-          {cadastros.map((cadastros) => (
-            <tr key={cadastros.idCadastro}>
-              <td>{cadastros.idCadastro}</td>
-              <td>{cadastros.nome}</td>
-              <td>{cadastros.email}</td>
-              <td>{cadastros.telefone}</td>
-              <td>{cadastros.senha}</td>
+          {contatos.map((contatos) => (
+            <tr key={contatos.idContato}>
+              <td>{contatos.idContato}</td>
+              <td>{contatos.nome}</td>
+              <td>{contatos.email}</td>
+              <td>{contatos.telefone}</td>
               <td>
                 <button
                   variant="danger"
-                  onClick={() => handleExcluirUsuario(cadastros.idCadastro)}
+                  onClick={() => handleExcluirUsuario(contatos.idContato)}
                 >
                   Excluir
                 </button>

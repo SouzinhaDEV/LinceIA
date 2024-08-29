@@ -4,6 +4,11 @@ import Button from 'react-bootstrap/Button';
 import { Container, Row, Col } from 'react-bootstrap';
 import InputMask from 'react-input-mask';
 
+// ORDEM CORRETA:
+// '-> Nome Completo
+// '-> E-Mail
+// '-> Telefone 
+
 function FormularioContato() {
     return (
         <Container className='FormContato'>
