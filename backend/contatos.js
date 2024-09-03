@@ -18,10 +18,6 @@ router.get('/contatos', (req, res) => {
 });
 
 // Rota para buscar um registro específico pelo ID.
-<<<<<<< HEAD:backend/routescontatos.js
-=======
-
->>>>>>> ee831fae50e472787abb94fae49ae43cc18a02c1:backend/contatos.js
 router.get('/contatos/:id', (req, res) => {
   const { id } = req.params;
   connection.query('SELECT * FROM contatos WHERE id = ?', [id], (err, results) => {
