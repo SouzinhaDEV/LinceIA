@@ -18,7 +18,7 @@ router.get('/contatos', (req, res) => {
 });
 
 // Rota para buscar um registro específico pelo ID.
-z
+
 router.get('/contatos/:id', (req, res) => {
   const { id } = req.params;
   connection.query('SELECT * FROM contatos WHERE id = ?', [id], (err, results) => {
