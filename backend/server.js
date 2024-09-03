@@ -1,7 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const cadastros = require('./routescadastros'); 
+// const cadastros = require('./routescadastros'); 
+const contatos = require('./routescontatos');
 
 // Importa as rotas do backend a partir daqui.
 
@@ -16,8 +17,9 @@ app.use(cors());
 
 // Usa as rotas do backend aqui.
 
-app.use('/', routes);
-app.use('/', cadastros);
+// app.use('/', routes);
+app.use('/routescadastros', cadastros);
+app.use('/routescontatos', contatos);
 
 // 
 
