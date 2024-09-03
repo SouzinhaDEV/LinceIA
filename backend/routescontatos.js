@@ -6,8 +6,8 @@ const router = express.Router();
 
 //"contatos", no plural, por causa do banco.
 
-router.get('/contatos', (req, res) => {
-  connection.query('SELECT * FROM contatos', (err, results) => {
+router.get('/contato', (req, res) => {
+  connection.query('SELECT * FROM contato', (err, results) => {
     if (err) {
       console.error('Erro ao buscar os registros:', err);
       res.status(500).json({ error: 'Erro ao buscar os registros' });
@@ -18,7 +18,7 @@ router.get('/contatos', (req, res) => {
 });
 
 // Rota para buscar um registro específico pelo ID.
-router.get('/contatos/:id', (req, res) => {
+router.get('/contato/:id', (req, res) => {
   const { id } = req.params;
   connection.query('SELECT * FROM contatos WHERE id = ?', [id], (err, results) => {
     if (err) {
@@ -43,9 +43,9 @@ router.get('/contatos/:id', (req, res) => {
 
 // NÃO ESQUECER de colocar o mesmo número de "?" que a quantidade de campos solicitados.
 
-router.post('/contatos', (req, res) => {
+router.post('/contato', (req, res) => {
   const { nome, email, telefone } = req.body;
-  connection.query('INSERT INTO contatos (nome, email, telefone) VALUES (?, ?, ?)',
+  connection.query('INSERT INTO contato (nome, email, telefone) VALUES (?, ?, ?)',
     [nome, email, telefone], (err, result) => {
       if (err) {
         console.error('Erro ao criar o registro:', err);
@@ -58,7 +58,7 @@ router.post('/contatos', (req, res) => {
 
 // Rota para atualizar um registro existente pelo ID.
 
-router.put('/contatos/:id', (req, res) => {
+router.put('/contato/:id', (req, res) => {
   const { id } = req.params;
   const { nome, email, telefone } = req.body;
   connection.query('UPDATE contatos SET nome = ?, email = ?, telefone = ?, WHERE id = ?',
@@ -76,7 +76,7 @@ router.put('/contatos/:id', (req, res) => {
 
 // OBS: Aqui, o "idContato" é no singular porque se trata de cada cadastro individualmente, como no banco de dados.
 
-router.delete('/contatos/:id', (req, res) => {
+router.delete('/contato/:id', (req, res) => {
   const { id } = req.params;
   connection.query('DELETE FROM contatos WHERE idContato = ?', [id], (err, result) => {
     if (err) {
