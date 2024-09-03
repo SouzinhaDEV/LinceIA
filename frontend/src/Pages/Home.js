@@ -2,9 +2,9 @@ import React from "react";
 import Carousel from 'react-bootstrap/Carousel';
 import { Image, Container, Row, Col } from "react-bootstrap";
 import '../CSS/Home.css';
-import video6 from '../Img/video6.mp4';
-import video5 from '../Img/video5.mp4';
-import video4 from '../Img/video4.mp4';
+import video6 from '../Video/video6.mp4';
+import video5 from '../Video/video5.mp4';
+import video4 from '../Video/video4.mp4';
 import foto2 from '../Img/celular.png';
 import foto3 from '../Img/ia.png';
 import foto4 from '../Img/batida.png';
@@ -40,6 +40,8 @@ function Home() {
     { id: 3, price: '400', title: 'Semestral', description: 'Descrição do Card Semestral' },
   ];
 
+  
+
   return (
     <>
       {/* Carrousel (ESTILIZAR) */}
@@ -53,7 +55,7 @@ function Home() {
                 loop
                 muted
                 width="100%"
-                height="auto"
+                className="carousel-video"
               />
               <Carousel.Caption>
                 <div className="carousel-center">
@@ -170,6 +172,12 @@ function Home() {
             <p>{card.description}</p>
           </div>
         ))}
+      </div>
+
+      {/* Avaliação de assinantes do Plano */}
+
+      <div className="card-stack-container">
+        
       </div>
 
     </>

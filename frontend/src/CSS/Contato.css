@@ -1,43 +1,75 @@
-
 .PaginaDeContato {
     padding-top: 150px;
     display: flex;
-    justify-content: space-between; /* ou space-around, space-evenly, etc. */
+    justify-content: space-between;
+    /* ou space-around, space-evenly, etc. */
 }
 
-.FormularioContato, .CardContato  {
-    flex: 1; /* Ajusta os componentes para ter tamanhos proporcionais */
+.FormularioContato,
+.CardContato {
+    flex: 1;
+    /* Ajusta os componentes para ter tamanhos proporcionais */
     padding: 10px;
     border: 1px solid #ccc;
 }
 
-.ContatoCard{
+.ContatoCard {
     width: 500px;
     height: 530px;
     padding: 16px;
 }
-.ContatoFormulario{
+
+.ContatoFormulario {
     height: 500px;
     border-top: 1px;
     padding: 16px;
 }
-.estilizacaoButton{
+
+.estilizacaoButton {
     width: 100%;
 }
 
-hr{
-    border-color:#aaa;
-    box-sizing:border-box;
-    width:100%;  
-  }
+hr {
+    border-color: #aaa;
+    box-sizing: border-box;
+    width: 100%;
+}
 
-h4{
+h4 {
     font-family: 'Playfair Display', serif;
 }
-.Titulo{
+
+.Titulo {
     padding: 0;
 }
 
-.FundoCardContato{
+.FundoCardContato {
     background-color: white;
+}
+
+.rating-container {
+    margin: 30px 0;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.star-rating {
+    margin-bottom: 10px;
+}
+
+.star {
+    font-size: 30px;
+    color: #ddd;
+    cursor: pointer;
+}
+
+.star.selected {
+    color: #f39c12;
+}
+
+textarea {
+    resize: none;
 }
