@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 
 function CardContato() {
     return (
@@ -16,7 +16,6 @@ function CardContato() {
                         <Card.Text>
                             Sinta-se à vontade para entrar em contato conosco via e-mail ou telefone
                         </Card.Text>
-
                     </Card.Body>
                 </Card>
             </Row>
