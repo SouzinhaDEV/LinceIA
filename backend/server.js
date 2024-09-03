@@ -21,7 +21,7 @@ app.use(cors());
 app.use('/routescadastros', cadastros);
 app.use('/routescontatos', contatos);
 
-// 
+// Inicia o servidor na porta definida.
 
 app.listen(port, () => {
   console.log(`Servidor está rodando na porta ${port}`);
