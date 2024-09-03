@@ -190,6 +190,7 @@ h2 {
     height: 100vh;
     position: relative;
     background-color: rgb(36, 36, 36);
+    padding: 50px;
 }
 
 .card-item {
@@ -371,4 +372,10 @@ h2 {
     object-fit: cover;
     display: block;
     margin: 0 auto;
+}
+
+.botao{
+    border-radius: 20px;
+    margin: 0 !important;
+    margin-right: 50px;
 }
