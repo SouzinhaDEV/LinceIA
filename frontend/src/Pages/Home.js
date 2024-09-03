@@ -1,6 +1,6 @@
 import React from "react";
 import Carousel from 'react-bootstrap/Carousel';
-import { Image, Container, Row, Col } from "react-bootstrap";
+import { Image, Container, Row, Col, Button } from "react-bootstrap";
 import '../CSS/Home.css';
 import video6 from '../Video/video6.mp4';
 import video5 from '../Video/video5.mp4';
@@ -170,14 +170,9 @@ function Home() {
             <h1>{card.price}</h1>
             <h3 className="titulo">{card.title}</h3>
             <p>{card.description}</p>
+            <Button className="botao">Saiba Mais</Button>
           </div>
         ))}
-      </div>
-
-      {/* Avaliação de assinantes do Plano */}
-
-      <div className="card-stack-container">
-        
       </div>
 
     </>
