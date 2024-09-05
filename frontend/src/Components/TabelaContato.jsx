@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const TabelaContato = () => {
-  const [contatos, setContatos] = useState([]);
+  const [contato, setCasdastros] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data } = await axios.get("http://localhost:3001/contatos");
-        setContatos(data);
+        const { data } = await axios.get("http://localhost:3001/contato");
+        setCasdastros(data);
       } catch (error) {
         console.error("Erro ao buscar usuários:", error); // Adiciona este log de erro
       }
@@ -17,12 +17,11 @@ const TabelaContato = () => {
     fetchData();
   }, []);
 
-  const handleExcluirUsuario = async (idContato) => {
+  const handleExcluirUsuario = async (id) => {
     try {
-      await axios.delete(`http://localhost:3001/contatos/${idContato}`);
-      // Atualiza a lista de contatos após a exclusão
-      const { data } = await axios.get("http://localhost:3001/contatos");
-      setContatos(data);
+      await axios.delete(`http://localhost:3001/contato/${id}`);
+      const { data } = await axios.get("http://localhost:3001/contato");
+      setCasdastros(data);
       console.log("Usuário excluído com sucesso!");
     } catch (error) {
       console.error("Erro ao excluir usuário:", error);
@@ -30,39 +29,50 @@ const TabelaContato = () => {
   };
 
   return (
-    <div>
-      <table border={2} cellPadding={5} cellSpacing={5}>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Email</th>
-            <th>Telefone</th>
-            <th>Ação</th>
-            {/* Adicione mais colunas, se necessário */}
-          </tr>
-        </thead>
-        <tbody>
-          {contatos.map((contatos) => (
-            <tr key={contatos.idContato}>
-              <td>{contatos.idContato}</td>
-              <td>{contatos.nome}</td>
-              <td>{contatos.email}</td>
-              <td>{contatos.telefone}</td>
-              <td>
-                <button
-                  variant="danger"
-                  onClick={() => handleExcluirUsuario(contatos.idContato)}
-                >
-                  Excluir
-                </button>
-              </td>
-              {/* Renderizar outras colunas, se necessário */}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+<div style={{ padding: '20px', maxWidth: '1000px', margin: '0 auto' }}>
+  <table
+    border={1}
+    cellPadding={10}
+    cellSpacing={0}
+    style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', backgroundColor: '#ff7300', boxShadow: '0 4px 8px rgba(0,0,0,0.1)' }}
+  >
+    <thead style={{ backgroundColor: '#ff7300', color: 'white' }}>
+      <tr>
+        <th style={{ padding: '12px' }}>ID</th>
+        <th style={{ padding: '12px' }}>Nome</th>
+        <th style={{ padding: '12px' }}>Email</th>
+        <th style={{ padding: '12px' }}>Telefone</th>
+        <th style={{ padding: '12px' }}>Excluir</th>
+      </tr>
+    </thead>
+    <tbody>
+      {contato.map((contato) => (
+        <tr key={contato.id} style={{ borderBottom: '1px solid #ddd' }}>
+          <td style={{ padding: '12px' }}>{contato.id}</td>
+          <td style={{ padding: '12px' }}>{contato.nome}</td>
+          <td style={{ padding: '12px' }}>{contato.email}</td>
+          <td style={{ padding: '12px' }}>{contato.telefone}</td>
+          <td style={{ padding: '12px' }}>
+            <button
+              style={{
+                backgroundColor: '#f44336',
+                color: 'white',
+                border: 'none',
+                padding: '10px 15px',
+                borderRadius: '5px',
+                cursor: 'pointer',
+              }}
+              onClick={() => handleExcluirUsuario(contato.id)}
+            >
+              Excluir
+            </button>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
   );
 };
 

@@ -1,7 +1,8 @@
 .footer {
     background-color: rgb(36, 36, 36);
-    padding: 30px; /* Espaçamento interno */
-    border-top: 1px dashed #e7e7e7; /* Linha superior suave */
+    /* Espaçamento interno */
+    border-top: 1px dashed #ffffff; 
+    padding-top: 45px;
   }
   
   .footer-text {
@@ -25,4 +26,9 @@
   .social-icons a:hover {
     color: #ff7300; /* Cor ao passar o mouse */
   }
+  p, h5 {
+    font-family: 'Work Sans', sans-serif;
+    font-size: larger;
+    color: rgb(255, 255, 255);
+}
   

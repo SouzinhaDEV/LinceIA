@@ -2,6 +2,7 @@
     padding-top: 150px;
     display: flex;
     justify-content: space-between;
+    background-color: rgb(36, 36, 36);
     /* ou space-around, space-evenly, etc. */
 }
 
@@ -22,7 +23,9 @@
 .ContatoFormulario {
     height: 500px;
     border-top: 1px;
-    padding: 16px;
+    padding: 26px;
+    margin-bottom: 250px;
+    margin-top: -36px;
 }
 
 .estilizacaoButton {
@@ -44,7 +47,7 @@ h4 {
 }
 
 .FundoCardContato {
-    background-color: white;
+    background-color: rgb(36, 36, 36);
 }
 
 .rating-container {
@@ -72,4 +75,37 @@ h4 {
 
 textarea {
     resize: none;
+}
+
+h2 {
+    padding-top: 60px;
+    color: #ffffff;
+}
+
+.form-label {
+    margin-bottom: .5rem;
+    color: #ffffff;
+}
+
+label {
+    display: inline-block;
+    color: #ffffff;
+}
+
+p,
+h5 {
+    font-family: 'Work Sans', sans-serif;
+    font-size: larger;
+    color: #ffffff;
+}
+
+.texte1 {
+    color: #000000;
+}
+.text2{
+    color: #000000;
+}
+.text4{
+    color: #000000;
+    font-size: 20px;
 }
