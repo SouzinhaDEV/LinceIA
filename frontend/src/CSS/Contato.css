@@ -19,12 +19,6 @@
     padding: 16px;
 }
 
-.ContatoFormulario {
-    height: 500px;
-    border-top: 1px;
-    padding: 16px;
-}
-
 .estilizacaoButton {
     width: 100%;
 }
@@ -72,4 +66,154 @@ h4 {
 
 textarea {
     resize: none;
+}
+
+/* Estilo para o container do card */
+.FundoCardContato {
+    padding: 20px;
+    /* background-color: #f9f9f9; Fundo leve para destacar o card */
+}
+
+/* Estilo para o card em si */
+.ContatoCard {
+    background-color: #ffffff; /* Cor de fundo branca para o card */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    padding: 20px;
+    max-width: 600px; /* Largura máxima do card */
+    margin: 20px; /* Espaçamento ao redor do card */
+}
+
+/* Estilo para o cabeçalho do card */
+.ContatoCard .card-header {
+    background-color: #007bff;/*  Cor de fundo azul */
+    color: black; /* Texto branco */
+    padding: 15px;
+    border-radius: 10px 10px 0 0; /* Bordas arredondadas no topo */
+    font-size: 24px;
+    text-align: center;
+}
+
+/* Estilo para o corpo do card */
+.ContatoCard .card-body {
+    padding: 20px;
+}
+
+/* Estilo para o texto dentro do card */
+.ContatoCard .card-text {
+    color: #333; /* Cor do texto principal */
+    margin-bottom: 10px; /* Espaçamento abaixo do texto */
+}
+
+/* Estilo para os títulos dentro do card */
+.ContatoCard .card-title {
+    font-size: 18px;
+    color: #007bff; /* Cor azul para títulos */
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+/* Estilo para as linhas horizontais */
+.ContatoCard hr {
+    border: 0;
+    border-top: 1px solid #e0e0e0; /* Linha fina e leve */
+    margin: 20px 0; /* Espaçamento ao redor da linha */
+}
+
+.footer{
+    margin-top: 100px;
+}
+
+/* Estilo para o container do formulário */
+.FormContato {
+    padding: 20px;
+    /* background-color: #f5f5f5; Fundo leve para destacar o formulário */
+}
+
+/* Estilo para o formulário */
+.ContatoFormulario {
+    background-color: #ffffff; /* Cor de fundo branca para o formulário */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    padding: 30px;
+    max-width: 800px; /* Largura máxima do formulário */
+    margin: 0 auto; /* Centralizar o formulário horizontalmente */
+    border-top: 1px;
+    padding: 16px;
+}
+
+/* Estilo para o título do formulário */
+.Titulo {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Estilo para os labels do formulário */
+.FormContato .form-label {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+/* Estilo para os campos de entrada */
+.FormContato .form-control {
+    border: 1px solid #ccc; /* Cor de borda leve */
+    border-radius: 5px; /* Bordas arredondadas */
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+/* Estilo para os campos de entrada com foco */
+.FormContato .form-control:focus {
+    border-color: #007bff; /* Cor da borda ao focar */
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25); /* Sombra ao focar */
+}
+
+/* Estilo para o container de avaliação */
+.rating-container {
+    margin-bottom: 20px;
+}
+
+/* Estilo para as estrelas da avaliação */
+.star-rating {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.star {
+    color: #ffc107; /* Cor das estrelas */
+    transition: color 0.3s; /* Transição suave ao selecionar */
+}
+
+.star.selected {
+    color: #ff9800; /* Cor das estrelas selecionadas */
+}
+
+/* Estilo para o botão de envio */
+.estilizacaoButton {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff; /* Cor de fundo azul */
+    color: #fff; /* Texto branco */
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.estilizacaoButton:hover {
+    background-color: #0056b3; /* Cor de fundo ao passar o mouse */
+}
+
+/* Estilo para o checkbox */
+.FormContato .form-check-label {
+    font-size: 16px;
+    color: #555;
+}
+
+.FormContato .form-check-input {
+    margin-right: 10px;
 }

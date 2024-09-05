@@ -84,6 +84,7 @@ const ContatoForm = () => {
                             <InputMask
                                 mask="(99) 99999-9999"
                                 value={formData.telefone}
+                                placeholder="(11) 11111-1111"
                                 onChange={(e) =>
                                     setFormData({ ...formData, telefone: e.target.value })
                                 }
@@ -137,6 +138,7 @@ const ContatoForm = () => {
                 </Col>
             </Row>
         </Container>
+
     );
 };
 
