@@ -94,7 +94,6 @@ const ContatoForm = () => {
                             </InputMask>
                         </Form.Group>
 
-                        {/* Card de Avaliação */}
                         <div className="rating-container mb-3">
                             <h3>Avalie o Plano</h3>
                             <div className="star-rating">
@@ -109,17 +108,18 @@ const ContatoForm = () => {
                                     </span>
                                 ))}
                             </div>
-                            <Form.Group controlId="comment" className="mt-3">
-                                <Form.Label>Deixe um comentário:</Form.Label>
-                                <Form.Control
-                                    as="textarea"
-                                    rows={3}
-                                    value={comment}
-                                    onChange={handleCommentChange}
-                                    placeholder="Escreva seu comentário aqui"
-                                />
-                            </Form.Group>
                         </div>
+
+                        <Form.Group controlId="comment" className="mt-3">
+                            <Form.Label>Deixe um comentário:</Form.Label>
+                            <Form.Control
+                                as="textarea"
+                                rows={3}
+                                value={comment}
+                                onChange={handleCommentChange}
+                                placeholder="Escreva seu comentário aqui"
+                            />
+                        </Form.Group>
 
                         <Form.Group className="mb-3">
                             <Form.Check
@@ -136,7 +136,7 @@ const ContatoForm = () => {
                     </Form>
                 </Col>
             </Row>
-        </Container>
+        </Container >
     );
 };
 
