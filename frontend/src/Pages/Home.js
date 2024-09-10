@@ -2,6 +2,7 @@ import React from "react";
 import Carousel from 'react-bootstrap/Carousel';
 import { Image, Container, Row, Col, Button } from "react-bootstrap";
 import '../CSS/Home.css';
+import video4 from '../Videos/video4.mp4';
 import video6 from '../Videos/video6.mp4';
 import video5 from '../Videos/video5.mp4';
 import foto3 from '../Img/ia.png';
