@@ -86,7 +86,6 @@ textarea {
 
 /* Estilo para o cabeçalho do card */
 .ContatoCard .card-header {
-    background-color: #007bff;/*  Cor de fundo azul */
     color: black; /* Texto branco */
     padding: 15px;
     border-radius: 10px 10px 0 0; /* Bordas arredondadas no topo */
@@ -108,7 +107,7 @@ textarea {
 /* Estilo para os títulos dentro do card */
 .ContatoCard .card-title {
     font-size: 18px;
-    color: #007bff; /* Cor azul para títulos */
+     color: #007bff; /*Cor azul para títulos */
     margin-top: 15px;
     margin-bottom: 10px;
 }
