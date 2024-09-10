@@ -105,10 +105,20 @@
     z-index: 100;
 }
 
+.esp2 {
+    padding: 20px;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
 p,
 h5 {
     font-family: 'Work Sans', sans-serif;
     font-size: larger;
+}
+
+.h5 h5{
+    color: black;
 }
 
 h2 {
@@ -172,6 +182,7 @@ h2 {
 
 .branco {
     color: white;
+    font-size: 15px;
 }
 
 .mov {
@@ -249,10 +260,10 @@ h2 {
     height: 350px;
 }
 
-.card-item h3 {
+.card-item h4 {
     margin-bottom: 5px;
     font-size: 40px;
-    font-family: 'Playfair Display', serif;
+    font-family: "Raleway", sans-serif;
     top: 5px;
 }
 
@@ -374,8 +385,65 @@ h2 {
     margin: 0 auto;
 }
 
-.botao{
+.botao {
     border-radius: 20px;
-    margin: 0 !important;
-    margin-right: 50px;
+    margin-right: 60px;
+    margin-left: 60px;
+    margin-top: 50px !important;
+    background-color: darkorange;
+    border: none;
+}
+
+.botao:hover{
+    background-color: rgb(255, 98, 0) !important;
+}
+
+.image-text-container {
+    display: flex;
+    /* Exibe imagem e texto lado a lado */
+    align-items: center;
+    /* Centraliza verticalmente */
+    justify-content: flex-start;
+    /* Alinha o conteúdo à esquerda */
+    gap: 10px;
+    /* Espaço entre imagem e caixa de texto */
+}
+
+.image-text-container img {
+    display: block;
+    width: 50%;
+    /* Ajuste de tamanho da imagem */
+    transition: transform 0.3s ease;
+    /* Suaviza o efeito ao passar o mouse */
+}
+
+.hover-box {
+    flex: 1;
+    /* Faz a caixa de texto ocupar o espaço restante */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Fundo semi-transparente */
+    color: white;
+    /* Cor do texto */
+    padding: 15px;
+    /* Espaço dentro da caixa */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+    text-align: center;
+    /* Alinha o texto no centro */
+    opacity: 0;
+    /* Começa escondido */
+    transition: opacity 0.3s ease;
+    /* Suaviza a transição de opacidade */
+    z-index: 1;
+    /* Garante que o texto fique acima da imagem */
+}
+
+.hover-container:hover .hover-box {
+    opacity: 1;
+    /* Mostra a caixa de texto ao passar o mouse */
+}
+
+.hover-container:hover img {
+    transform: scale(1.05);
+    /* Efeito de zoom na imagem ao passar o mouse */
 }

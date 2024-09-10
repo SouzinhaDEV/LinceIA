@@ -2,6 +2,10 @@ const express = require('express');
 const connection = require('./db');
 const router = express.Router();
 
+// Rota para listar todos os registros.
+
+//"contatos", no plural, por causa do banco.
+
 router.get('/contato', (req, res) => {
   connection.query('SELECT * FROM contato', (err, results) => {
     if (err) {
@@ -16,7 +20,7 @@ router.get('/contato', (req, res) => {
 // Rota para buscar um registro específico pelo ID.
 router.get('/contato/:id', (req, res) => {
   const { id } = req.params;
-  connection.query('SELECT * FROM contato WHERE id = ?', [id], (err, results) => {
+  connection.query('SELECT * FROM contatos WHERE id = ?', [id], (err, results) => {
     if (err) {
       console.error('Erro ao buscar o registro:', err);
       res.status(500).json({ error: 'Erro ao buscar o registro' });
@@ -41,7 +45,6 @@ router.get('/contato/:id', (req, res) => {
 
 router.post('/contato', (req, res) => {
   const { nome, email, telefone } = req.body;
-  console.log(req.body);  // Adicione este log para verificar os dados que estão sendo enviados
   connection.query('INSERT INTO contato (nome, email, telefone) VALUES (?, ?, ?)',
     [nome, email, telefone], (err, result) => {
       if (err) {
@@ -58,7 +61,7 @@ router.post('/contato', (req, res) => {
 router.put('/contato/:id', (req, res) => {
   const { id } = req.params;
   const { nome, email, telefone } = req.body;
-  connection.query('UPDATE contato SET nome = ?, email = ?, telefone = ?, WHERE id = ?'
+  connection.query('UPDATE contatos SET nome = ?, email = ?, telefone = ?, WHERE id = ?',
     [nome, email, telefone, id], (err, result) => {
       if (err) {
         console.error('Erro ao atualizar o registro:', err);
@@ -75,7 +78,7 @@ router.put('/contato/:id', (req, res) => {
 
 router.delete('/contato/:id', (req, res) => {
   const { id } = req.params;
-  connection.query('DELETE FROM contato WHERE id = ?', [id], (err, result) => {
+  connection.query('DELETE FROM contatos WHERE idContato = ?', [id], (err, result) => {
     if (err) {
       console.error('Erro ao excluir o registro:', err);
       res.status(500).json({ error: 'Erro ao excluir o registro' });
