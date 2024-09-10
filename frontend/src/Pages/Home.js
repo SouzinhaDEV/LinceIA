@@ -4,7 +4,6 @@ import { Image, Container, Row, Col, Button } from "react-bootstrap";
 import '../CSS/Home.css';
 import video6 from '../Videos/video6.mp4';
 import video5 from '../Videos/video5.mp4';
-import video4 from '../Videos/video4.mp4';
 import foto3 from '../Img/ia.png';
 import foto4 from '../Img/batida.png';
 import foto5 from '../Img/mecanico.png';
@@ -121,7 +120,7 @@ function Home() {
                   </Col>
                   <Col xs={12} md={8} className="d-flex align-items-center justify-content-center branco text-center">
                     <div>
-                      <h2>IA Totalmente Inovadora</h2>
+                      <h2>Nois pika e o resto é buraco Ladrão</h2>
                       <p>A LinceIA é pioneira em IA para o setor automotivo, oferecendo tecnologia inovadora que analisa dados com alta precisão. Nossa IA identifica problemas de forma eficiente e evolui continuamente para garantir soluções rápidas e eficazes, mantendo você na vanguarda da tecnologia automotiva.</p>
                     </div>
                   </Col>

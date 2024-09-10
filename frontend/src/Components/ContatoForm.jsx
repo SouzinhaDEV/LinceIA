@@ -84,6 +84,7 @@ const ContatoForm = () => {
                             <InputMask
                                 mask="(99) 99999-9999"
                                 value={formData.telefone}
+                                placeholder="(11) 11111-1111"
                                 onChange={(e) =>
                                     setFormData({ ...formData, telefone: e.target.value })
                                 }
@@ -108,18 +109,17 @@ const ContatoForm = () => {
                                     </span>
                                 ))}
                             </div>
+                            <Form.Group controlId="comment" className="mt-3">
+                                <Form.Label className='texte1'>Deixe um comentário:</Form.Label>
+                                <Form.Control
+                                    as="textarea"
+                                    rows={3}
+                                    value={comment}
+                                    onChange={handleCommentChange}
+                                    placeholder="Escreva seu comentário aqui"
+                                />
+                            </Form.Group>
                         </div>
-
-                        <Form.Group controlId="comment" className="mt-3">
-                            <Form.Label>Deixe um comentário:</Form.Label>
-                            <Form.Control
-                                as="textarea"
-                                rows={3}
-                                value={comment}
-                                onChange={handleCommentChange}
-                                placeholder="Escreva seu comentário aqui"
-                            />
-                        </Form.Group>
 
                         <Form.Group className="mb-3">
                             <Form.Check
