@@ -105,10 +105,20 @@
     z-index: 100;
 }
 
+.esp2 {
+    padding: 20px;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
 p,
 h5 {
     font-family: 'Work Sans', sans-serif;
     font-size: larger;
+}
+
+.h5 h5{
+    color: black;
 }
 
 h2 {

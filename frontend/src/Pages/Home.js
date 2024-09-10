@@ -8,7 +8,6 @@ import video5 from '../Videos/video5.mp4';
 import foto3 from '../Img/ia.png';
 import foto4 from '../Img/batida.png';
 import foto5 from '../Img/mecanico.png';
-import arcamera from '../Img/ar_camera.png';
 import aroficina from '../Img/ar_oficina.png';
 import arplanos from '../Img/ar_planos.png';
 import arprivacidade from '../Img/ar_privacidade.png';
@@ -69,27 +68,23 @@ function Home() {
 
       {/* Acesso Rápido */}
 
-      <Container className="esp1 shadow-fade-up">
+      <Container className="shadow-fade-up">
         <Row className="d-flex justify-content-center text-center">
-          <Col xs={6} sm={4} md={2}>
-            <Image src={arcamera} width="100%" className="mov" />
-            <h5>Camera</h5>
-          </Col>
-          <Col xs={6} sm={4} md={2}>
+          <Col className="esp2" xs={6} sm={4} md={2}>
             <Image src={aroficina} width="100%" className="mov" />
-            <h5>Oficinas</h5>
+            <h5 className="h5">Oficinas</h5>
           </Col>
-          <Col xs={6} sm={4} md={2}>
+          <Col className="esp2" xs={6} sm={4} md={2}>
             <Image src={arprivacidade} width="100%" className="mov" />
-            <h5>Privacidade</h5>
+            <h5 className="h5">Privacidade</h5>
           </Col>
-          <Col xs={6} sm={4} md={2}>
+          <Col className="esp2" xs={6} sm={4} md={2}>
             <Image src={arplanos} width="100%" className="mov" />
-            <h5>Planos</h5>
+            <h5 className="h5">Planos</h5>
           </Col>
-          <Col xs={6} sm={4} md={2}>
+          <Col className="esp2" xs={6} sm={4} md={2}>
             <Image src={arsuporte} width="100%" className="mov" />
-            <h5>Suporte</h5>
+            <h5 className="h5">Suporte</h5>
           </Col>
         </Row>
       </Container>
