@@ -2,13 +2,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-// ORDEM CORRETA:
-// '-> Nome Completo
-// '-> E-Mail
-// '-> Senha
-// '-> Telefone 
-// '-> CPF 
-
 const CadastroForm = () => {
   const [formData, setFormData] = useState({
     nome: '',
@@ -50,21 +43,7 @@ const CadastroForm = () => {
       <input type="text" name="nome" placeholder="Nome Completo" value={formData.nome} onChange={handleChange} />
       <input type="email" name="email" placeholder="E-Mail" value={formData.email} onChange={handleChange} />
       <input type="password" name="senha" placeholder="Senha" value={formData.senha} onChange={handleChange} />
-      <Form.Group className="mb-3" controlId="formTelefone">
-        <Form.Label as="p">Número de Telefone</Form.Label>
-        <InputMask
-          mask="(99) 99999-9999"
-          value={formData.telefone}
-          placeholder="(11) 11111-1111"
-          onChange={(e) =>
-            setFormData({ ...formData, telefone: e.target.value })
-          }
-        >
-          {(inputProps) => (
-            <Form.Control {...inputProps} name="telefone" type="text" required />
-          )}
-        </InputMask>
-      </Form.Group>
+      <input type="number" name="telefone" placeholder="Telefone" value={formData.telefone} onChange={handleChange} />
       <input type="number" name="cpf" placeholder="CPF" value={formData.cpf} onChange={handleChange} />
       <button type="submit">Salvar</button>
     </form>
