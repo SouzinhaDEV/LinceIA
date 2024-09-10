@@ -121,7 +121,7 @@ function Home() {
                   </Col>
                   <Col xs={12} md={8} className="d-flex align-items-center justify-content-center branco text-center">
                     <div>
-                      <h2>Nois pika e o resto é buraco Ladrão</h2>
+                      <h2>Sua Vida se Tornará mais Facil com nossa Incrivel IA</h2>
                       <p>A LinceIA é pioneira em IA para o setor automotivo, oferecendo tecnologia inovadora que analisa dados com alta precisão. Nossa IA identifica problemas de forma eficiente e evolui continuamente para garantir soluções rápidas e eficazes, mantendo você na vanguarda da tecnologia automotiva.</p>
                     </div>
                   </Col>

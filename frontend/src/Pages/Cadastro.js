@@ -24,7 +24,7 @@ const Cadastro = () => {
   };
 
   return (
-    <div className='FundoCardCadastro'>
+    <div className='FundoCadastro'>
       <Container className="fundo3">
         <Row className="justify-content-center">
           <Col md={6}>
@@ -113,8 +113,8 @@ const Cadastro = () => {
               <p className="p line">Ou com</p>
 
               <div className="flex-row">
-                <button className="btn google">Google</button>
-                <button className="btn apple">Apple</button>
+                <button className="bot google">Google</button>
+                <button className="bot apple">Apple</button>
               </div>
             </form>
           </Col>
