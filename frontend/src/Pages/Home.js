@@ -2,10 +2,9 @@ import React from "react";
 import Carousel from 'react-bootstrap/Carousel';
 import { Image, Container, Row, Col, Button } from "react-bootstrap";
 import '../CSS/Home.css';
+import video4 from '../Videos/video4.mp4';
 import video6 from '../Videos/video6.mp4';
 import video5 from '../Videos/video5.mp4';
-import video4 from '../Videos/video4.mp4';
-import foto2 from '../Img/celular.png';
 import foto3 from '../Img/ia.png';
 import foto4 from '../Img/batida.png';
 import foto5 from '../Img/mecanico.png';
@@ -19,7 +18,7 @@ function Home() {
   const carouselItems = [
     {
       videoSrc: video4,
-      title: "Inteligencia Artificial",
+      title: "Inteligência Artificial",
       description: "Com nossa IA você se sentira conectado com todo o mundo do futuro, com nossa análise em tempo real do seu carro"
     },
     {
@@ -35,9 +34,9 @@ function Home() {
   ];
 
   const cardsData = [
-    { id: 1, price: '200', title: 'Mensal', description: 'Descrição do Card Mensal' },
-    { id: 2, price: '1.200', title: 'Anual', description: 'Descrição do Card Anual' },
-    { id: 3, price: '400', title: 'Semestral', description: 'Descrição do Card Semestral' },
+    { id: 1, price: '200', title: 'Mensal', description: 'Acesso de um mês de plano' },
+    { id: 2, price: '1.200', title: 'Anual', description: 'Acesso de um ano de plano' },
+    { id: 3, price: '400', title: 'Semestral', description: 'Acesso semestral ao plano' },
   ];
 
   
@@ -109,22 +108,9 @@ function Home() {
                   </Col>
                   <Col xs={12} md={8} className="d-flex align-items-center justify-content-center branco text-center">
                     <div>
-                      <h2>Nois pika e o resto é buraco Ladrão</h2>
-                      <p>A leitura é uma habilidade essencial que abre portas para o conhecimento e o crescimento pessoal. Ela nos permite explorar diferentes mundos, culturas e perspectivas, ampliando nossa compreensão do mundo ao nosso redor.</p>
+                      <h2>Diagnóstico Preciso e Solução Imediata para o Seu Carro</h2>
+                      <p>A LinceIA utiliza inteligência artificial para identificar problemas no seu carro com alta precisão e rapidez, detectando falhas em várias partes do veículo. Além disso, localiza as oficinas mais próximas para uma solução rápida e eficiente.</p>
                     </div>
-                  </Col>
-                </Row>
-              </Carousel.Item>
-              <Carousel.Item className="esp1">
-                <Row className="fade-in-image">
-                  <Col xs={12} md={8} className="d-flex align-items-center justify-content-center branco text-center">
-                    <div>
-                      <h2>Nois pika e o resto é buraco Ladrão</h2>
-                      <p>A leitura é uma habilidade essencial que abre portas para o conhecimento e o crescimento pessoal. Ela nos permite explorar diferentes mundos, culturas e perspectivas, ampliando nossa compreensão do mundo ao nosso redor.</p>
-                    </div>
-                  </Col>
-                  <Col xs={12} md={4} className="d-flex justify-content-center">
-                    <Image src={foto2} width="100%" />
                   </Col>
                 </Row>
               </Carousel.Item>
@@ -135,8 +121,8 @@ function Home() {
                   </Col>
                   <Col xs={12} md={8} className="d-flex align-items-center justify-content-center branco text-center">
                     <div>
-                      <h2>Nois pika e o resto é buraco Ladrão</h2>
-                      <p>A leitura é uma habilidade essencial que abre portas para o conhecimento e o crescimento pessoal. Ela nos permite explorar diferentes mundos, culturas e perspectivas, ampliando nossa compreensão do mundo ao nosso redor.</p>
+                      <h2>Sua Vida se Tornará mais Facil com nossa Incrivel IA</h2>
+                      <p>A LinceIA é pioneira em IA para o setor automotivo, oferecendo tecnologia inovadora que analisa dados com alta precisão. Nossa IA identifica problemas de forma eficiente e evolui continuamente para garantir soluções rápidas e eficazes, mantendo você na vanguarda da tecnologia automotiva.</p>
                     </div>
                   </Col>
                 </Row>
@@ -145,8 +131,8 @@ function Home() {
                 <Row className="fade-in-image">
                   <Col xs={12} md={8} className="d-flex align-items-center justify-content-center branco text-center">
                     <div>
-                      <h2>Nois pika e o resto é buraco Ladrão</h2>
-                      <p>A leitura é uma habilidade essencial que abre portas para o conhecimento e o crescimento pessoal. Ela nos permite explorar diferentes mundos, culturas e perspectivas, ampliando nossa compreensão do mundo ao nosso redor.</p>
+                      <h2>Achamos Oficinas para você</h2>
+                      <p>A LinceIA identifica problemas no seu carro com precisão usando inteligência artificial e facilita o próximo passo, indicando as oficinas mais próximas da sua localização. Nossa plataforma garante rapidez, confiança e comodidade, simplificando sua vida ao diagnosticar o problema e mostrar onde solucioná-lo, tudo em um só lugar.</p>
                     </div>
                   </Col>
                   <Col xs={12} md={4} className="d-flex justify-content-center">
@@ -167,8 +153,8 @@ function Home() {
         </div>
         {cardsData.map((card, index) => (
           <div key={card.id} className={`card-item card-${index + 1}`}>
+            <h4 className="titulo">{card.title}</h4>
             <h1>{card.price}</h1>
-            <h3 className="titulo">{card.title}</h3>
             <p>{card.description}</p>
             <Button className="botao">Saiba Mais</Button>
           </div>

@@ -95,7 +95,6 @@ const ContatoForm = () => {
                             </InputMask>
                         </Form.Group>
 
-                        {/* Card de Avaliação */}
                         <div className="rating-container mb-3">
                             <h3>Avalie o Plano</h3>
                             <div className="star-rating">
@@ -137,7 +136,7 @@ const ContatoForm = () => {
                     </Form>
                 </Col>
             </Row>
-        </Container>
+        </Container >
     );
 };
 
