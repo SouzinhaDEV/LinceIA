@@ -111,7 +111,7 @@ const ContatoForm = () => {
                                 ))}
                             </div>
                             <Form.Group controlId="comment" className="mt-3">
-                                <Form.Label>Deixe um comentário:</Form.Label>
+                                <Form.Label className='texte1'>Deixe um comentário:</Form.Label>
                                 <Form.Control
                                     as="textarea"
                                     rows={3}

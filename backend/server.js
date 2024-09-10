@@ -1,8 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const routesCadastros = require("./routesCadastros");
-const routesContato = require("./routesContato");
+const routescadastros = require("./routescadastros");
+const routescontato = require("./routescontato");
 const app = express();
 const port = 3001;
 
@@ -11,8 +11,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 
-app.use("/", routescadastrosCadastros);
-app.use("/", routescontatosContato);
+app.use("/", routescadastros);
+app.use("/", routescontato);
 
 
 app.listen(port, () => {
