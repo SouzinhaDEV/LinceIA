@@ -2,6 +2,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+// ORDEM CORRETA:
+// '-> Nome Completo
+// '-> E-Mail
+// '-> Senha
+// '-> Telefone 
+// '-> CPF 
+
 const CadastroForm = () => {
   const [formData, setFormData] = useState({
     nome: '',
