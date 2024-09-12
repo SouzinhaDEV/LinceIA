@@ -13,7 +13,7 @@ const Footer = () => {
           <Col md={4} className="footer-text">
             <p>© 2024 Todos os direitos reservados.</p>
           </Col>
-          <Col md={4}>
+          <Col className='logorod'>
             <Image src={logo} width={120}/>
           </Col>
             <Col md={4} className="social-icons">

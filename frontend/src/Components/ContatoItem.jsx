@@ -1,11 +1,5 @@
 import React from 'react';
 
-// ORDEM CORRETA:
-// '-> Nome Completo
-// '-> E-Mail
-// '-> Telefone 
-
-// "contatos", como está na tabela do MySQL.
 const ContatoItem = ({ contatos, onDelete }) => {
   return (
     <tr>

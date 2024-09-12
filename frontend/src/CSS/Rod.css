@@ -1,11 +1,11 @@
 .footer {
     background-color: rgb(36, 36, 36);
-
   }
   
   .footer-text {
     color: #555; /* Cor do texto para um contraste suave */
     font-size: 14px; /* Tamanho de fonte pequeno */
+    margin-top: 70px;
   }
   
   .social-icons {
@@ -13,6 +13,7 @@
     justify-content: center;
     align-items: center;
     gap: 25px; /* Espaço entre os ícones */
+    margin-top: 50px;
   }
   
   .social-icons a {
@@ -29,4 +30,6 @@
     font-size: larger;
     color: rgb(255, 255, 255);
 }
-  
+.logorod{
+  margin-top: 50px;
+}
