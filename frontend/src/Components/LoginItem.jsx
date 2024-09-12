@@ -7,7 +7,7 @@ const LoginItem = ({ login, onDelete }) => {
       <td>{login.email}</td>      
       <td>{login.senha}</td>
       <td>
-        <button onClick={() => onDelete(login.idLogin)}>Excluir</button>
+        <button onClick={() => onDelete(login.id)}>Excluir</button>
       </td>
     </tr>
   );
