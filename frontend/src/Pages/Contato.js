@@ -8,8 +8,14 @@ const Contato = () => {
   return (
     <>
       <div className="PaginaDeContato">
-        <Formulario />
-        <Card />
+        <div className="respon">
+          <div className="component1">
+            <Card />
+          </div>
+          <div className="component2">
+            <Formulario />
+          </div>
+        </div>
       </div>
     </>
   );

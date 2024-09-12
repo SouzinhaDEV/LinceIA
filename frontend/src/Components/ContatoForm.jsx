@@ -49,12 +49,11 @@ const ContatoForm = () => {
 
     return (
         <Container className="FormContato">
-            <Row className="justify-content-center">
-                <Col md={10}>
+            <Row>
+                <Col md={12}>
                     <Form className="ContatoFormulario" onSubmit={handleSubmit}>
                         <h2 className="Titulo">Formulário de Contato</h2>
                         <Form.Group className="mb-3" controlId="formNomeCompleto">
-                            <Form.Label as="p">Nome Completo</Form.Label>
                             <Form.Control
                                 name="nome"
                                 onChange={handleChange}
@@ -64,40 +63,25 @@ const ContatoForm = () => {
                                 pattern="[A-Za-zÀ-ÖØ-Ýà-öø-ÿ ]{1,}"
                                 title="Nome deve conter apenas letras e espaços."
                                 required
+                                className='formctt'
                             />
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formEmail">
-                            <Form.Label as="p">Endereço de Email</Form.Label>
                             <Form.Control
                                 name="email"
                                 onChange={handleChange}
                                 value={formData.email}
                                 type="email"
-                                placeholder="nome@exemplo.com"
+                                placeholder="Email válido para contato"
                                 required
+                                className='formctt'
                             />
-                        </Form.Group>
-
-                        <Form.Group className="mb-3" controlId="formTelefone">
-                            <Form.Label as="p">Número de Telefone</Form.Label>
-                            <InputMask
-                                mask="(99) 99999-9999"
-                                value={formData.telefone}
-                                placeholder="(11) 11111-1111"
-                                onChange={(e) =>
-                                    setFormData({ ...formData, telefone: e.target.value })
-                                }
-                            >
-                                {(inputProps) => (
-                                    <Form.Control {...inputProps} name="telefone" type="text" required />
-                                )}
-                            </InputMask>
                         </Form.Group>
 
                         {/* Card de Avaliação */}
                         <div className="rating-container mb-3">
-                            <h3>Avalie o Plano</h3>
+                            <h2 className='espctt'>Avalie o Plano</h2>
                             <div className="star-rating">
                                 {[1, 2, 3, 4, 5].map((star) => (
                                     <span
@@ -110,17 +94,19 @@ const ContatoForm = () => {
                                     </span>
                                 ))}
                             </div>
-                            <Form.Group controlId="comment" className="mt-3">
-                                <Form.Label className='texte1'>Deixe um comentário:</Form.Label>
-                                <Form.Control
-                                    as="textarea"
-                                    rows={3}
-                                    value={comment}
-                                    onChange={handleCommentChange}
-                                    placeholder="Escreva seu comentário aqui"
-                                />
-                            </Form.Group>
                         </div>
+
+                        <Form.Group controlId="comment" className="mt-3">
+                            <Form.Label className='texte1'>Deixe um comentário:</Form.Label>
+                            <Form.Control
+                                as="textarea"
+                                rows={3}
+                                value={comment}
+                                onChange={handleCommentChange}
+                                placeholder="Escreva seu comentário aqui"
+                                className='formctt'
+                            />
+                        </Form.Group>
 
                         <Form.Group className="mb-3">
                             <Form.Check
@@ -131,13 +117,14 @@ const ContatoForm = () => {
                             />
                         </Form.Group>
 
-                        <Button className="estilizacaoButton" variant="primary" type="submit">
+                        <Button className="estilizacaoButton" variant="dark" type="submit">
                             Enviar Mensagem
                         </Button>
                     </Form>
                 </Col>
             </Row>
         </Container>
+
     );
 };
 

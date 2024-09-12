@@ -1,8 +1,6 @@
 .footer {
     background-color: rgb(36, 36, 36);
-    /* Espaçamento interno */
-    border-top: 1px dashed #ffffff; 
-    padding-top: 45px;
+
   }
   
   .footer-text {
