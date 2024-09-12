@@ -3,7 +3,7 @@ import axios from 'axios';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { Container, Row, Col } from 'react-bootstrap';
-import InputMask from 'react-input-mask';
+// import InputMask from 'react-input-mask';
 
 const ContatoForm = () => {
     const [formData, setFormData] = useState({
@@ -23,7 +23,6 @@ const ContatoForm = () => {
             setFormData({
                 nome: '',
                 email: '',
-                telefone: '',
             });
         } catch (error) {
             console.error('Erro ao criar cadastro:', error);

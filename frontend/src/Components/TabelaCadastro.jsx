@@ -13,7 +13,6 @@ const TabelaCadastro = () => {
         console.error("Erro ao buscar usuários:", error); // Adiciona este log de erro
       }
     };
-
     fetchData();
   }, []);
 
@@ -37,38 +36,48 @@ const TabelaCadastro = () => {
   // '-> CPF 
 
   return (
-    <div>
-      <table border={2} cellPadding={5} cellSpacing={5}>
-        <thead>
+    <div style={{ padding: '20px', maxWidth: '1000px', margin: '0 auto' }}>
+      <table
+        border={1}
+        cellPadding={10}
+        cellSpacing={0}
+        style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', backgroundColor: '#ff7300', boxShadow: '0 4px 8px rgba(0,0,0,0.1)' }}
+      >
+        <thead style={{ backgroundColor: '#ff7300', color: 'white' }}>
           <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Email</th>
-            <th>Senha</th>
-            <th>Telefone</th>
-            <th>CPF</th>
-            <th>Ação</th>
-            {/* Adicione mais colunas, se necessário */}
+            <th style={{ padding: '12px' }}>ID</th>
+            <th style={{ padding: '12px' }}>Nome</th>
+            <th style={{ padding: '12px' }}>Email</th>
+            <th style={{ padding: '12px' }}>Senha</th>
+            <th style={{ padding: '12px' }}>Telefone</th>
+            <th style={{ padding: '12px' }}>CPF</th>
+            <th style={{ padding: '12px' }}>Excluir</th>
           </tr>
         </thead>
         <tbody>
           {cadastros.map((cadastros) => (
-            <tr key={cadastros.idCadastro}>
-              <td>{cadastros.idCadastro}</td>
-              <td>{cadastros.nome}</td>
-              <td>{cadastros.email}</td>
-              <td>{cadastros.senha}</td>
-              <td>{cadastros.telefone}</td>
-              <td>{cadastros.cpf}</td>
-              <td>
+            <tr key={cadastros.id} style={{ borderBottom: '1px solid #ddd' }}>
+              <td style={{ padding: '12px' }}>{cadastros.id}</td>
+              <td style={{ padding: '12px' }}>{cadastros.nome}</td>
+              <td style={{ padding: '12px' }}>{cadastros.email}</td>
+              <td style={{ padding: '12px' }}>{cadastros.senha}</td>
+              <td style={{ padding: '12px' }}>{cadastros.telefone}</td>
+              <td style={{ padding: '12px' }}>{cadastros.cpf}</td>
+              <td style={{ padding: '12px' }}>
                 <button
-                  variant="danger"
-                  onClick={() => handleExcluirUsuario(cadastros.idCadastro)}
+                  style={{
+                    backgroundColor: '#f44336',
+                    color: 'white',
+                    border: 'none',
+                    padding: '10px 15px',
+                    borderRadius: '5px',
+                    cursor: 'pointer',
+                  }}
+                  onClick={() => handleExcluirUsuario(cadastros.id)}
                 >
                   Excluir
                 </button>
               </td>
-              {/* Renderizar outras colunas, se necessário */}
             </tr>
           ))}
         </tbody>
