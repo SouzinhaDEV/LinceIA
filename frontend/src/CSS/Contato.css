@@ -117,11 +117,6 @@ textarea {
     border-top: 1px solid #e0e0e0; /* Linha fina e leve */
     margin: 20px 0; /* Espaçamento ao redor da linha */
 }
-
-.footer{
-    margin-top: 100px;
-}
-
 /* Estilo para o container do formulário */
 .FormContato {
     padding: 20px;
