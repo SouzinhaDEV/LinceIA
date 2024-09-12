@@ -23,7 +23,7 @@ function CardContato() {
                         </Card.Text >
                         <Card.Title className='text2'>Entre em Contato Conosco:</Card.Title>
                         <Card.Text className='text4'>
-                        +55 (11)99669-7545
+                        +55 (11) 99669-7545
                         </Card.Text>
                         <hr />
                     </Card.Body>
