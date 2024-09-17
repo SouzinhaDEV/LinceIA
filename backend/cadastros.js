@@ -19,9 +19,9 @@ router.get('/cadastros', (req, res) => {
 
 // Rota para buscar um registro específico pelo ID.
 
-router.get('/cadastros/:id', (req, res) => {
+router.get('/cadastros/:idCadastro', (req, res) => {
   const { id } = req.params;
-  connection.query('SELECT * FROM cadastros WHERE id = ?', [id], (err, results) => {
+  connection.query('SELECT * FROM cadastros WHERE idCadastro = ?', [id], (err, results) => {
     if (err) {
       console.error('Erro ao buscar o registro:', err);
       res.status(500).json({ error: 'Erro ao buscar o registro' });
@@ -61,10 +61,10 @@ router.post('/cadastros', (req, res) => {
 
 // Rota para atualizar um registro existente pelo ID.
 
-router.put('/cadastros/:id', (req, res) => {
+router.put('/cadastros/:idCadastro', (req, res) => {
   const { id } = req.params;
   const { nome, email, senha, telefone, cpf } = req.body;
-  connection.query('UPDATE cadastros SET nome = ?, email = ?, senha = ?, telefone = ? cpf = ?, WHERE id = ?',
+  connection.query('UPDATE cadastros SET nome = ?, email = ?, senha = ?, telefone = ? cpf = ?, WHERE idCadastro = ?',
     [nome, email, senha, telefone, cpf, id], (err, result) => {
       if (err) {
         console.error('Erro ao atualizar o registro:', err);
@@ -79,7 +79,7 @@ router.put('/cadastros/:id', (req, res) => {
 
 // OBS: Aqui, o "idCadastro" é no singular porque se trata de cada cadastro individualmente, como no banco de dados.
 
-router.delete('/cadastros/:id', (req, res) => {
+router.delete('/cadastros/:idCadastro', (req, res) => {
   const { id } = req.params;
   connection.query('DELETE FROM cadastros WHERE idCadastro = ?', [id], (err, result) => {
     if (err) {

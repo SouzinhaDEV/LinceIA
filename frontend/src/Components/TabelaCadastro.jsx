@@ -43,6 +43,7 @@ const TabelaCadastro = () => {
         cellSpacing={0}
         style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', backgroundColor: '#ff7300', boxShadow: '0 4px 8px rgba(0,0,0,0.1)' }}
       >
+
         <thead style={{ backgroundColor: '#ff7300', color: 'white' }}>
           <tr>
             <th style={{ padding: '12px' }}>ID</th>
@@ -54,6 +55,7 @@ const TabelaCadastro = () => {
             <th style={{ padding: '12px' }}>Excluir</th>
           </tr>
         </thead>
+
         <tbody>
           {cadastros.map((cadastros) => (
             <tr key={cadastros.id} style={{ borderBottom: '1px solid #ddd' }}>
@@ -63,26 +65,24 @@ const TabelaCadastro = () => {
               <td style={{ padding: '12px' }}>{cadastros.senha}</td>
               <td style={{ padding: '12px' }}>{cadastros.telefone}</td>
               <td style={{ padding: '12px' }}>{cadastros.cpf}</td>
-              <td style={{ padding: '12px' }}>
-                <button
-                  style={{
-                    backgroundColor: '#f44336',
-                    color: 'white',
-                    border: 'none',
-                    padding: '10px 15px',
-                    borderRadius: '5px',
-                    cursor: 'pointer',
-                  }}
-                  onClick={() => handleExcluirUsuario(cadastros.id)}
-                >
-                  Excluir
-                </button>
-              </td>
+              <button
+                style={{
+                  backgroundColor: '#f44336',
+                  color: 'white',
+                  border: 'none',
+                  padding: '10px 15px',
+                  borderRadius: '5px',
+                  cursor: 'pointer',
+                }}
+                onClick={() => handleExcluirUsuario(cadastros.id)}
+              >
+                Excluir
+              </button>
             </tr>
           ))}
         </tbody>
       </table>
-    </div>
+    </div >
   );
 };
 
