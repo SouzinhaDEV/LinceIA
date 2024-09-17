@@ -1,9 +1,8 @@
 .PaginaDeContato {
-    padding-top: 150px;
     display: flex;
     justify-content: space-between;
     background-color: rgb(36, 36, 36);
-    /* ou space-around, space-evenly, etc. */
+    padding-top: 200px;
 }
 
 .FormularioContato, .CardContato {
@@ -35,30 +34,17 @@ h4 {
 
 .Titulo {
     padding: 0;
+    color: white !important;
 }
 
 /* Inicio Card de Avaliação */
 .rating-container {
-    margin: 30px 0;
+    margin: 30px;
     padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    text-align: center;
-}
-
-.star-rating {
-    margin-bottom: 10px;
-}
-
-.star {
-    font-size: 30px;
-    color: #ddd;
-    cursor: pointer;
-}
-
-.star.selected {
-    color: #f39c12;
+    border-radius: none;
+    background-color: none;
+    display: flex;
+    align-items: center;
 }
 
 textarea {
@@ -67,7 +53,6 @@ textarea {
 /* Fim Card de Avaliação */
 /* Estilo para o container do card */
 .FundoCardContato {
-    background-color: rgb(36, 36, 36);
     padding: 20px;
     /* background-color: #f9f9f9; Fundo leve para destacar o card */
 }
@@ -75,19 +60,17 @@ textarea {
 
 /* Estilo para o card em si */
 .ContatoCard {
-    background-color: #ffffff; /* Cor de fundo branca para o card */
-    border-radius: 10px; /* Bordas arredondadas */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    padding: 20px;
+    background-color: #ffffff00; /* Cor de fundo branca para o card */
+    border: none;
     max-width: 600px; /* Largura máxima do card */
-    margin: 20px; /* Espaçamento ao redor do card */
+    margin-left: 20px; /* Espaçamento ao redor do card */
 }
 
 /* Estilo para o cabeçalho do card */
 .ContatoCard .card-header {
     color: black; /* Texto branco */
     padding: 15px;
-    border-radius: 10px 10px 0 0; /* Bordas arredondadas no topo */
+    border-radius: none; /* Bordas arredondadas no topo */
     font-size: 24px;
     text-align: center;
 }
@@ -106,7 +89,7 @@ textarea {
 /* Estilo para os títulos dentro do card */
 .ContatoCard .card-title {
     font-size: 18px;
-    color: #007bff; /*Cor azul para títulos */
+    /* color: #007bff; Cor azul para títulos */
     margin-top: 15px;
     margin-bottom: 10px;
 }
@@ -117,19 +100,60 @@ textarea {
     border-top: 1px solid #e0e0e0; /* Linha fina e leve */
     margin: 20px 0; /* Espaçamento ao redor da linha */
 }
-/* Estilo para o container do formulário */
+/* Estilos gerais para o formulário */
 .FormContato {
-    padding: 20px;
+    padding: 1rem; /* Adiciona um pouco de padding ao contêiner */
 }
+
+.ContatoFormulario {
+    max-width: 600px; /* Define uma largura máxima para o formulário */
+    margin: 0 auto; /* Centraliza o formulário horizontalmente */
+}
+
+/* Estilos para inputs */
+.formctt {
+    width: 100%; /* Garante que os campos ocupem toda a largura disponível */
+    box-sizing: border-box; /* Inclui padding e bordas na largura total */
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+    .formctt {
+        font-size: 0.875rem; /* Ajusta o tamanho da fonte dos campos em telas pequenas */
+    }
+
+    .estilizacaoButton {
+        width: 100%; /* Garante que o botão ocupe toda a largura disponível em telas pequenas */
+    }
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+    .Titulo {
+        font-size: 1.5rem; /* Ajusta o tamanho do título em telas pequenas */
+    }
+
+    .espctt {
+        font-size: 1.25rem; /* Ajusta o tamanho do título da avaliação */
+    }
+
+    .formctt {
+        font-size: 0.875rem; /* Ajusta o tamanho da fonte dos campos em telas pequenas */
+    }
+
+    .estilizacaoButton {
+        width: 100%; /* Garante que o botão ocupe toda a largura disponível em telas pequenas */
+    }
+}
+
 
 /* Estilo para o formulário */
 .ContatoFormulario {
-    background-color: #ffffff; /* Cor de fundo branca para o formulário */
-    border-radius: 8px; /* Bordas arredondadas */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    background-color: #ffffff00; /* Cor de fundo branca para o formulário */
+    border: none;
     padding: 30px;
-    max-width: 800px; /* Largura máxima do formulário */
-    margin: 0 auto; /* Centralizar o formulário horizontalmente */
+    max-width: 300px; /* Largura máxima do formulário */
+    margin: 0 auto !important; /* Centralizar o formulário horizontalmente */
     border-top: 1px;
     padding: 16px;
 }
@@ -140,28 +164,30 @@ textarea {
     color: #333;
     margin-bottom: 20px;
     text-align: center;
+    max-width: 300px;
 }
 
 /* Estilo para os labels do formulário */
 .FormContato .form-label {
     font-weight: 600;
     font-size: 16px;
-    color: #555;
+    color: #ffffff;
     margin-bottom: 8px;
 }
 
 /* Estilo para os campos de entrada */
 .FormContato .form-control {
     border: 1px solid #ccc; /* Cor de borda leve */
-    border-radius: 5px; /* Bordas arredondadas */
+    border-radius: none; /* Bordas arredondadas */
     padding: 10px;
     margin-bottom: 20px;
 }
 
 /* Estilo para os campos de entrada com foco */
 .FormContato .form-control:focus {
-    border-color: #007bff; /* Cor da borda ao focar */
-    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25); /* Sombra ao focar */
+    border-color: #ffc400; /* Cor da borda ao focar */
+    box-shadow: 0 0 0 0.1rem rgba(255, 165, 38, 0.874); /* Sombra ao focar */
+    background-color: #181818;
 }
 
 /* Estilo para o container de avaliação */
@@ -177,12 +203,12 @@ textarea {
 }
 
 .star {
-    color: #ffc107; /* Cor das estrelas */
+    color: #d7d7d7; /* Cor das estrelas */
     transition: color 0.3s; /* Transição suave ao selecionar */
 }
 
 .star.selected {
-    color: #ff9800; /* Cor das estrelas selecionadas */
+    color: #ff9800 !important; /* Cor das estrelas selecionadas */
 }
 
 /* Estilo para o botão de envio */
@@ -190,16 +216,16 @@ textarea {
     width: 100%;
     padding: 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: none;
     background-color: black; /* Cor de fundo azul */
     color: #fff; /* Texto branco */
     font-size: 16px;
     cursor: pointer;
 }
 
-.estilizacaoButton:hover {
-    background-color: #0056b3; /* Cor de fundo ao passar o mouse */
-}
+/* .estilizacaoButton:hover {
+    background-color: #0056b3; /* Cor de fundo ao passar o mouse 
+} */
 
 
 /* Estilo para o checkbox */
@@ -210,4 +236,65 @@ textarea {
 
 .FormContato .form-check-input {
     margin-right: 10px;
+}
+
+.text2{
+    color: rgb(214, 214, 214) !important;
+    font-size: 16px;
+    padding-right: 80px;
+}
+
+.tituloctt{
+    color: white !important;
+    font-size: 28px !important;
+    display: flex;
+    align-items: center;
+}
+
+.formctt{
+    background-color: #353535;
+    border: none !important;
+    border-radius: 0;
+}
+
+.formctt::placeholder {
+    color: #888 !important;
+}
+
+.espctt{
+    color: white;
+    padding-left: 10px;
+    padding-right: 40px;
+    font-size: 25px;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-style: bold;
+}
+
+.form-control {
+    color: whitesmoke !important;
+}
+
+.iconst{
+    margin-left: 10px;
+    padding: 3px;
+}
+
+.respon {
+    display: flex; /* Usa flexbox para o layout */
+    flex-direction: row; /* Alinha os componentes horizontalmente por padrão */
+    gap: 1rem; /* Espaçamento entre os componentes */
+}
+
+/* Estilos para os componentes */
+.component1, .component2 {
+    flex: 0 0 auto; /* Mantém o tamanho dos componentes sem redimensionar */
+}
+
+/* Media Query para dispositivos móveis */
+@media (max-width: 768px) {
+    .respon {
+        flex-direction: column; /* Alinha os componentes verticalmente em dispositivos móveis */
+        gap: 0; /* Remove o espaçamento entre os componentes se desejado */
+    }
 }
