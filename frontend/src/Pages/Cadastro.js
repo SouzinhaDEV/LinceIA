@@ -6,7 +6,7 @@ import '../CSS/cadastro.css'
 const Contato = () => {
     return (
         <>
-                <Formulario />
+            <Formulario />
         </>
     );
 };

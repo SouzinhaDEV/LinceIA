@@ -13,7 +13,7 @@ const CadastroItem = ({ cadastros, onDelete }) => {
     <tr>
       <td>{cadastros.idCadastro}</td>
       <td>{cadastros.nome}</td>
-      <td>{cadastros.email}</td>      
+      <td>{cadastros.email}</td>
       <td>{cadastros.senha}</td>
       <td>{cadastros.telefone}</td>
       <td>{cadastros.cpf}</td>
