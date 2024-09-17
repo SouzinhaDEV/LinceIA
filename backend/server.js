@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const routescadastros = require("./routescadastros");
 const routescontato = require("./routescontato");
+const routeslogin = require("./routeslogin")
 const app = express();
 const port = 3001;
 
@@ -13,6 +14,7 @@ app.use(cors());
 
 app.use("/", routescadastros);
 app.use("/", routescontato);
+app.use("/", routeslogin)
 
 
 app.listen(port, () => {

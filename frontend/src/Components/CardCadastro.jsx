@@ -2,11 +2,12 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import { Container, Row } from 'react-bootstrap';
 
-function CardContato() {
+
+function CardCadastro() {
     return (
         <Container>
             <Row className="justify-content-center">
-                <Card className='ContatoCard'>
+                <Card className='CadastroCard'>
                     <Card.Header as="h4">Entrar em Contato</Card.Header>
                     <Card.Body>
                         <Card.Title>Redes Sociais</Card.Title>
@@ -23,4 +24,4 @@ function CardContato() {
     );
 }
 
-export default CardContato;
+export default CardCadastro;

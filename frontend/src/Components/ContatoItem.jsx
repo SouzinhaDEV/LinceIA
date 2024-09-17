@@ -1,20 +1,13 @@
 import React from 'react';
 
-// ORDEM CORRETA:
-// '-> Nome Completo
-// '-> E-Mail
-// '-> Telefone 
-
-// "contatos", como está na tabela do MySQL.
-const ContatoItem = ({ contatos, onDelete }) => {
+const ContatoItem = ({ contato, onDelete }) => {
   return (
     <tr>
-      <td>{contatos.idContato}</td>
-      <td>{contatos.nome}</td>
-      <td>{contatos.email}</td>      
-      <td>{contatos.telefone}</td>
+      <td>{contato.idContato}</td>
+      <td>{contato.nome}</td>
+      <td>{contato.email}</td>      
       <td>
-        <button onClick={() => onDelete(contatos.idContato)}>Excluir</button>
+        <button onClick={() => onDelete(contato.idContato)}>Excluir</button>
       </td>
     </tr>
   );

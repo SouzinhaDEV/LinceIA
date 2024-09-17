@@ -7,6 +7,7 @@
   .footer-text {
     color: #555; /* Cor do texto para um contraste suave */
     font-size: 14px; /* Tamanho de fonte pequeno */
+    margin-top: 70px;
   }
   
   .social-icons {
@@ -14,6 +15,7 @@
     justify-content: center;
     align-items: center;
     gap: 25px; /* Espaço entre os ícones */
+    margin-top: 50px;
   }
   
   .social-icons a {
@@ -25,9 +27,12 @@
   .social-icons a:hover {
     color: #ff7300; /* Cor ao passar o mouse */
   }
+
   p, h5 {
     font-family: 'Work Sans', sans-serif;
     font-size: larger;
     color: rgb(255, 255, 255);
 }
-  
+.logorod{
+  margin-top: 50px;
+}

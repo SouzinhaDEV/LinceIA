@@ -1,15 +1,17 @@
 //Lista de Usuarios
 import React from "react";
-import TabelaCadastro from "../Components/TabelaCadastro";
+import TabelaLogin from "../Components/TabelaLogin";
 import TabelaContato from "../Components/TabelaContato";
+import TabelaCadastro from "../Components/TabelaCadastro";
 
 const ListaUsuarios = () => {
   return (
     <>
       <div>
         <h2>Lista de Usuários</h2>
-        <TabelaCadastro />
+        <TabelaLogin />
         <TabelaContato />
+        <TabelaCadastro />
       </div>
     </>
   );
