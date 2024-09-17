@@ -8,7 +8,7 @@ const Contato = () => {
   return (
     <>
       <div className="PaginaDeContato">
-        <div className="respon">
+        <div className="respon ">
           <div className="component1">
             <Card />
           </div>
