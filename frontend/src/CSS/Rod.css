@@ -28,7 +28,7 @@
     color: #ff7300; /* Cor ao passar o mouse */
   }
 
-  p, h5 {
+  .rodp p, h5 {
     font-family: 'Work Sans', sans-serif;
     font-size: larger;
     color: rgb(255, 255, 255);

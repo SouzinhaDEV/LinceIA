@@ -1,7 +1,7 @@
 //Contato
 import React from "react";
 import Formulario from "../Components/CadastroForm"
-import '../CSS/Cadastro.css'
+import '../CSS/cadastro.css'
 
 const Contato = () => {
     return (
