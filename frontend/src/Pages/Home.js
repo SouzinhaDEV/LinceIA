@@ -2,6 +2,7 @@ import React from "react";
 import Carousel from 'react-bootstrap/Carousel';
 import { Image, Container, Row, Col, Button } from "react-bootstrap";
 import '../CSS/Home.css';
+import TermsAndPrivacy from "./Privacidade";
 import video4 from '../Videos/video4.mp4';
 import video6 from '../Videos/video6.mp4';
 import video5 from '../Videos/video5.mp4';
@@ -72,11 +73,11 @@ function Home() {
         <Row className="d-flex justify-content-center text-center">
           <Col className="esp2" xs={6} sm={4} md={2}>
             <Image src={aroficina} width="100%" className="mov" />
-            <h5 className="h5">Oficinas</h5>
+            <a as="h5" className="h5">Oficinas</a>
           </Col>
           <Col className="esp2" xs={6} sm={4} md={2}>
             <Image src={arprivacidade} width="100%" className="mov" />
-            <h5 className="h5">Privacidade</h5>
+            <a href='./Privacidade' as="h5" className="h5">Privacidade</a>
           </Col>
           <Col className="esp2" xs={6} sm={4} md={2}>
             <Image src={arplanos} width="100%" className="mov" />
