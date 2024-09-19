@@ -3,10 +3,6 @@ import axios from 'axios';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { Container, Row, Col } from 'react-bootstrap';
-<<<<<<< HEAD
-=======
-// import InputMask from 'react-input-mask';
->>>>>>> 241bd3b2f3c7b5703ea189793b0809cc2f9aff9a
 
 const ContatoForm = () => {
     const [formData, setFormData] = useState({
