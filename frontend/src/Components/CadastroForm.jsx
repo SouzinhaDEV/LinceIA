@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { React, useState } from 'react';
 import axios from 'axios';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -43,6 +43,7 @@ const CadastroForm = () => {
   return (
     <div className="login-container">
       <Form className="login" onSubmit={handleSubmit}>
+        <h2 className='Titulocd'>Cadastre-se</h2>
         <Form.Group className="mb-3" controlId="formNomeCompleto">
           <Form.Label className='login-label'>Nome Completo</Form.Label>
           <Form.Control
@@ -53,6 +54,7 @@ const CadastroForm = () => {
             placeholder="Nome completo"
             pattern="[A-Za-zÀ-ÖØ-Ýà-öø-ÿ ]{1,}"
             title="Nome deve conter apenas letras e espaços."
+            className='formcd'
             required
           />
         </Form.Group>
@@ -65,6 +67,7 @@ const CadastroForm = () => {
             value={formData.email}
             type="email"
             placeholder="nome@exemplo.com"
+            className='formcd'
             required
           />
         </Form.Group>
@@ -77,6 +80,7 @@ const CadastroForm = () => {
             value={formData.senha}
             type="password"
             placeholder="Senha"
+            className='formcd'
             required
           />
         </Form.Group>
@@ -87,6 +91,7 @@ const CadastroForm = () => {
             mask="(99) 99999-9999"
             value={formData.telefone}
             placeholder="(11) 11111-1111"
+            className='formcd'
             onChange={(e) =>
               setFormData({ ...formData, telefone: e.target.value })
             }
@@ -103,6 +108,7 @@ const CadastroForm = () => {
             mask="999.999.999-99"
             value={formData.cpf}
             placeholder="123.456.789-00"
+            className='formcd'
             onChange={(e) =>
               setFormData({ ...formData, cpf: e.target.value })
             }
