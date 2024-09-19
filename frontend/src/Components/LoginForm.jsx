@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom'; // Importar o useNavigate para redirecionar
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
@@ -8,6 +9,8 @@ const LoginForm = () => {
     email: '',
     senha: ''
   });
+
+  const navigate = useNavigate(); // Inicializa o hook de navegação
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,17 +22,20 @@ const LoginForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      await axios.post('http://localhost:3001/login', formData);
-      alert('Login criado com sucesso!');
-      // Limpar o formulário após o envio bem-sucedido.
-      setFormData({
-        email: '',
-        senha: ''
-      });
-    } catch (error) {
-      console.error('Erro ao criar login:', error);
-      alert('Erro ao criar login. Verifique o console para mais detalhes.');
+    if (formData.email === 'admin@admin.com' && formData.senha === '12345') {
+      navigate('/listaUsuarios');
+    } else {
+      try {
+        await axios.post('http://localhost:3001/login', formData);
+        alert('Login criado com sucesso!');
+        setFormData({
+          email: '',
+          senha: ''
+        });
+      } catch (error) {
+        console.error('Erro ao criar login:', error);
+        alert('Erro ao criar login. Verifique o console para mais detalhes.');
+      }
     }
   };
 
@@ -76,8 +82,6 @@ const LoginForm = () => {
         </Button>
       </Form>
     </div>
-
-
   );
 };
 
