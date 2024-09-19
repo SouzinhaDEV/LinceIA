@@ -33,7 +33,7 @@ router.get('/login/:id', (req, res) => {
 
 router.post('/login', (req, res) => {
   const { email, senha } = req.body;
-  connection.query('INSERT INTO contato ( email, senha) VALUES (?, ?)',
+  connection.query('INSERT INTO login ( email, senha) VALUES (?, ?)',
     [ email, senha], (err, result) => {
       if (err) {
         console.error('Erro ao criar o registro:', err);

@@ -10,7 +10,7 @@ const LoginForm = () => {
     senha: ''
   });
 
-  const navigate = useNavigate(); // Inicializa o hook de navegação
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -52,9 +52,6 @@ const LoginForm = () => {
             placeholder="nome@exemplo.com"
             required
           />
-          <Form.Text className="login-text">
-            Nunca compartilharemos seu e-mail com mais ninguém.
-          </Form.Text>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
