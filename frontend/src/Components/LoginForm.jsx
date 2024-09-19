@@ -23,7 +23,7 @@ const LoginForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (formData.email === 'admin@admin.com' && formData.senha === '12345') {
-      navigate('/listaUsuarios');
+      navigate('/admin');
     } else {
       try {
         await axios.post('http://localhost:3001/login', formData);
@@ -53,12 +53,6 @@ const LoginForm = () => {
             className='formlog'
             required
           />
-<<<<<<< HEAD
-=======
-          <Form.Text className="login-text">
-            Aqui seu e-mail é seguro.
-          </Form.Text>
->>>>>>> 22abe9a1b451759f2ae51c790149062398945855
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
