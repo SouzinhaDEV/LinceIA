@@ -118,17 +118,6 @@ textarea {
 
 /* Media Queries para responsividade */
 @media (max-width: 768px) {
-    .formctt {
-        font-size: 0.875rem; /* Ajusta o tamanho da fonte dos campos em telas pequenas */
-    }
-
-    .estilizacaoButton {
-        width: 100%; /* Garante que o botão ocupe toda a largura disponível em telas pequenas */
-    }
-}
-
-/* Media Queries para responsividade */
-@media (max-width: 768px) {
     .Titulo {
         font-size: 1.5rem; /* Ajusta o tamanho do título em telas pequenas */
     }

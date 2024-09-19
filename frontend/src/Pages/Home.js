@@ -141,6 +141,12 @@ function Home() {
         </Container>
       </div>
 
+      {/* Sobre Nós */}
+
+      <div>
+      <h1>0ijtoíhqr0igh10irghioéqg</h1>
+      </div>
+
       {/* Planos */}
 
       <div className="card-stack-container">
