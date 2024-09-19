@@ -66,8 +66,12 @@ const LoginForm = () => {
         </Form.Group>
 
         <Form.Group className="mb-3 login-checkbox" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Lembre de mim" />
+          <Form.Check type="checkbox" label="Lembre de mim" className='lembre'/>
         </Form.Group>
+
+        <Form.Text className='login-text'>
+          Não tem conta? <a href='../Cadastro'>Cadastre-se</a>
+        </Form.Text>
 
         <Button className="login-button" variant="primary" type="submit">
           Fazer Login
