@@ -4,6 +4,13 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import InputMask from 'react-input-mask';
 
+// ORDEM CORRETA:
+// '-> Nome Completo
+// '-> E-Mail
+// '-> Senha
+// '-> Telefone 
+// '-> CPF 
+
 const CadastroForm = () => {
   const [formData, setFormData] = useState({
     nome: '',
@@ -13,24 +20,45 @@ const CadastroForm = () => {
     cpf: ''
   });
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await axios.post('http://localhost:3001/cadastros', formData);
       alert('Cadastro criado com sucesso!');
-      // Limpar o formulário após o envio bem-sucedido
+      // Limpar o formulário após o envio bem-sucedido.
       setFormData({
         nome: '',
         email: '',
         telefone: '',
         senha: '',
         cpf: '',
-      });
-    } catch (error) {
-      console.error('Erro ao criar cadastro:', error);
-      alert('Erro ao criar cadastro. Verifique o console para mais detalhes.');
-    }
-  };
+    });
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            await axios.post('http://localhost:3001/contato', formData);
+            alert('Cadastro criado com sucesso!');
+            setFormData({
+                nome: '',
+                email: '',
+                telefone: '',
+                senha: '',
+                cpf: '',
+            });
+        } catch (error) {
+            console.error('Erro ao criar cadastro:', error);
+            alert('Erro ao criar cadastro. Verifique o console para mais detalhes.');
+        }
+    };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
