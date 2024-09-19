@@ -2,7 +2,11 @@
     /* display: flex; */
     justify-content: space-between;
     background-color: rgb(36, 36, 36);
+<<<<<<< HEAD
     padding-top: 100px;
+=======
+    padding-top: 200px;
+>>>>>>> 241bd3b2f3c7b5703ea189793b0809cc2f9aff9a
 }
 
 .FormularioContato, .CardContato {
