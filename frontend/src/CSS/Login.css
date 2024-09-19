@@ -82,3 +82,6 @@
     background-color: #000000;
     border-color: #000000;
 }
+.form-control {
+  color: rgb(0, 0, 0) !important;
+}

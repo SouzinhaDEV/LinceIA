@@ -41,7 +41,6 @@ const TabelaContato = () => {
         <th style={{ padding: '12px' }}>ID</th>
         <th style={{ padding: '12px' }}>Nome</th>
         <th style={{ padding: '12px' }}>Email</th>
-        <th style={{ padding: '12px' }}>Telefone</th>
         <th style={{ padding: '12px' }}>Excluir</th>
       </tr>
     </thead>
@@ -51,7 +50,6 @@ const TabelaContato = () => {
           <td style={{ padding: '12px' }}>{contato.id}</td>
           <td style={{ padding: '12px' }}>{contato.nome}</td>
           <td style={{ padding: '12px' }}>{contato.email}</td>
-          <td style={{ padding: '12px' }}>{contato.telefone}</td>
           <td style={{ padding: '12px' }}>
             <button
               style={{
