@@ -4,6 +4,7 @@ import Home from "./Pages/Home";
 import Contato from "./Pages/Contato";
 import Login from "./Pages/Login";
 import TabelaUsuarios from "./Pages/ListaUsuarios";
+import Privacidade from "./Pages/Privacidade";
 import Cadastro from "./Pages/Cadastro";
 
 const Rotas = () => {
@@ -15,10 +16,10 @@ const Rotas = () => {
         <Route path="/Cadastro" element={<Cadastro />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/listaUsuarios" element={<TabelaUsuarios />} />
+        <Route path="/Privacidade" element={<Privacidade />} />
       </Routes>
     </>
   );
 };
 
 export default Rotas;
-

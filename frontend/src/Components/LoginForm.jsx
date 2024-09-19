@@ -40,35 +40,46 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="login-container">
+    <div className="login-container FormCotato">
       <Form className="login" onSubmit={handleSubmit}>
+        <h2 className='Titulocd'>Login</h2>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label className="login-label">Email</Form.Label>
           <Form.Control
             name="email"
             onChange={handleChange}
             value={formData.email}
             type="email"
             placeholder="nome@exemplo.com"
+            className='formlog'
             required
           />
+<<<<<<< HEAD
+=======
+          <Form.Text className="login-text">
+            Aqui seu e-mail é seguro.
+          </Form.Text>
+>>>>>>> 22abe9a1b451759f2ae51c790149062398945855
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label className="login-label">Senha</Form.Label>
           <Form.Control
             name="senha"
             onChange={handleChange}
             value={formData.senha}
             type="password"
             placeholder="Senha"
+            className='formlog'
             required
           />
         </Form.Group>
 
         <Form.Group className="mb-3 login-checkbox" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Lembre de mim" />
+          <Form.Check type="checkbox" label="Lembre de mim" className='lembre'/>
         </Form.Group>
+
+        <Form.Text className='login-text'>
+          Não tem conta? <a href='../Cadastro'>Cadastre-se</a>
+        </Form.Text>
 
         <Button className="login-button" variant="primary" type="submit">
           Fazer Login

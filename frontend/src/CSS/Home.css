@@ -112,12 +112,14 @@
 }
 
 p,
-h5 {
+h5,
+a {
     font-family: 'Work Sans', sans-serif;
     font-size: larger;
+    text-decoration: none;
 }
 
-.h5 h5{
+.h5 h5 a{
     color: black;
 }
 
