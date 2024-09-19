@@ -20,7 +20,7 @@ const LoginForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:3001/acesso', formData);
+      await axios.post('http://localhost:3001/login', formData);
       alert('Login criado com sucesso!');
       // Limpar o formulário após o envio bem-sucedido.
       setFormData({
@@ -54,7 +54,6 @@ const LoginForm = () => {
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label className="login-label">Senha</Form.Label>
           <Form.Control
-           
             name="senha"
             onChange={handleChange}
             value={formData.senha}
@@ -67,6 +66,10 @@ const LoginForm = () => {
         <Form.Group className="mb-3 login-checkbox" controlId="formBasicCheckbox">
           <Form.Check type="checkbox" label="Lembre de mim" />
         </Form.Group>
+        
+        <Form.Text className="login-text">
+            Não tem conta? <a href='../Pages/Cadastro'>Cadastre-se</a>
+        </Form.Text>
 
         <Button className="login-button" variant="primary" type="submit">
           Fazer Login

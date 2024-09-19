@@ -22,7 +22,6 @@ const ContatoForm = () => {
             setFormData({
                 nome: '',
                 email: '',
-                telefone: '',
             });
         } catch (error) {
             console.error('Erro ao criar cadastro:', error);

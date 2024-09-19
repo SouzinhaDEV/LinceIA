@@ -2,8 +2,7 @@
     /* display: flex; */
     justify-content: space-between;
     background-color: rgb(36, 36, 36);
-    /* ou space-around, space-evenly, etc. */
-    padding-top: 120px;
+    padding-top: 100px;
 }
 
 .FormularioContato, .CardContato {
