@@ -39,7 +39,7 @@ function Home() {
     { id: 3, price: '400', title: 'Semestral', description: 'Acesso semestral ao plano' },
   ];
 
-  
+
 
   return (
     <>
@@ -141,12 +141,6 @@ function Home() {
         </Container>
       </div>
 
-      {/* Sobre Nós */}
-
-      <div>
-      <h1>0ijtoíhqr0igh10irghioéqg</h1>
-      </div>
-
       {/* Planos */}
 
       <div className="card-stack-container">
@@ -161,6 +155,13 @@ function Home() {
             <Button className="botao">Saiba Mais</Button>
           </div>
         ))}
+      </div>
+      
+      {/* Sobre Nós */}
+
+      <div className="fundsobre align-items-center justify-content-center">
+        <h2>Sobre Nós</h2>
+        <p className="pHome">A Lince é uma empresa focada em soluções digitais ágeis e inovadoras. Nossa missão é ajudar negócios a evoluir tecnologicamente, oferecendo serviços personalizados para otimizar processos e gerar valor.</p>
       </div>
 
     </>

@@ -101,3 +101,7 @@
   box-shadow: 0 0 0 0.1rem rgba(255, 165, 38, 0.874); /* Sombra ao focar */
   background-color: #181818;
 }
+
+.labelcor{
+  color: whitesmoke;
+}
