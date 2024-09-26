@@ -3,8 +3,9 @@ import {Routes, Route} from "react-router-dom";
 import Home from "./Pages/Home";
 import Contato from "./Pages/Contato";
 import Login from "./Pages/Login";
-import TabelaUsuarios from "./Pages/ListaUsuarios";
+import Privacidade from "./Pages/Privacidade";
 import Cadastro from "./Pages/Cadastro";
+import Admin from "./Pages/Admin";
 
 const Rotas = () => {
   return (
@@ -14,7 +15,8 @@ const Rotas = () => {
         <Route path="/Contato" element={<Contato />} />
         <Route path="/Cadastro" element={<Cadastro />} />
         <Route path="/Login" element={<Login />} />
-        <Route path="/listaUsuarios" element={<TabelaUsuarios />} />
+        <Route path="/Admin" element={<Admin />} />
+        <Route path="/Privacidade" element={<Privacidade />} />
       </Routes>
     </>
   );

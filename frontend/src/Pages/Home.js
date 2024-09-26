@@ -2,6 +2,7 @@ import React from "react";
 import Carousel from 'react-bootstrap/Carousel';
 import { Image, Container, Row, Col, Button } from "react-bootstrap";
 import '../CSS/Home.css';
+import TermsAndPrivacy from "./Privacidade";
 import video4 from '../Videos/video4.mp4';
 import video6 from '../Videos/video6.mp4';
 import video5 from '../Videos/video5.mp4';
@@ -38,7 +39,7 @@ function Home() {
     { id: 3, price: '400', title: 'Semestral', description: 'Acesso semestral ao plano' },
   ];
 
-  
+
 
   return (
     <>
@@ -72,11 +73,11 @@ function Home() {
         <Row className="d-flex justify-content-center text-center">
           <Col className="esp2" xs={6} sm={4} md={2}>
             <Image src={aroficina} width="100%" className="mov" />
-            <h5 className="h5">Oficinas</h5>
+            <a as="h5" className="h5">Oficinas</a>
           </Col>
           <Col className="esp2" xs={6} sm={4} md={2}>
             <Image src={arprivacidade} width="100%" className="mov" />
-            <h5 className="h5">Privacidade</h5>
+            <a href='./Privacidade' as="h5" className="h5">Privacidade</a>
           </Col>
           <Col className="esp2" xs={6} sm={4} md={2}>
             <Image src={arplanos} width="100%" className="mov" />
@@ -154,6 +155,13 @@ function Home() {
             <Button className="botao">Saiba Mais</Button>
           </div>
         ))}
+      </div>
+      
+      {/* Sobre Nós */}
+
+      <div className="fundsobre align-items-center justify-content-center">
+        <h2>Sobre Nós</h2>
+        <p className="pHome">A Lince é uma empresa focada em soluções digitais ágeis e inovadoras. Nossa missão é ajudar negócios a evoluir tecnologicamente, oferecendo serviços personalizados para otimizar processos e gerar valor.</p>
       </div>
 
     </>
