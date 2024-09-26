@@ -449,3 +449,27 @@ h2 {
     transform: scale(1.05);
     /* Efeito de zoom na imagem ao passar o mouse */
 }
+
+.fundsobre h2 {
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(36, 36, 36) !important;
+    margin-bottom: 0 !important;
+    padding-top: 90px;
+}
+
+.pHome{
+    background-color: rgb(36, 36, 36);
+    color: white;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding-right: 100px;
+    padding-left: 100px;
+    margin-bottom: 0 !important;
+    font-size: 19px;
+    padding-bottom: 70px;
+}
