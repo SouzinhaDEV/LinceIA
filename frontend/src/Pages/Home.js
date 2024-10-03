@@ -73,7 +73,7 @@ function Home() {
         <Row className="d-flex justify-content-center text-center">
           <Col className="esp2" xs={6} sm={4} md={2}>
             <Image src={aroficina} width="100%" className="mov" />
-            <a as="h5" className="h5">Oficinas</a>
+            <a href='./Oficinas' as="h5" className="h5">Oficinas</a>
           </Col>
           <Col className="esp2" xs={6} sm={4} md={2}>
             <Image src={arprivacidade} width="100%" className="mov" />
@@ -81,11 +81,11 @@ function Home() {
           </Col>
           <Col className="esp2" xs={6} sm={4} md={2}>
             <Image src={arplanos} width="100%" className="mov" />
-            <h5 className="h5">Planos</h5>
+            <a href='./Planos' className="h5">Planos</a>
           </Col>
           <Col className="esp2" xs={6} sm={4} md={2}>
             <Image src={arsuporte} width="100%" className="mov" />
-            <h5 className="h5">Suporte</h5>
+            <a href='./Contato' className="h5">Suporte</a>
           </Col>
         </Row>
       </Container>
@@ -139,6 +139,12 @@ function Home() {
             </Carousel>
           </Row>
         </Container>
+      </div>
+
+      {/* Sobre Nós */}
+
+      <div>
+      
       </div>
 
       {/* Planos */}
