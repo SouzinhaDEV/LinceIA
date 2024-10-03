@@ -168,4 +168,22 @@ CREATE TABLE contato (
 	CONSTRAINT `PRIMARY` PRIMARY KEY (idContato)
 );
 
+CREATE TABLE login (
+   id INT AUTO_INCREMENT NOT NULL,
+   email VARCHAR(150) NOT NULL,
+   senha VARCHAR(45) NOT NULL,
+   CONSTRAINT `PRIMARY` PRIMARY KEY (idLogin)
+);
+
+CREATE TABLE dataset (
+   idDataset INT AUTO_INCREMENT,
+   EngRPM DECIMAL,
+   FuelP DECIMAL,
+   LubOilP DECIMAL,
+   LubOilT DECIMAL,
+   AirP DECIMAL,
+   AirT DECIMAL,
+   CONSTRAINT `PRIMARY` PRIMARY KEY (idDataset)
+);
+
 ````````````````````````````````````````````````````````````
