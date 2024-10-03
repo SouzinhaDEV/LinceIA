@@ -125,6 +125,7 @@ const CadastroForm = () => {
             label="Concordo com os termos de serviço"
             feedback="Você deve concordar antes de enviar."
             feedbackType="invalid"
+            className='labelcor'
           />
         </Form.Group>
 
