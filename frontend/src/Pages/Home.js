@@ -35,8 +35,8 @@ function Home() {
 
   const cardsData = [
     { id: 1, price: '200', title: 'Mensal', description: 'Acesso de um mês de plano' },
-    { id: 2, price: '1.200', title: 'Anual', description: 'Acesso de um ano de plano' },
-    { id: 3, price: '400', title: 'Semestral', description: 'Acesso semestral ao plano' },
+    { id: 2, price: '2.200', title: 'Anual', description: 'Acesso de um ano de plano' },
+    { id: 3, price: '1.200', title: 'Semestral', description: 'Acesso semestral ao plano' },
   ];
 
 
@@ -85,7 +85,7 @@ function Home() {
           </Col>
           <Col className="esp2" xs={6} sm={4} md={2}>
             <Image src={arsuporte} width="100%" className="mov" />
-            <h5 className="h5">Suporte</h5>
+            <a href='./Contato' className="h5">Suporte</a>
           </Col>
         </Row>
       </Container>
@@ -141,6 +141,13 @@ function Home() {
         </Container>
       </div>
 
+      {/* Sobre Nós */}
+
+      <div className="fundsobre align-items-center justify-content-center">
+        <h2>Sobre Nós</h2>
+        <p className="pHome">A Lince é uma empresa focada em soluções digitais ágeis e inovadoras. Nossa missão é ajudar negócios a evoluir tecnologicamente, oferecendo serviços personalizados para otimizar processos e gerar valor.</p>
+      </div>
+
       {/* Planos */}
 
       <div className="card-stack-container">
@@ -156,13 +163,8 @@ function Home() {
           </div>
         ))}
       </div>
-      
-      {/* Sobre Nós */}
 
-      <div className="fundsobre align-items-center justify-content-center">
-        <h2>Sobre Nós</h2>
-        <p className="pHome">A Lince é uma empresa focada em soluções digitais ágeis e inovadoras. Nossa missão é ajudar negócios a evoluir tecnologicamente, oferecendo serviços personalizados para otimizar processos e gerar valor.</p>
-      </div>
+
 
     </>
   );

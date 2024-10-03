@@ -15,6 +15,7 @@ const Header = () => {
     <header className="shadow-fade">
       <nav className={`navbar navbar-expand-lg navbar-custom fixed-top ${isNavbarExpanded ? 'navbar-expanded' : ''}`}>
         <div className="container">
+
           {/* Logo */}
           <a className="navbar-brand" href="#">
             <Image src={logo} width={150} />
@@ -51,6 +52,9 @@ const Header = () => {
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/admin">Admin</Link>
+              </li>
+              <li className='nav-item'>
+                <Link className='nav-link' to='/Oficinas'>Oficinas</Link>
               </li>
             </ul>
           </div>
