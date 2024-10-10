@@ -8,7 +8,7 @@ router.get("/login", (req, res) => {
     if (err) {
       console.error("Erro ao buscar os registros:", err);
       res.status(500).json({ error: "Erro ao buscar os registros" });
-      return;
+      return;3
     }
     res.json(results);
   });
