@@ -6,8 +6,8 @@ const router = express.Router();
 
 //"cadastros", no plural, por causa do banco.
 
-router.get('/cadastros', (req, res) => {
-  connection.query('SELECT * FROM cadastros', (err, results) => {
+router.get('/dataset', (req, res) => {
+  connection.query('SELECT * FROM dataset', (err, results) => {
     if (err) {
       console.error('Erro ao buscar os registros:', err);
       res.status(500).json({ error: 'Erro ao buscar os registros' });
@@ -19,9 +19,9 @@ router.get('/cadastros', (req, res) => {
 
 // Rota para buscar um registro específico pelo ID.
 
-router.get('/cadastros/:idCadastro', (req, res) => {
-  const { id } = req.params;
-  connection.query('SELECT * FROM cadastros WHERE idCadastro = ?', [id], (err, results) => {
+router.get('/dataset/:idDataset', (req, res) => {
+  const { idDataset } = req.params;
+  connection.query('SELECT * FROM dataset WHERE idDataset = ?', [idDataset], (err, results) => {
     if (err) {
       console.error('Erro ao buscar o registro:', err);
       res.status(500).json({ error: 'Erro ao buscar o registro' });
@@ -38,18 +38,21 @@ router.get('/cadastros/:idCadastro', (req, res) => {
 // Rota para criar um novo registro.
 
 // ORDEM CORRETA:
-// '-> Nome Completo
-// '-> E-Mail
-// '-> Senha
-// '-> Telefone 
-// '-> CPF 
+// '-> RPM do Motor (Engine RPM)
+// '-> Pressão de Combustível (Fuel Pressure)
+// '-> Pressão do Óleo Lubrificante (Lub Oil Pressure)
+// '-> Temperatura do Óleo Lubrificante (Lub Oil Temp)
+// '-> Pressão do Ar (Coolant Pressure)
+// '-> Temperatura do Ar (Coolant Temp)
+
+// EngRPM, FuelP, LubOilP, LubOilT, AirP, AirT
 
 // NÃO ESQUECER de colocar o mesmo número de "?" que a quantidade de campos solicitados.
 
 router.post('/cadastros', (req, res) => {
-  const { nome, email, senha, telefone, cpf } = req.body;
-  connection.query('INSERT INTO cadastros (nome, email, senha, telefone, cpf) VALUES (?, ?, ?, ?, ?)',
-    [nome, email, senha, telefone, cpf], (err, result) => {
+  const { EngRPM, FuelP, LubOilP, LubOilT, AirP, AirT } = req.body;
+  connection.query('INSERT INTO dataset (EngRPM, FuelP, LubOilP, LubOilT, AirP, AirT) VALUES (?, ?, ?, ?, ?, ?, ?)',
+    [EngRPM, FuelP, LubOilP, LubOilT, AirP, AirT], (err, result) => {
       if (err) {
         console.error('Erro ao criar o registro:', err);
         res.status(500).json({ error: 'Erro ao criar o registro' });
@@ -61,11 +64,11 @@ router.post('/cadastros', (req, res) => {
 
 // Rota para atualizar um registro existente pelo ID.
 
-router.put('/cadastros/:idCadastro', (req, res) => {
-  const { id } = req.params;
-  const { nome, email, senha, telefone, cpf } = req.body;
-  connection.query('UPDATE cadastros SET nome = ?, email = ?, senha = ?, telefone = ? cpf = ?, WHERE idCadastro = ?',
-    [nome, email, senha, telefone, cpf, id], (err, result) => {
+router.put('/dataset/:idDataset', (req, res) => {
+  const { idDataset } = req.params;
+  const { EngRPM, FuelP, LubOilP, LubOilT, AirP, AirT } = req.body;
+  connection.query('UPDATE dataset SET EngRPM = ?, FuelP = ?, LubOilP = ?, LubOilT = ?, AirP = ?, AirT = ?, WHERE idDataset = ?',
+    [EngRPM, FuelP, LubOilP, LubOilT, AirP, AirT, idDataset], (err, result) => {
       if (err) {
         console.error('Erro ao atualizar o registro:', err);
         res.status(500).json({ error: 'Erro ao atualizar o registro' });
@@ -79,9 +82,9 @@ router.put('/cadastros/:idCadastro', (req, res) => {
 
 // OBS: Aqui, o "idCadastro" é no singular porque se trata de cada cadastro individualmente, como no banco de dados.
 
-router.delete('/cadastros/:idCadastro', (req, res) => {
-  const { id } = req.params;
-  connection.query('DELETE FROM cadastros WHERE idCadastro = ?', [id], (err, result) => {
+router.delete('/dataset/:idDataset', (req, res) => {
+  const { idDataset } = req.params;
+  connection.query('DELETE FROM dataset WHERE idDataset = ?', [idDataset], (err, result) => {
     if (err) {
       console.error('Erro ao excluir o registro:', err);
       res.status(500).json({ error: 'Erro ao excluir o registro' });

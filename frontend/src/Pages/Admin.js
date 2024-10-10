@@ -1,28 +1,31 @@
-import React from 'react';
-import { Sidebar, Menu, MenuItem } from 'react-pro-sidebar';
-import { Link } from 'react-router-dom';
+import React from "react";
+import '../CSS/Admin.css';
+import { Container, Row, Col} from 'react-bootstrap';
+import Header from "../Components/Admin/Header_Admin/Header";
+import TabelaLogin from '../Components/TabelaLogin';
+import TabelaCadastro from '../Components/TabelaCadastro';
+import TabelaCotato from '../Components/TabelaContato';
 
-const CustomSidebar = () => {
-  return (
-    <Sidebar>
-      <Menu
-        menuItemStyles={{
-          button: {
-            // the active class will be added automatically by react router
-            // so we can use it to style the active menu item
-            [`&.active`]: {
-              backgroundColor: '#13395e',
-              color: '#b6c8d9',
-            },
-          },
-        }}
-      >
-        <MenuItem component={<Link to="/documentation" />}> Documentation</MenuItem>
-        <MenuItem component={<Link to="/calendar" />}> Calendar</MenuItem>
-        <MenuItem component={<Link to="/e-commerce" />}> E-commerce</MenuItem>
-      </Menu>
-    </Sidebar>
-  );
+
+const Admin = () => {
+    return (
+        <div className="fundoadmin">
+            <Header />
+            <Container>
+                <Row>
+                    <Col>
+                        <TabelaLogin />
+                    </Col>
+                    <Col>
+                        <TabelaCadastro />
+                    </Col>
+                    <Col>
+                        <TabelaCotato />
+                    </Col>
+                </Row>
+            </Container>
+        </div>
+    );
 };
 
-export default CustomSidebar;
+export default Admin;

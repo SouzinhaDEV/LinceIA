@@ -3,9 +3,12 @@ import {Routes, Route} from "react-router-dom";
 import Home from "./Pages/Home";
 import Contato from "./Pages/Contato";
 import Login from "./Pages/Login";
-import Privacidade from "./Pages/Privacidade";
 import Cadastro from "./Pages/Cadastro";
 import Admin from "./Pages/Admin";
+import Privacidade from "./Pages/Privacidade";
+import Planos from "./Pages/Planos";
+import Oficinas from "./Pages/Oficinas";
+import AI from "./Pages/AI";
 
 const Rotas = () => {
   return (
@@ -17,6 +20,9 @@ const Rotas = () => {
         <Route path="/Login" element={<Login />} />
         <Route path="/Admin" element={<Admin />} />
         <Route path="/Privacidade" element={<Privacidade />} />
+        <Route path="/Planos" element={<Planos />} />
+        <Route path="/Oficinas" element={<Oficinas />} />
+        <Route path="/AI" element={<AI />} />
       </Routes>
     </>
   );
