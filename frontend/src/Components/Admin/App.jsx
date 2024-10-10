@@ -1,4 +1,4 @@
-import Header from "./Header_Admin/Header"
+import Header from "./Header_Admin/Header";
 
 const App = () => {
     return(
