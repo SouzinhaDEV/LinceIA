@@ -13,8 +13,6 @@ router.get('/cadastros', (req, res) => {
     res.json(results);
   });
 });
-
-// Rota para buscar um registro específico pelo ID
 router.get('/cadastros/:idCadastro', (req, res) => {
   const { idCadastro } = req.params;
   connection.query('SELECT * FROM cadastros WHERE idCadastro = ?', [idCadastro], (err, results) => {

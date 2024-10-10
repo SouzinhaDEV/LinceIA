@@ -52,26 +52,25 @@ router.post("/login", (req, res) => {
     });
   });
 
-// Rota para criar um novo registro
-// router.post("/login", (req, res) => {
-//   const { email, senha } = req.body;
-//   connection.query(
-//     "INSERT INTO login (email, senha) VALUES (?, ?)",
-//     [email, senha],
-//     (err, result) => {
-//       if (err) {
-//         console.error("Erro ao criar o registro:", err);
-//         res.status(500).json({ error: "Erro ao criar o registro" });
-//         return;
-//       }
-//       res
-//         .status(201)
-//         .json({ message: "Registro criado com sucesso", id: result.insertId });
-//     }
-//   );
-// });
+router.post("/login", (req, res) => {
+  const { email, senha } = req.body;
+  console.log(req.body);  // Adicione este log para verificar os dados que estão sendo enviados
+  connection.query(
+    "INSERT INTO login (email, senha) VALUES (?, ?)",
+    [email, senha],
+    (err, result) => {
+      if (err) {
+        console.error("Erro ao criar o registro:", err);
+        res.status(500).json({ error: "Erro ao criar o registro" });
+        return;
+      }
+      res
+        .status(201)
+        .json({ message: "Registro criado com sucesso", id: result.insertId });
+    }
+  );
+});
 
-// Rota para atualizar um registro existente pelo ID
 router.put("/login/:id", (req, res) => {
   const { id } = req.params;
   const { email, senha } = req.body;
