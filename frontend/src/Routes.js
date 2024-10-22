@@ -8,7 +8,7 @@ import Admin from "./Pages/Admin";
 import Privacidade from "./Pages/Privacidade";
 import Planos from "./Pages/Planos";
 import Oficinas from "./Pages/Oficinas";
-import AI from "./Pages/AI";
+import Dataset from "./Components/DatasetForm";
 
 const Rotas = () => {
   return (
@@ -22,7 +22,7 @@ const Rotas = () => {
         <Route path="/Privacidade" element={<Privacidade />} />
         <Route path="/Planos" element={<Planos />} />
         <Route path="/Oficinas" element={<Oficinas />} />
-        <Route path="/AI" element={<AI />} />
+        <Route path="/Dataset" element={<Dataset />} />
       </Routes>
     </>
   );
