@@ -1,5 +1,6 @@
 import React from "react";
 import Carousel from 'react-bootstrap/Carousel';
+import { Link } from 'react-router-dom'; // Importando Link
 import { Image, Container, Row, Col, Button } from "react-bootstrap";
 import '../CSS/Home.css';
 import video4 from '../Videos/video4.mp4';
@@ -10,6 +11,7 @@ import foto4 from '../Img/batida.png';
 import foto5 from '../Img/mecanico.png';
 import aroficina from '../Img/ar_oficina.png';
 import arplanos from '../Img/ar_planos.png';
+import arIA from '../Img/ar_AI.png';
 import arprivacidade from '../Img/ar_privacidade.png';
 import arsuporte from '../Img/ar_suporte.png';
 
@@ -38,11 +40,17 @@ function Home() {
     { id: 3, price: '1.200', title: 'Semestral', description: 'Acesso semestral ao plano' },
   ];
 
-
+  const itens = [
+    { id: 1, src: aroficina, title: 'Oficinas', link: '/Oficinas' },
+    { id: 2, src: arprivacidade, title: 'Privacidade', link: '/Privacidade' },
+    { id: 3, src: arIA, title: 'IA', link: '/IA' },
+    { id: 4, src: arplanos, title: 'Planos', link: '/Planos' },
+    { id: 5, src: arsuporte, title: 'Suporte', link: '/Suporte' }
+  ];
 
   return (
     <>
-      {/* Carrousel (ESTILIZAR) */}
+      {/* Carrousel */}
       <div className="carousel-container carousel1">
         <Carousel interval={4000}>
           {carouselItems.map((item, index) => (
@@ -67,25 +75,16 @@ function Home() {
       </div>
 
       {/* Acesso Rápido */}
-
-      <Container className="shadow-fade-up">
+      <Container className="esp1 shadow-fade-up">
         <Row className="d-flex justify-content-center text-center">
-          <Col className="esp2" xs={6} sm={4} md={2}>
-            <Image src={aroficina} width="100%" className="mov" />
-            <a href='./Oficinas' as="h5" className="h5">Oficinas</a>
-          </Col>
-          <Col className="esp2" xs={6} sm={4} md={2}>
-            <Image src={arprivacidade} width="100%" className="mov" />
-            <a href='./Privacidade' as="h5" className="h5">Privacidade</a>
-          </Col>
-          <Col className="esp2" xs={6} sm={4} md={2}>
-            <Image src={arplanos} width="100%" className="mov" />
-            <a href='./Planos' className="h5">Planos</a>
-          </Col>
-          <Col className="esp2" xs={6} sm={4} md={2}>
-            <Image src={arsuporte} width="100%" className="mov" />
-            <a href='./Contato' className="h5">Suporte</a>
-          </Col>
+          {itens.map((item) => (
+            <Col key={item.id} xs={6} sm={4} md={2}>
+              <Link to={item.link}> {/* Utilizando Link corretamente */}
+                <Image src={item.src} width="100%" className="mov" />
+                <h5 className="corar">{item.title}</h5>
+              </Link>
+            </Col>
+          ))}
         </Row>
       </Container>
 
@@ -141,14 +140,12 @@ function Home() {
       </div>
 
       {/* Sobre Nós */}
-
       <div className="fundsobre align-items-center justify-content-center">
         <h2>Sobre Nós</h2>
         <p className="pHome">A Lince é uma empresa focada em soluções digitais ágeis e inovadoras. Nossa missão é ajudar negócios a evoluir tecnologicamente, oferecendo serviços personalizados para otimizar processos e gerar valor.</p>
       </div>
 
       {/* Planos */}
-
       <div className="card-stack-container">
         <div className="title-container font">
           <h2>Planos</h2>
@@ -162,9 +159,6 @@ function Home() {
           </div>
         ))}
       </div>
-
-
-
     </>
   );
 }
