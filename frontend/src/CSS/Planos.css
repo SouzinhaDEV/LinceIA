@@ -1,0 +1,258 @@
+.fundoplan {
+  background-color: rgb(36, 36, 36);
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 420px;
+  height: 420px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+}
+
+/* From Uiverse.io by Praashoo7 */
+.flip-card {
+  background-color: transparent;
+  width: 240px;
+  height: 154px;
+  perspective: 1000px;
+  color: white;
+}
+
+.heading_8264 {
+  position: absolute;
+  letter-spacing: .2em;
+  font-size: 0.5em;
+  top: 2em;
+  left: 18.6em;
+}
+
+.logo {
+  position: absolute;
+  top: 6.8em;
+  left: 11.7em;
+}
+
+.chip {
+  position: absolute;
+  top: 2.3em;
+  left: 1.5em;
+}
+
+.contactless {
+  position: absolute;
+  top: 3.5em;
+  left: 12.4em;
+}
+
+.number {
+  position: absolute;
+  font-weight: bold;
+  font-size: .6em;
+  top: 8.3em;
+  left: 1.6em;
+}
+
+.valid_thru {
+  position: absolute;
+  font-weight: bold;
+  top: 635.8em;
+  font-size: .01em;
+  left: 140.3em;
+}
+
+.date_8264 {
+  position: absolute;
+  font-weight: bold;
+  font-size: 0.5em;
+  top: 13.6em;
+  left: 3.2em;
+}
+
+.name {
+  position: absolute;
+  font-weight: bold;
+  font-size: 0.5em;
+  top: 16.1em;
+  left: 2em;
+}
+
+.strip {
+  position: absolute;
+  background-color: black;
+  width: 15em;
+  height: 1.5em;
+  top: 2.4em;
+  background: repeating-linear-gradient(45deg,
+      #303030,
+      #303030 10px,
+      #202020 10px,
+      #202020 20px);
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 1rem;
+}
+
+.flip-card-front {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 2px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -1px 0px inset;
+  background-color: #171717;
+}
+
+.flip-card-back {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 2px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -1px 0px inset;
+  background-color: #171717;
+  transform: rotateY(180deg);
+}
+
+.brancopl {
+  color: white;
+}
+
+.formpl{
+  background-color: #353535;
+  border: none !important;
+  border-radius: 0;
+}
+
+.formpl::placeholder {
+  color: #888 !important;
+}
+
+.py-5{
+  padding-bottom: 60px !important;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 320px; /* Largura aumentada um pouco */
+  height: 200px; /* Altura aumentada um pouco */
+  perspective: 1000px;
+  display: inline-block; /* Centraliza o cartão em relação ao conteúdo pai */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 1rem;
+  background-color: #171717; /* Mesma cor para frente e verso */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Estilo quando o cartão estiver de frente */
+.flip-card-front {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 2px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -1px 0px inset;
+}
+
+/* Estilo quando o cartão estiver virado */
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+/* Ajuste fino nos elementos internos */
+.heading_8264 {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  letter-spacing: .2em;
+  font-size: 0.8em; /* Ajuste no tamanho da fonte */
+}
+
+.logo {
+  position: absolute;
+  top: 50px;
+  left: 15px;
+  width: 40px; /* Leve ajuste no logo */
+  height: 40px;
+}
+
+.number {
+  position: absolute;
+  top: 100px;
+  left: 15px;
+  font-size: 1.2em; /* Ajuste no tamanho da fonte */
+}
+
+.valid_thru {
+  position: absolute;
+  top: 150px;
+  left: 170px; /* Ajuste na posição */
+  font-size: 0.7em; /* Ajuste no tamanho da fonte */
+}
+
+.date_8264 {
+  position: absolute;
+  top: 150px;
+  left: 230px; /* Ajuste na posição */
+  font-size: 0.7em; /* Ajuste no tamanho da fonte */
+}
+
+.name {
+  position: absolute;
+  top: 170px; /* Ajuste na posição */
+  left: 15px;
+  font-size: 0.9em; /* Ajuste no tamanho da fonte */
+}
+
+.strip {
+  position: absolute;
+  top: 10px; /* Ajuste na posição */
+  left: 10%;
+  width: 80%;
+  height: 30px; /* Ajuste na altura da faixa */
+  background-color: black;
+}
+
+.code {
+  text-align: center;
+  margin-top: 5px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  background-color: aliceblue;
+}
+
+/* Ajuste no efeito de flip */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}

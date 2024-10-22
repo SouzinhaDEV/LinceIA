@@ -2,7 +2,6 @@ import React from "react";
 import Carousel from 'react-bootstrap/Carousel';
 import { Image, Container, Row, Col, Button } from "react-bootstrap";
 import '../CSS/Home.css';
-import TermsAndPrivacy from "./Privacidade";
 import video4 from '../Videos/video4.mp4';
 import video6 from '../Videos/video6.mp4';
 import video5 from '../Videos/video5.mp4';
@@ -34,9 +33,9 @@ function Home() {
   ];
 
   const cardsData = [
-    { id: 1, price: '200', title: 'Mensal', description: 'Acesso de um mês de plano' },
-    { id: 2, price: '1.200', title: 'Anual', description: 'Acesso de um ano de plano' },
-    { id: 3, price: '400', title: 'Semestral', description: 'Acesso semestral ao plano' },
+    { id: 1, price: '250', title: 'Mensal', description: 'Acesso de um mês de plano' },
+    { id: 2, price: '2.200', title: 'Anual', description: 'Acesso de um ano de plano' },
+    { id: 3, price: '1.200', title: 'Semestral', description: 'Acesso semestral ao plano' },
   ];
 
 
@@ -110,7 +109,7 @@ function Home() {
                   </Col>
                 </Row>
               </Carousel.Item>
-              <Carousel.Item className="esp1">
+              <Carousel.Item className="esp1">  
                 <Row className="fade-in-image">
                   <Col xs={12} md={4} className="d-flex justify-content-center">
                     <Image src={foto3} width="100%" />
@@ -143,8 +142,9 @@ function Home() {
 
       {/* Sobre Nós */}
 
-      <div>
-      
+      <div className="fundsobre align-items-center justify-content-center">
+        <h2>Sobre Nós</h2>
+        <p className="pHome">A Lince é uma empresa focada em soluções digitais ágeis e inovadoras. Nossa missão é ajudar negócios a evoluir tecnologicamente, oferecendo serviços personalizados para otimizar processos e gerar valor.</p>
       </div>
 
       {/* Planos */}
@@ -162,13 +162,8 @@ function Home() {
           </div>
         ))}
       </div>
-      
-      {/* Sobre Nós */}
 
-      <div className="fundsobre align-items-center justify-content-center">
-        <h2>Sobre Nós</h2>
-        <p className="pHome">A Lince é uma empresa focada em soluções digitais ágeis e inovadoras. Nossa missão é ajudar negócios a evoluir tecnologicamente, oferecendo serviços personalizados para otimizar processos e gerar valor.</p>
-      </div>
+
 
     </>
   );

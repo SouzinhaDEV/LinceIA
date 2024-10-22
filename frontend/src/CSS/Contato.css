@@ -84,6 +84,7 @@ textarea {
 .ContatoCard .card-text {
     color: #333; /* Cor do texto principal */
     margin-bottom: 10px; /* Espaçamento abaixo do texto */
+    padding: 0 !important;
 }
 
 /* Estilo para os títulos dentro do card */
