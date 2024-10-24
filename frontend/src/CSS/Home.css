@@ -480,3 +480,7 @@ h2 {
     color: rgb(32, 32, 32) !important;
     font-size: 20px;
 }
+
+.col-sm-4{
+    margin: 13px;
+}

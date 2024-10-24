@@ -1,0 +1,14 @@
+.ia {
+    background: none !important;
+    padding: 40px;
+    max-width: 400px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.dataset-container{
+    padding-top: 150px;
+    background-color: rgb(36, 36, 36);
+    justify-items: center;
+}
