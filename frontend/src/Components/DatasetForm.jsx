@@ -1,12 +1,9 @@
-import { React, useState } from 'react';
+import React, { useState } from 'react';
 import '../CSS/IA.css';
 import axios from 'axios';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-// import InputMask from 'react-input-mask';
-
-// Série de dados disponíveis em ORDEM:
-// EngRPM, FuelP, LubOilP, LubOilT, AirP, AirT
+import { Row, Col } from 'react-bootstrap';
 
 const DatasetForm = () => {
     const [formData, setFormData] = useState({
@@ -23,7 +20,6 @@ const DatasetForm = () => {
         try {
             await axios.post('http://localhost:3001/dataset', formData);
             alert('Dados enviados para o cálculo...');
-            // Limpar o formulário após o envio bem-sucedido
             setFormData({
                 EngRPM: '',
                 FuelP: '',
@@ -46,83 +42,122 @@ const DatasetForm = () => {
         });
     };
 
-    // EngRPM, FuelP, LubOilP, LubOilT, AirP, AirT
-
     return (
         <div className="dataset-container">
-            <Form className="ia justify-content-center text-center" onSubmit={handleSubmit}>
-                <Form.Group className="mb-3 justify-content-center text-center" controlId="formNomeCompleto">
-                    <Form.Label className='login-label'>Rotação do Motor RPM</Form.Label>
-                    <Form.Control
-                        name="EngRPM"
-                        onChange={handleChange}
-                        value={formData.EngRPM}
-                        type="number"
-                        placeholder="0.000rpm"
-                        pattern="[A-Za-zÀ-ÖØ-Ýà-öø-ÿ ]{1,}"
-                        title="Nome deve conter apenas letras e espaços."
-                        required
-                    />
+            <Form className="ia" onSubmit={handleSubmit}>
+                <h2 className='Titulocd'>Formulário da I.A</h2>
+                <Form.Group className="mb-3" controlId="formNomeCompleto">
+                    <Row>
+                        <Col xs={5}>
+                            <Form.Label>Rotação do Motor RPM</Form.Label>
+                        </Col>
+                        <Col xs={7}>
+                            <Form.Control
+                                name="EngRPM"
+                                onChange={handleChange}
+                                value={formData.EngRPM}
+                                className='formlog'
+                                type="number"
+                                placeholder="0.000rpm"
+                                required
+                            />
+                        </Col>
+                    </Row>
                 </Form.Group>
 
-                <Form.Group className="mb-3 justify-content-center text-center" controlId="formBasicEmail">
-                    <Form.Label className="login-label">Pressão de Combustível N/m²</Form.Label>
-                    <Form.Control
-                        name="FuelP"
-                        onChange={handleChange}
-                        value={formData.FuelP}
-                        type="number"
-                        placeholder="N/m²"
-                        required
-                    />
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Row>
+                        <Col xs={5}>
+                            <Form.Label>Pressão de Combustível N/m²</Form.Label>
+                        </Col>
+                        <Col xs={7}>
+                            <Form.Control
+                                name="FuelP"
+                                onChange={handleChange}
+                                value={formData.FuelP}
+                                className='formlog'
+                                type="number"
+                                placeholder="N/m²"
+                                required
+                            />
+                        </Col>
+                    </Row>
                 </Form.Group>
 
-                <Form.Group className="mb-3 justify-content-center text-center" controlId="formBasicPassword">
-                    <Form.Label className="login-label">Pressão do Óleo Lubrificante N/m²</Form.Label>
-                    <Form.Control
-                        name="LubOilP"
-                        onChange={handleChange}
-                        value={formData.LubOilP}
-                        type="number"
-                        placeholder="N/m²"
-                        required
-                    />
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Row>
+                        <Col xs={5}>
+                            <Form.Label>Pressão do Óleo Lubrificante N/m²</Form.Label>
+                        </Col>
+                        <Col xs={7}>
+                            <Form.Control
+                                name="LubOilP"
+                                onChange={handleChange}
+                                value={formData.LubOilP}
+                                className='formlog'
+                                type="number"
+                                placeholder="N/m²"
+                                required
+                            />
+                        </Col>
+                    </Row>
                 </Form.Group>
 
-                <Form.Group className="mb-3 justify-content-center text-center" controlId="formBasicPassword">
-                    <Form.Label className="login-label">Temperatura do Óleo Lubrificante °C</Form.Label>
-                    <Form.Control
-                        name="LubOilT"
-                        onChange={handleChange}
-                        value={formData.LubOilT}
-                        type="number"
-                        placeholder="0°C"
-                        required
-                    />
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Row>
+                        <Col xs={5}>
+                            <Form.Label>Temperatura do Óleo Lubrificante °C</Form.Label>
+                        </Col>
+                        <Col xs={7}>
+                            <Form.Control
+                                name="LubOilT"
+                                onChange={handleChange}
+                                value={formData.LubOilT}
+                                className='formlog'
+                                type="number"
+                                placeholder="0°C"
+                                required
+                            />
+                        </Col>
+                    </Row>
                 </Form.Group>
 
-                <Form.Group className="mb-3 justify-content-center text-center" controlId="formBasicPassword">
-                    <Form.Label className="login-label">Pressão do Ar de Arrefecimento N/m²</Form.Label>
-                    <Form.Control
-                        name="AirP"
-                        onChange={handleChange}
-                        value={formData.AirP}
-                        type="number"
-                        placeholder="N/m²"
-                        required
-                    />
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Row>
+                        <Col xs={5}>
+                            <Form.Label>Pressão do Ar de Arrefecimento N/m²</Form.Label>
+                        </Col>
+                        <Col xs={7}>
+                            <Form.Control
+                                name="AirP"
+                                onChange={handleChange}
+                                value={formData.AirP}
+                                className='formlog'
+                                type="number"
+                                placeholder="N/m²"
+                                required
+                            />
+                        </Col>
+                    </Row>
                 </Form.Group>
 
-                <Form.Group className="mb-3 justify-content-center text-center" controlId="formBasicPassword">
-                    <Form.Label className="login-label">Temperatura do Ar de Arrefecimento °C</Form.Label>
-                    <Form.Control
-                        name="AirT"
-                        onChange={handleChange}
-                        value={formData.AirT}
-                        type="number"
-                        placeholder="0°C"
-                        required
-                    />
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Row>
+                        <Col xs={5}>
+                            <Form.Label>Temperatura do Ar de Arrefecimento °C</Form.Label>
+                        </Col>
+                        <Col xs={7}>
+                            <Form.Control
+                                name="AirT"
+                                onChange={handleChange}
+                                value={formData.AirT}
+                                type="number"
+                                className='formlog'
+                                placeholder="0°C"
+                                required
+                            />
+                        </Col>
+                    </Row>
                 </Form.Group>
 
                 <Button className="login-button" variant="primary" type="submit">
