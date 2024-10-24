@@ -56,6 +56,9 @@ const Header = () => {
               <li className='nav-item'>
                 <Link className='nav-link' to='/Oficinas'>Oficinas</Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/Dataset">rascunhoIA</Link>
+              </li>
             </ul>
           </div>
         </div>
