@@ -52,14 +52,14 @@ const PlansPage = () => {
     },
     {
       title: 'Plano Anual',
-      price: 'R$ 2.200,00',
+      price: 'R$ 2.500,00',
       features: ['- Cobrança Anual', '- Maior economia por um longo tempo'],
       isPopular: true,
     },
     {
       title: 'Plano Semestral',
-      price: 'R$ 900,00',
-      features: ['- Cobrança Semestral', '- Plano eficiente para pequenos espaços de tempo'],
+      price: 'R$ 899,90',
+      features: ['- Cobrança Semestral', '- Plano eficiente curtos períodos'],
       isPopular: true,
     },
   ];

@@ -45,7 +45,6 @@ const CadastroForm = () => {
       <Form className="login" onSubmit={handleSubmit}>
         <h2 className='Titulocd'>Cadastre-se</h2>
         <Form.Group className="mb-3" controlId="formNomeCompleto">
-          <Form.Label className='login-label'></Form.Label>
           <Form.Control
             name="nome"
             onChange={handleChange}
@@ -60,7 +59,6 @@ const CadastroForm = () => {
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label className="login-label"></Form.Label>
           <Form.Control
             name="email"
             onChange={handleChange}
@@ -73,7 +71,6 @@ const CadastroForm = () => {
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label className="login-label"></Form.Label>
           <Form.Control
             name="senha"
             onChange={handleChange}
@@ -86,7 +83,6 @@ const CadastroForm = () => {
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formTelefone">
-          <Form.Label className='login-label'></Form.Label>
           <InputMask
             mask="(99) 99999-9999"
             value={formData.telefone}
@@ -103,7 +99,6 @@ const CadastroForm = () => {
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formCpf">
-          <Form.Label className='login-label'></Form.Label>
           <InputMask
             mask="999.999.999-99"
             value={formData.cpf}

@@ -1,5 +1,6 @@
 .fundoplan {
   background-color: rgb(36, 36, 36);
+  padding-bottom: 20px;
 }
 
 .flip-card {
@@ -255,4 +256,22 @@
 /* Ajuste no efeito de flip */
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
+}
+
+.btn-primary{
+  background-color: darkorange;
+  border: none;
+}
+
+.btn-primary:hover{
+  background-color:  rgb(255, 98, 0) !important;
+}
+
+.bg-primary{
+  background-color: darkorange !important;
+  border: none !important;
+}
+
+.border-primary{
+  border: none;
 }
