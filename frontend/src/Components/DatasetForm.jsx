@@ -2,11 +2,7 @@ import { React, useState } from 'react';
 import axios from 'axios';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-<<<<<<< HEAD
-import InputMask from 'react-input-mask';
-=======
 // import InputMask from 'react-input-mask';
->>>>>>> 5ddf4c6d82e5b2e3efae1c97c9e9b17e04adc38d
 
 // Série de dados disponíveis em ORDEM:
 // EngRPM, FuelP, LubOilP, LubOilT, AirP, AirT
@@ -52,11 +48,7 @@ const DatasetForm = () => {
     // EngRPM, FuelP, LubOilP, LubOilT, AirP, AirT
 
     return (
-<<<<<<< HEAD
-        <div className="login-container">
-=======
         <div className="dataset-container">
->>>>>>> 5ddf4c6d82e5b2e3efae1c97c9e9b17e04adc38d
             <Form className="login" onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formNomeCompleto">
                     <Form.Label className='login-label'>Rotação do Motor RPM</Form.Label>
@@ -140,8 +132,4 @@ const DatasetForm = () => {
     );
 };
 
-<<<<<<< HEAD
 export default DatasetForm;
-=======
-export default DatasetForm;
->>>>>>> 5ddf4c6d82e5b2e3efae1c97c9e9b17e04adc38d
