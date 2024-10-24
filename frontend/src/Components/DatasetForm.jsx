@@ -1,4 +1,5 @@
 import { React, useState } from 'react';
+import '../CSS/IA.css';
 import axios from 'axios';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -49,8 +50,8 @@ const DatasetForm = () => {
 
     return (
         <div className="dataset-container">
-            <Form className="login" onSubmit={handleSubmit}>
-                <Form.Group className="mb-3" controlId="formNomeCompleto">
+            <Form className="ia justify-content-center text-center" onSubmit={handleSubmit}>
+                <Form.Group className="mb-3 justify-content-center text-center" controlId="formNomeCompleto">
                     <Form.Label className='login-label'>Rotação do Motor RPM</Form.Label>
                     <Form.Control
                         name="EngRPM"
@@ -64,7 +65,7 @@ const DatasetForm = () => {
                     />
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Group className="mb-3 justify-content-center text-center" controlId="formBasicEmail">
                     <Form.Label className="login-label">Pressão de Combustível N/m²</Form.Label>
                     <Form.Control
                         name="FuelP"
@@ -76,7 +77,7 @@ const DatasetForm = () => {
                     />
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Group className="mb-3 justify-content-center text-center" controlId="formBasicPassword">
                     <Form.Label className="login-label">Pressão do Óleo Lubrificante N/m²</Form.Label>
                     <Form.Control
                         name="LubOilP"
@@ -88,7 +89,7 @@ const DatasetForm = () => {
                     />
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Group className="mb-3 justify-content-center text-center" controlId="formBasicPassword">
                     <Form.Label className="login-label">Temperatura do Óleo Lubrificante °C</Form.Label>
                     <Form.Control
                         name="LubOilT"
@@ -100,7 +101,7 @@ const DatasetForm = () => {
                     />
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Group className="mb-3 justify-content-center text-center" controlId="formBasicPassword">
                     <Form.Label className="login-label">Pressão do Ar de Arrefecimento N/m²</Form.Label>
                     <Form.Control
                         name="AirP"
@@ -112,7 +113,7 @@ const DatasetForm = () => {
                     />
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Group className="mb-3 justify-content-center text-center" controlId="formBasicPassword">
                     <Form.Label className="login-label">Temperatura do Ar de Arrefecimento °C</Form.Label>
                     <Form.Control
                         name="AirT"
