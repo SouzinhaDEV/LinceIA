@@ -8,7 +8,7 @@ import Admin from "./Pages/Admin";
 import Privacidade from "./Pages/Privacidade";
 import Planos from "./Pages/Planos";
 import Oficinas from "./Pages/Oficinas";
-import Dataset from "./Components/DatasetForm";
+import Dataset from "./Pages/Dataset";
 
 const Rotas = () => {
   return (
