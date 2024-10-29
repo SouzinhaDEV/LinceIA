@@ -157,21 +157,26 @@ CREATE TABLE cadastros (
   	senha VARCHAR(45) NOT NULL,
   	telefone VARCHAR(20) NOT NULL,
   	cpf VARCHAR(20) NOT NULL,
-  	CONSTRAINT `PRIMARY` PRIMARY KEY (idCadastro) 
+  	CONSTRAINT PRIMARY KEY (idCadastro) 
 );
 
 CREATE TABLE contato (
 	idContato INT AUTO_INCREMENT NOT NULL,
 	nome VARCHAR(150) NOT NULL,
 	email VARCHAR(150) NOT NULL,
+<<<<<<< HEAD
 	CONSTRAINT `PRIMARY` PRIMARY KEY (idContato)
+=======
+   comentario VARCHAR (300) NOT NULL,
+	CONSTRAINT PRIMARY KEY (idContato)
+>>>>>>> 031d7143dea04a8de23d4ea7aeb6be68bb1883d3
 );
 
 CREATE TABLE login (
    id INT AUTO_INCREMENT NOT NULL,
    email VARCHAR(150) NOT NULL,
    senha VARCHAR(45) NOT NULL,
-   CONSTRAINT `PRIMARY` PRIMARY KEY (idLogin)
+   CONSTRAINT PRIMARY KEY (idLogin)
 );
 
 CREATE TABLE dataset (
@@ -182,7 +187,7 @@ CREATE TABLE dataset (
    LubOilT DECIMAL,
    AirP DECIMAL,
    AirT DECIMAL,
-   CONSTRAINT `PRIMARY` PRIMARY KEY (idDataset)
+   CONSTRAINT PRIMARY KEY (idDataset)
 );
 
 ````````````````````````````````````````````````````````````
