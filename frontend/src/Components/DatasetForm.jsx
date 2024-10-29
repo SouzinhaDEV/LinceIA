@@ -1,20 +1,9 @@
-<<<<<<< HEAD
-import { React, useState } from 'react';
-import axios from 'axios';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import InputMask from 'react-input-mask';
-
-// Série de dados disponíveis em ORDEM:
-// EngRPM, FuelP, LubOilP, LubOilT, AirP, AirT
-=======
 import React, { useState } from 'react';
 import '../CSS/IA.css';
 import axios from 'axios';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { Row, Col } from 'react-bootstrap';
->>>>>>> 917ad45e29b8ddda5fbd6e06054f836df5c00c05
 
 const DatasetForm = () => {
     const [formData, setFormData] = useState({
@@ -31,10 +20,6 @@ const DatasetForm = () => {
         try {
             await axios.post('http://localhost:3001/dataset', formData);
             alert('Dados enviados para o cálculo...');
-<<<<<<< HEAD
-            // Limpar o formulário após o envio bem-sucedido
-=======
->>>>>>> 917ad45e29b8ddda5fbd6e06054f836df5c00c05
             setFormData({
                 EngRPM: '',
                 FuelP: '',
@@ -57,85 +42,6 @@ const DatasetForm = () => {
         });
     };
 
-<<<<<<< HEAD
-    // EngRPM, FuelP, LubOilP, LubOilT, AirP, AirT
-
-    return (
-        <div className="dataset-container">
-            <Form className="login" onSubmit={handleSubmit}>
-                <Form.Group className="mb-3" controlId="formNomeCompleto">
-                    <Form.Label className='login-label'>Rotação do Motor RPM</Form.Label>
-                    <Form.Control
-                        name="EngRPM"
-                        onChange={handleChange}
-                        value={formData.EngRPM}
-                        type="number"
-                        placeholder="0.000rpm"
-                        pattern="[A-Za-zÀ-ÖØ-Ýà-öø-ÿ ]{1,}"
-                        title="Nome deve conter apenas letras e espaços."
-                        required
-                    />
-                </Form.Group>
-
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label className="login-label">Pressão de Combustível N/m²</Form.Label>
-                    <Form.Control
-                        name="FuelP"
-                        onChange={handleChange}
-                        value={formData.FuelP}
-                        type="number"
-                        placeholder="N/m²"
-                        required
-                    />
-                </Form.Group>
-
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label className="login-label">Pressão do Óleo Lubrificante N/m²</Form.Label>
-                    <Form.Control
-                        name="LubOilP"
-                        onChange={handleChange}
-                        value={formData.LubOilP}
-                        type="number"
-                        placeholder="N/m²"
-                        required
-                    />
-                </Form.Group>
-
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label className="login-label">Temperatura do Óleo Lubrificante °C</Form.Label>
-                    <Form.Control
-                        name="LubOilT"
-                        onChange={handleChange}
-                        value={formData.LubOilT}
-                        type="number"
-                        placeholder="0°C"
-                        required
-                    />
-                </Form.Group>
-
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label className="login-label">Pressão do Ar de Arrefecimento N/m²</Form.Label>
-                    <Form.Control
-                        name="AirP"
-                        onChange={handleChange}
-                        value={formData.AirP}
-                        type="number"
-                        placeholder="N/m²"
-                        required
-                    />
-                </Form.Group>
-
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label className="login-label">Temperatura do Ar de Arrefecimento °C</Form.Label>
-                    <Form.Control
-                        name="AirT"
-                        onChange={handleChange}
-                        value={formData.AirT}
-                        type="number"
-                        placeholder="0°C"
-                        required
-                    />
-=======
     return (
         <div className="dataset-container">
             <Form className="ia" onSubmit={handleSubmit}>
@@ -252,7 +158,6 @@ const DatasetForm = () => {
                             />
                         </Col>
                     </Row>
->>>>>>> 917ad45e29b8ddda5fbd6e06054f836df5c00c05
                 </Form.Group>
 
                 <Button className="login-button" variant="primary" type="submit">
@@ -263,8 +168,4 @@ const DatasetForm = () => {
     );
 };
 
-<<<<<<< HEAD
 export default DatasetForm;
-=======
-export default DatasetForm;
->>>>>>> 917ad45e29b8ddda5fbd6e06054f836df5c00c05

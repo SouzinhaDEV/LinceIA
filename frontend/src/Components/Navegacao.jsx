@@ -56,13 +56,8 @@ const Header = () => {
               <li className='nav-item'>
                 <Link className='nav-link' to='/Oficinas'>Oficinas</Link>
               </li>
-<<<<<<< HEAD
-              <li className="nav-item">
-                <Link className="nav-link" to="/Dataset">rascunhoIA</Link>
-=======
               <li className='nav-item'>
                 <Link className='nav-link' to='/Dataset'>Inteligência Artificial</Link>
->>>>>>> 917ad45e29b8ddda5fbd6e06054f836df5c00c05
               </li>
             </ul>
           </div>

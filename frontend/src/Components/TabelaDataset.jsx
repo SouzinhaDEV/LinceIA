@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-<<<<<<< HEAD
-const TabelaContato = () => {
-=======
 const TabelaDataset = () => {
->>>>>>> 917ad45e29b8ddda5fbd6e06054f836df5c00c05
     const [dataset, setDataset] = useState([]);
 
     useEffect(() => {
@@ -23,11 +19,7 @@ const TabelaDataset = () => {
 
     const handleExcluirUsuario = async (id) => {
         try {
-<<<<<<< HEAD
-            await axios.delete(`http://localhost:3001/dataset/${id}`);
-=======
             await axios.delete('http://localhost:3001/dataset/${id}');
->>>>>>> 917ad45e29b8ddda5fbd6e06054f836df5c00c05
             const { data } = await axios.get("http://localhost:3001/dataset");
             setDataset(data);
             console.log("Usuário excluído com sucesso!");
@@ -87,8 +79,4 @@ const TabelaDataset = () => {
     );
 };
 
-<<<<<<< HEAD
-export default TabelaContato;
-=======
 export default TabelaDataset;
->>>>>>> 917ad45e29b8ddda5fbd6e06054f836df5c00c05
