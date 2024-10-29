@@ -35,15 +35,15 @@ function Home() {
   ];
 
   const cardsData = [
-    { id: 1, price: '250', title: 'Mensal', description: 'Acesso de um mês de plano' },
-    { id: 2, price: '2.200', title: 'Anual', description: 'Acesso de um ano de plano' },
-    { id: 3, price: '1.200', title: 'Semestral', description: 'Acesso semestral ao plano' },
+    { id: 1, price: '250', money: 'R$', title: 'Mensal', description: 'Acesso de um mês de plano' },
+    { id: 2, price: '2.200', money: 'R$', title: 'Anual', description: 'Acesso de um ano de plano' },
+    { id: 3, price: '900', money: 'R$', title: 'Semestral', description: 'Acesso semestral ao plano' },
   ];
 
   const itens = [
     { id: 1, src: aroficina, title: 'Oficinas', link: '/Oficinas' },
     { id: 2, src: arprivacidade, title: 'Privacidade', link: '/Privacidade' },
-    { id: 3, src: arIA, title: 'IA', link: '/IA' },
+    { id: 3, src: arIA, title: 'IA', link: '/Dataset' },
     { id: 4, src: arplanos, title: 'Planos', link: '/Planos' },
     { id: 5, src: arsuporte, title: 'Suporte', link: '/Suporte' }
   ];
@@ -153,7 +153,10 @@ function Home() {
         {cardsData.map((card, index) => (
           <div key={card.id} className={`card-item card-${index + 1}`}>
             <h4 className="titulo">{card.title}</h4>
-            <h1>{card.price}</h1>
+            <div className="price-container">
+              <h1>{card.price}</h1>
+              <h6>{card.money}</h6>
+            </div>
             <p>{card.description}</p>
             <Button className="botao">Saiba Mais</Button>
           </div>

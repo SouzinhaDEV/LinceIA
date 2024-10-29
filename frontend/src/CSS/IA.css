@@ -1,0 +1,18 @@
+.ia {
+    background: none !important;
+    padding: 40px;
+    max-width: 580px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.dataset-container{
+    padding-top: 100px;
+    background-color: rgb(36, 36, 36);
+    justify-items: center;
+}
+
+.form-label{
+    color: white;
+}

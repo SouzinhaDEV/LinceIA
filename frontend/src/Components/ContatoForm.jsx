@@ -8,12 +8,12 @@ const ContatoForm = () => {
     const [formData, setFormData] = useState({
         nome: '',
         email: '',
-        telefone: '',
+        comentario: '',
     });
 
     const [rating, setRating] = useState(0);
-    const [comment, setComment] = useState('');
-
+    const [comentario, setComentario] = useState('');
+    // PEGAR O COMPUTADOR DO VITÃO PARA COMPARAR ONDE FICA O "comment" DELE, o form não funciona!!!
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -22,6 +22,7 @@ const ContatoForm = () => {
             setFormData({
                 nome: '',
                 email: '',
+                comentario: '',
             });
         } catch (error) {
             console.error('Erro ao criar cadastro:', error);
@@ -41,8 +42,8 @@ const ContatoForm = () => {
         setRating(newRating);
     };
 
-    const handleCommentChange = (e) => {
-        setComment(e.target.value);
+    const handleComentarioChange = (e) => {
+        setComentario(e.target.value);
     };
 
     return (
@@ -78,6 +79,7 @@ const ContatoForm = () => {
                         </Form.Group>
 
                         {/* Card de Avaliação */}
+
                         <div className="rating-container mb-3">
                             <h2 className='espctt'>Avalie o Plano</h2>
                             <div className="star-rating">
@@ -94,17 +96,21 @@ const ContatoForm = () => {
                             </div>
                         </div>
 
-                        <Form.Group controlId="comment" className="mt-3">
+                        {/* Comentários  */}
+
+                        <Form.Group controlId="comentario" className="mt-3">
                             <Form.Label className='texte1'>Deixe um comentário:</Form.Label>
                             <Form.Control
                                 as="textarea"
                                 rows={3}
-                                value={comment}
-                                onChange={handleCommentChange}
+                                value={formData.comentario}
+                                onChange={handleComentarioChange}
                                 placeholder="Escreva seu comentário aqui"
                                 className='formctt'
                             />
                         </Form.Group>
+
+                        {/* Checkzinho P/Confirmar  */}
 
                         <Form.Group className="mb-3">
                             <Form.Check
@@ -122,7 +128,6 @@ const ContatoForm = () => {
                 </Col>
             </Row>
         </Container>
-
     );
 };
 

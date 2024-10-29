@@ -480,3 +480,22 @@ h2 {
     color: rgb(32, 32, 32) !important;
     font-size: 20px;
 }
+
+.col-sm-4{
+    margin: 13px;
+}
+
+.price-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.price-container h1 {
+    margin-right: 10px;
+}
+
+.price-container h6 {
+    font-size: 1rem;
+}

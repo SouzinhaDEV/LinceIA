@@ -9,7 +9,6 @@ import TabelaCotato from '../Components/TabelaContato';
 const Admin = () => {
     return (
         <div className="fundoadmin">
-
             <Container>
                 <Row>
                     <Col>
