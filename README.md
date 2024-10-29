@@ -164,7 +164,6 @@ CREATE TABLE contato (
 	idContato INT AUTO_INCREMENT NOT NULL,
 	nome VARCHAR(150) NOT NULL,
 	email VARCHAR(150) NOT NULL,
-	telefone VARCHAR (20) NOT NULL,
 	CONSTRAINT `PRIMARY` PRIMARY KEY (idContato)
 );
 
@@ -177,7 +176,7 @@ CREATE TABLE login (
 
 CREATE TABLE dataset (
    idDataset INT AUTO_INCREMENT,
-   EngRPM DECIMAL,
+   EngRPM INT(5),
    FuelP DECIMAL,
    LubOilP DECIMAL,
    LubOilT DECIMAL,
