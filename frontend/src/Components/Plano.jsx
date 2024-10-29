@@ -108,7 +108,7 @@ const PlansPage = () => {
                       <li key={index}>{feature}</li>
                     ))}
                   </ul>
-                  <Button variant="primary" onClick={() => handlePlanSelect(plan)}>
+                  <Button variant="primary" className="botaopl" onClick={() => handlePlanSelect(plan)}>
                     Selecionar
                   </Button>
                 </div>

@@ -43,7 +43,7 @@ function Home() {
   const itens = [
     { id: 1, src: aroficina, title: 'Oficinas', link: '/Oficinas' },
     { id: 2, src: arprivacidade, title: 'Privacidade', link: '/Privacidade' },
-    { id: 3, src: arIA, title: 'IA', link: '/Dataset' },
+    { id: 3, src: arIA, title: 'Inteligência Artificial', link: '/Dataset' },
     { id: 4, src: arplanos, title: 'Planos', link: '/Planos' },
     { id: 5, src: arsuporte, title: 'Suporte', link: '/Suporte' }
   ];
