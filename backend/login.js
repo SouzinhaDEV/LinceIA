@@ -13,6 +13,19 @@ router.get('/login', (req, res) => {
   });
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Rota para buscar um registro específico pelo ID.
 router.get('/login/:id', (req, res) => {
   const { id } = req.params;

@@ -108,7 +108,7 @@ function Home() {
                   </Col>
                 </Row>
               </Carousel.Item>
-              <Carousel.Item className="esp1">
+              <Carousel.Item className="esp1">  
                 <Row className="fade-in-image">
                   <Col xs={12} md={4} className="d-flex justify-content-center">
                     <Image src={foto3} width="100%" />

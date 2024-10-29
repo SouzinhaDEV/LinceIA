@@ -5,7 +5,8 @@ const ContatoItem = ({ contato, onDelete }) => {
     <tr>
       <td>{contato.idContato}</td>
       <td>{contato.nome}</td>
-      <td>{contato.email}</td>      
+      <td>{contato.email}</td>
+      <td>{contato.comentario}</td>         
       <td>
         <button onClick={() => onDelete(contato.idContato)}>Excluir</button>
       </td>
