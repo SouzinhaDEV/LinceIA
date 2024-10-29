@@ -1,10 +1,16 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './App'
+import './App.css';
+import Sidebar from './layout/Sidebar/Sidebar';
+import Content from './layout/Content/Content';
 
+function App() {
+  return (
+    <>
+      <div className='app'>
+        <Sidebar />
+        <Content />
+      </div>
+    </>
+  )
+}
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+export default App
