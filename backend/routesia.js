@@ -14,10 +14,9 @@ router.get('/dataset', (req, res) => {
     });
 });
 
-// Rota para buscar um registro específico pelo ID
-router.get('/dataset/:idDataset', (req, res) => {
-    const { idDataset } = req.params;
-    connection.query('SELECT * FROM dataset WHERE idDataset = ?', [idDataset], (err, results) => {
+router.get('/dataset/:id', (req, res) => {
+    const { id } = req.params;
+    connection.query('SELECT * FROM dataset WHERE id = ?', [id], (err, results) => {
         if (err) {
             console.error('Erro ao buscar o registro:', err);
             res.status(500).json({ error: 'Erro ao buscar o registro' });
@@ -31,14 +30,11 @@ router.get('/dataset/:idDataset', (req, res) => {
     });
 });
 
-// Série de dados disponíveis em ORDEM:
-// EngRPM, FuelP, LubOilP, LubOilT, AirP, AirT
-
 // Rota para criar um novo registro
 router.post('/dataset', (req, res) => {
     const { EngRPM, FuelP, LubOilP, LubOilT, AirP, AirT } = req.body;
-    console.log(req.body);  // Adicione este log para verificar os dados que estão sendo enviados
-    connection.query('INSERT INTO Dataset (EngRPM, FuelP, LubOilP, LubOilT, AirP, AirT) VALUES (?, ?, ?, ?, ?, ?)',
+    console.log(req.body);
+    connection.query('INSERT INTO dataset (EngRPM, FuelP, LubOilP, LubOilT, AirP, AirT) VALUES (?, ?, ?, ?, ?, ?)',
         [EngRPM, FuelP, LubOilP, LubOilT, AirP, AirT], (err, result) => {
             if (err) {
                 console.error('Erro ao criar o registro:', err);
@@ -50,11 +46,11 @@ router.post('/dataset', (req, res) => {
 });
 
 // Rota para atualizar um registro existente pelo ID
-router.put('/dataset/:idDataset', (req, res) => {
-    const { idDataset } = req.params;
+router.put('/dataset/:id', (req, res) => {
+    const { id } = req.params;
     const { EngRPM, FuelP, LubOilP, LubOilT, AirP, AirT } = req.body;
-    connection.query('UPDATE Dataset SET EngRPM = ?, FuelP = ?, LubOilP = ?, LubOilT = ?, AirP = ?, AirT = ?',
-        [EngRPM, FuelP, LubOilP, LubOilT, AirP, AirT, IdDataset], (err, result) => {
+    connection.query('UPDATE dataset SET EngRPM = ?, FuelP = ?, LubOilP = ?, LubOilT = ?, AirP = ?, AirT = ?',
+        [EngRPM, FuelP, LubOilP, LubOilT, AirP, AirT, id], (err, result) => {
             if (err) {
                 console.error('Erro ao atualizar o registro:', err);
                 res.status(500).json({ error: 'Erro ao atualizar o registro' });
@@ -65,9 +61,9 @@ router.put('/dataset/:idDataset', (req, res) => {
 });
 
 // Rota para excluir um registro pelo ID
-router.delete('/dataset/:idDataset', (req, res) => {
-    const { idDataset } = req.params;
-    connection.query('DELETE FROM dataset WHERE idDataset = ?', [idDataset], (err, result) => {
+router.delete('/dataset/:id', (req, res) => {
+    const { id } = req.params;
+    connection.query('DELETE FROM dataset WHERE id = ?', [id], (err, result) => {
         if (err) {
             console.error('Erro ao excluir o registro:', err);
             res.status(500).json({ error: 'Erro ao excluir o registro' });
@@ -82,5 +78,3 @@ router.delete('/dataset/:idDataset', (req, res) => {
 });
 
 module.exports = router;
-
-// AAAAAA

@@ -2,10 +2,6 @@ const express = require('express');
 const connection = require('./db');
 const router = express.Router();
 
-// Rota para listar todos os registros.
-
-//"cadastros", no plural, por causa do banco.
-
 router.get('/dataset', (req, res) => {
   connection.query('SELECT * FROM dataset', (err, results) => {
     if (err) {
@@ -19,9 +15,9 @@ router.get('/dataset', (req, res) => {
 
 // Rota para buscar um registro específico pelo ID.
 
-router.get('/dataset/:idDataset', (req, res) => {
-  const { idDataset } = req.params;
-  connection.query('SELECT * FROM dataset WHERE idDataset = ?', [idDataset], (err, results) => {
+router.get('/dataset/:id', (req, res) => {
+  const { id } = req.params;
+  connection.query('SELECT * FROM dataset WHERE id = ?', [id], (err, results) => {
     if (err) {
       console.error('Erro ao buscar o registro:', err);
       res.status(500).json({ error: 'Erro ao buscar o registro' });
@@ -35,21 +31,7 @@ router.get('/dataset/:idDataset', (req, res) => {
   });
 });
 
-// Rota para criar um novo registro.
-
-// ORDEM CORRETA:
-// '-> RPM do Motor (Engine RPM)
-// '-> Pressão de Combustível (Fuel Pressure)
-// '-> Pressão do Óleo Lubrificante (Lub Oil Pressure)
-// '-> Temperatura do Óleo Lubrificante (Lub Oil Temp)
-// '-> Pressão do Ar (Coolant Pressure)
-// '-> Temperatura do Ar (Coolant Temp)
-
-// EngRPM, FuelP, LubOilP, LubOilT, AirP, AirT
-
-// NÃO ESQUECER de colocar o mesmo número de "?" que a quantidade de campos solicitados.
-
-router.post('/cadastros', (req, res) => {
+router.post('/dataset', (req, res) => {
   const { EngRPM, FuelP, LubOilP, LubOilT, AirP, AirT } = req.body;
   connection.query('INSERT INTO dataset (EngRPM, FuelP, LubOilP, LubOilT, AirP, AirT) VALUES (?, ?, ?, ?, ?, ?, ?)',
     [EngRPM, FuelP, LubOilP, LubOilT, AirP, AirT], (err, result) => {
@@ -64,11 +46,11 @@ router.post('/cadastros', (req, res) => {
 
 // Rota para atualizar um registro existente pelo ID.
 
-router.put('/dataset/:idDataset', (req, res) => {
-  const { idDataset } = req.params;
+router.put('/dataset/:id', (req, res) => {
+  const { id } = req.params;
   const { EngRPM, FuelP, LubOilP, LubOilT, AirP, AirT } = req.body;
-  connection.query('UPDATE dataset SET EngRPM = ?, FuelP = ?, LubOilP = ?, LubOilT = ?, AirP = ?, AirT = ?, WHERE idDataset = ?',
-    [EngRPM, FuelP, LubOilP, LubOilT, AirP, AirT, idDataset], (err, result) => {
+  connection.query('INSERT INTO dataset (EngRPM, FuelP, LubOilP, LubOilT, AirP, AirT) VALUES (?, ?, ?, ?, ?, ?, ?)',
+    [EngRPM, FuelP, LubOilP, LubOilT, AirP, AirT], (err, result) => {
       if (err) {
         console.error('Erro ao atualizar o registro:', err);
         res.status(500).json({ error: 'Erro ao atualizar o registro' });
@@ -82,9 +64,9 @@ router.put('/dataset/:idDataset', (req, res) => {
 
 // OBS: Aqui, o "idCadastro" é no singular porque se trata de cada cadastro individualmente, como no banco de dados.
 
-router.delete('/dataset/:idDataset', (req, res) => {
-  const { idDataset } = req.params;
-  connection.query('DELETE FROM dataset WHERE idDataset = ?', [idDataset], (err, result) => {
+router.delete('/dataset/:id', (req, res) => {
+  const { id } = req.params;
+  connection.query('DELETE FROM dataset WHERE id = ?', [id], (err, result) => {
     if (err) {
       console.error('Erro ao excluir o registro:', err);
       res.status(500).json({ error: 'Erro ao excluir o registro' });

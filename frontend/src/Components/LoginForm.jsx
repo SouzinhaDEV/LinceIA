@@ -26,15 +26,16 @@ const LoginForm = () => {
       navigate('/admin');
     } else {
       try {
-        await axios.post('http://localhost:3001/login', formData);
+        // EXISTE UMA TABELA PARA "login", seria 'http://localhost:3001/login'.
+        await axios.post('http://localhost:3001/login/login', formData);
         alert('Login criado com sucesso!');
         setFormData({
           email: '',
           senha: ''
         });
       } catch (error) {
-        console.error('Erro ao criar login:', error);
-        alert('Erro ao criar login. Verifique o console para mais detalhes.');
+        console.error('Erro ao realizar login:', error);
+        alert('Erro ao realizar login. Verifique o console para mais detalhes.');
       }
     }
   };

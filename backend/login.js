@@ -2,7 +2,7 @@ const express = require('express');
 const connection = require('./db');
 const router = express.Router();
 
-router.get('/login', (req, res) => {
+router.get('/login',(req, res) => {
   connection.query('SELECT * FROM login', (err, results) => {
     if (err) {
       console.error('Erro ao buscar os registros:', err);
@@ -12,19 +12,6 @@ router.get('/login', (req, res) => {
     res.json(results);
   });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Rota para buscar um registro específico pelo ID.
 router.get('/login/:id', (req, res) => {
@@ -63,7 +50,7 @@ router.put('/login/:id', (req, res) => {
   const { id } = req.params;
   const { email, senha } = req.body;
   connection.query('INSERT INTO login ( email, senha) VALUES (?, ?)',
-    [ email, senha], (err, result) => {
+    [ email, senha, id], (err, result) => {
       if (err) {
         console.error('Erro ao atualizar o registro:', err);
         res.status(500).json({ error: 'Erro ao atualizar o registro' });
