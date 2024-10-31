@@ -15,9 +15,9 @@ router.get('/dataset', (req, res) => {
 
 // Rota para buscar um registro específico pelo ID.
 
-router.get('/dataset/:id', (req, res) => {
-  const { id } = req.params;
-  connection.query('SELECT * FROM dataset WHERE id = ?', [id], (err, results) => {
+router.get('/dataset/:idDataset', (req, res) => {
+  const { idDataset } = req.params;
+  connection.query('SELECT * FROM dataset WHERE idDataset = ?', [idDataset], (err, results) => {
     if (err) {
       console.error('Erro ao buscar o registro:', err);
       res.status(500).json({ error: 'Erro ao buscar o registro' });
@@ -46,8 +46,8 @@ router.post('/dataset', (req, res) => {
 
 // Rota para atualizar um registro existente pelo ID.
 
-router.put('/dataset/:id', (req, res) => {
-  const { id } = req.params;
+router.put('/dataset/:idDataset', (req, res) => {
+  const { idDataset } = req.params;
   const { EngRPM, FuelP, LubOilP, LubOilT, AirP, AirT } = req.body;
   connection.query('INSERT INTO dataset (EngRPM, FuelP, LubOilP, LubOilT, AirP, AirT) VALUES (?, ?, ?, ?, ?, ?, ?)',
     [EngRPM, FuelP, LubOilP, LubOilT, AirP, AirT], (err, result) => {
@@ -62,18 +62,29 @@ router.put('/dataset/:id', (req, res) => {
 
 // Rota para excluir um registro pelo ID.
 
-// OBS: Aqui, o "idCadastro" é no singular porque se trata de cada cadastro individualmente, como no banco de dados.
+// OBS: Aqui, o "idDataset" é no singular porque se trata de cada dataset individualmente, como no banco de dados.
 
-router.delete('/dataset/:id', (req, res) => {
-  const { id } = req.params;
-  connection.query('DELETE FROM dataset WHERE id = ?', [id], (err, result) => {
-    if (err) {
-      console.error('Erro ao excluir o registro:', err);
-      res.status(500).json({ error: 'Erro ao excluir o registro' });
-      return;
-    }
-    res.json({ message: 'Registro excluído com sucesso' });
+router.delete('/dataset/:idDataset', (req, res) => {
+  const { idDataset } = req.params;
+  console.log(`Recebido pedido para excluir o registro com id: ${idDataset}`);
+
+  // Altere 'id' para 'idDataset' na consulta SQL
+  connection.query('DELETE FROM dataset WHERE idDataset = ?', [idDataset], (err, result) => {
+      if (err) {
+          console.error('Erro ao excluir o registro no banco de dados:', err);
+          res.status(500).json({ error: 'Erro ao excluir o registro' });
+          return;
+      }
+      if (result.affectedRows === 0) {
+          console.log('Nenhum registro foi encontrado para exclusão');
+          res.status(404).json({ error: 'Registro não encontrado' });
+      } else {
+          console.log('Registro excluído com sucesso!');
+          res.json({ message: 'Registro excluído com sucesso' });
+      }
   });
 });
+
+
 
 module.exports = router;

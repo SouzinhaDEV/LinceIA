@@ -15,9 +15,9 @@ router.get("/login", (req, res) => {
 });
 
 // Rota para buscar um registro específico pelo ID
-router.get("/login/:id", (req, res) => {
-  const { id } = req.params;
-  connection.query("SELECT * FROM login WHERE id = ?", [id], (err, results) => {
+router.get("/login/:idLogin", (req, res) => {
+  const { idLogin } = req.params;
+  connection.query("SELECT * FROM login WHERE idLogin = ?", [idLogin], (err, results) => {
     if (err) {
       console.error("Erro ao buscar o registro:", err);
       res.status(500).json({ error: "Erro ao buscar o registro" });
@@ -36,7 +36,7 @@ router.get("/login/:id", (req, res) => {
 router.post("/login", (req, res) => {
   const { email, senha } = req.body;
   connection.query(
-    "SELECT * FROM cadastros WHERE email=? and senha=?",
+    "SELECT * FROM login WHERE email=? and senha=?",
     [email, senha],
     (err, result) => {
       if (err) {
@@ -71,12 +71,12 @@ router.post("/login", (req, res) => {
   );
 });
 
-router.put("/login/:id", (req, res) => {
-  const { id } = req.params;
+router.put("/login/:idLogin", (req, res) => {
+  const { idLogin } = req.params;
   const { email, senha } = req.body;
   connection.query(
-    "UPDATE login SET email = ?, senha = ?, WHERE id = ?",
-    [email, senha, id],
+    "UPDATE login SET email = ?, senha = ?, WHERE idLogin = ?",
+    [email, senha, idLogin],
     (err, result) => {
       if (err) {
         console.error("Erro ao atualizar o registro:", err);
@@ -89,9 +89,9 @@ router.put("/login/:id", (req, res) => {
 });
 
 // Rota para excluir um registro pelo ID
-router.delete("/login/:id", (req, res) => {
-  const { id } = req.params;
-  connection.query("DELETE FROM login WHERE id = ?", [id], (err, result) => {
+router.delete("/login/:idLogin", (req, res) => {
+  const { idLogin } = req.params;
+  connection.query("DELETE FROM login WHERE idLogin = ?", [idLogin], (err, result) => {
     if (err) {
       console.error("Erro ao excluir o registro:", err);
       res.status(500).json({ error: "Erro ao excluir o registro" });

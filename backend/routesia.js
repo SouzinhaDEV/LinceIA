@@ -14,9 +14,9 @@ router.get('/dataset', (req, res) => {
     });
 });
 
-router.get('/dataset/:id', (req, res) => {
+router.get('/dataset/:idDataset', (req, res) => {
     const { id } = req.params;
-    connection.query('SELECT * FROM dataset WHERE id = ?', [id], (err, results) => {
+    connection.query('SELECT * FROM dataset WHERE idDataset = ?', [idDataset], (err, results) => {
         if (err) {
             console.error('Erro ao buscar o registro:', err);
             res.status(500).json({ error: 'Erro ao buscar o registro' });
@@ -46,11 +46,11 @@ router.post('/dataset', (req, res) => {
 });
 
 // Rota para atualizar um registro existente pelo ID
-router.put('/dataset/:id', (req, res) => {
-    const { id } = req.params;
+router.put('/dataset/:idDataset', (req, res) => {
+    const { idDataset } = req.params;
     const { EngRPM, FuelP, LubOilP, LubOilT, AirP, AirT } = req.body;
     connection.query('UPDATE dataset SET EngRPM = ?, FuelP = ?, LubOilP = ?, LubOilT = ?, AirP = ?, AirT = ?',
-        [EngRPM, FuelP, LubOilP, LubOilT, AirP, AirT, id], (err, result) => {
+        [EngRPM, FuelP, LubOilP, LubOilT, AirP, AirT, idDataset], (err, result) => {
             if (err) {
                 console.error('Erro ao atualizar o registro:', err);
                 res.status(500).json({ error: 'Erro ao atualizar o registro' });
@@ -60,21 +60,15 @@ router.put('/dataset/:id', (req, res) => {
         });
 });
 
-// Rota para excluir um registro pelo ID
-router.delete('/dataset/:id', (req, res) => {
-    const { id } = req.params;
-    connection.query('DELETE FROM dataset WHERE id = ?', [id], (err, result) => {
-        if (err) {
-            console.error('Erro ao excluir o registro:', err);
-            res.status(500).json({ error: 'Erro ao excluir o registro' });
-            return;
-        }
-        if (result.affectedRows > 0) {
-            res.json({ message: 'Registro excluído com sucesso' });
-        } else {
-            res.status(404).json({ message: 'Registro não encontrado' });
-        }
+router.delete('/dataset/:idDataset', (req, res) => {
+    const { idDataset } = req.params;
+    connection.query('DELETE FROM dataset WHERE idDataset = ?', [idDataset], (err, result) => {
+      if (err) {
+        console.error('Erro ao excluir o registro:', err);
+        res.status(500).json({ error: 'Erro ao excluir o registro' });
+        return;
+      }
+      res.json({ message: 'Registro excluído com sucesso' });
     });
-});
-
+  });
 module.exports = router;

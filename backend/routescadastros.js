@@ -2,8 +2,9 @@ const express = require('express');
 const connection = require('./db');
 const router = express.Router();
 
-// Rota para buscar todos os registros
+
 router.get('/cadastros', (req, res) => {
+  console.log('Rota /cadastros chamada');
   connection.query('SELECT * FROM cadastros', (err, results) => {
     if (err) {
       console.error('Erro ao buscar os registros:', err);
@@ -12,6 +13,7 @@ router.get('/cadastros', (req, res) => {
     res.json(results);
   });
 });
+
 
 // Rota para buscar um registro específico pelo ID
 router.get('/cadastros/:idCadastro', (req, res) => {

@@ -15,9 +15,9 @@ router.get('/contato', (req, res) => {
 });
 
 // Rota para buscar um registro específico pelo ID
-router.get('/contato/:id', (req, res) => {
-  const { id } = req.params;
-  connection.query('SELECT * FROM contato WHERE id = ?', [id], (err, results) => {
+router.get('/contato/:idContato', (req, res) => {
+  const { idContato } = req.params;
+  connection.query('SELECT * FROM contato WHERE id = ?', [idContato], (err, results) => {
     if (err) {
       console.error('Erro ao buscar o registro:', err);
       res.status(500).json({ error: 'Erro ao buscar o registro' });
@@ -47,11 +47,11 @@ router.post('/contato', (req, res) => {
 });
 
 // Rota para atualizar um registro pelo ID
-router.put('/contato/:id', (req, res) => {
-  const { id } = req.params;
+router.put('/contato/:idContato', (req, res) => {
+  const { idContato } = req.params;
   const { nome, email, comentario } = req.body;
-  connection.query('UPDATE contato SET nome = ?, email = ?, comentario = ? WHERE id = ?',
-    [nome, email, comentario, id], (err, result) => {
+  connection.query('UPDATE contato SET nome = ?, email = ?, comentario = ? WHERE idContato = ?',
+    [nome, email, comentario, idContato], (err, result) => {
       if (err) {
         console.error('Erro ao atualizar o registro:', err);
         res.status(500).json({ error: 'Erro ao atualizar o registro' });
@@ -62,9 +62,9 @@ router.put('/contato/:id', (req, res) => {
 });
 
 // Rota para excluir um registro pelo ID
-router.delete('/contato/:id', (req, res) => {
-  const { id } = req.params;
-  connection.query('DELETE FROM contato WHERE id = ?', [id], (err, result) => {
+router.delete('/contato/:idContato', (req, res) => {
+  const { idContato } = req.params;
+  connection.query('DELETE FROM contato WHERE idContato = ?', [idContato], (err, result) => {
     if (err) {
       console.error('Erro ao excluir o registro:', err);
       res.status(500).json({ error: 'Erro ao excluir o registro' });
