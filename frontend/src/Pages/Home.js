@@ -45,7 +45,7 @@ function Home() {
     { id: 2, src: arprivacidade, title: 'Privacidade', link: '/Privacidade' },
     { id: 3, src: arIA, title: 'Inteligência Artificial', link: '/Dataset' },
     { id: 4, src: arplanos, title: 'Planos', link: '/Planos' },
-    { id: 5, src: arsuporte, title: 'Suporte', link: '/Suporte' }
+    { id: 5, src: arsuporte, title: 'Suporte', link: '/Contato' }
   ];
 
   return (
