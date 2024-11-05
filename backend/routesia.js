@@ -15,7 +15,7 @@ router.get('/dataset', (req, res) => {
 });
 
 router.get('/dataset/:idDataset', (req, res) => {
-    const { id } = req.params;
+    const { idDataset } = req.params;
     connection.query('SELECT * FROM dataset WHERE idDataset = ?', [idDataset], (err, results) => {
         if (err) {
             console.error('Erro ao buscar o registro:', err);
@@ -63,12 +63,12 @@ router.put('/dataset/:idDataset', (req, res) => {
 router.delete('/dataset/:idDataset', (req, res) => {
     const { idDataset } = req.params;
     connection.query('DELETE FROM dataset WHERE idDataset = ?', [idDataset], (err, result) => {
-      if (err) {
-        console.error('Erro ao excluir o registro:', err);
-        res.status(500).json({ error: 'Erro ao excluir o registro' });
-        return;
-      }
-      res.json({ message: 'Registro excluído com sucesso' });
+        if (err) {
+            console.error('Erro ao excluir o registro:', err);
+            res.status(500).json({ error: 'Erro ao excluir o registro' });
+            return;
+        }
+        res.json({ message: 'Registro excluído com sucesso' });
     });
-  });
+});
 module.exports = router;
