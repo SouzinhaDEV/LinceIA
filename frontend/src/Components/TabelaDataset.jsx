@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 const TabelaDataset = () => {
 =======
 <<<<<<< HEAD
@@ -10,12 +11,15 @@ const TabelaContato = () => {
 const TabelaDataset = () => {
 >>>>>>> 5ddf4c6d82e5b2e3efae1c97c9e9b17e04adc38d
 >>>>>>> 031d7143dea04a8de23d4ea7aeb6be68bb1883d3
+=======
+const TabelaDataset = () => {
+>>>>>>> d193575c4d96d5c81cbf6a20605d5fbc9bb58c60
     const [dataset, setDataset] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const { data } = await axios.get("http://localhost:3001/dataset");
+                const { data } = await axios.get("http://localhost:3001/dataset/dataset");
                 setDataset(data);
             } catch (error) {
                 console.error("Erro ao buscar usuários:", error); // Adiciona este log de erro
@@ -25,8 +29,9 @@ const TabelaDataset = () => {
         fetchData();
     }, []);
 
-    const handleExcluirUsuario = async (id) => {
+    const handleExcluirUsuario = async (idDataset) => {
         try {
+<<<<<<< HEAD
 <<<<<<< HEAD
             await axios.delete('http://localhost:3001/dataset/${id}');
 =======
@@ -37,6 +42,10 @@ const TabelaDataset = () => {
 >>>>>>> 5ddf4c6d82e5b2e3efae1c97c9e9b17e04adc38d
 >>>>>>> 031d7143dea04a8de23d4ea7aeb6be68bb1883d3
             const { data } = await axios.get("http://localhost:3001/dataset");
+=======
+            await axios.delete(`http://localhost:3001/dataset/dataset/${idDataset}`);
+            const { data } = await axios.get("http://localhost:3001/dataset/dataset");
+>>>>>>> d193575c4d96d5c81cbf6a20605d5fbc9bb58c60
             setDataset(data);
             console.log("Usuário excluído com sucesso!");
         } catch (error) {
@@ -55,12 +64,15 @@ const TabelaDataset = () => {
                 <thead style={{ backgroundColor: '#ff7300', color: 'white' }}>
                     <tr>
                         <th style={{ padding: '12px' }}>ID</th>
-                        <th style={{ padding: '12px' }}>Nome</th>
-                        <th style={{ padding: '12px' }}>Email</th>
+                        <th style={{ padding: '12px' }}>Rotação do Motor RPM</th>
+                        <th style={{ padding: '12px' }}>Pressão de Combustível N/m²</th>
+                        <th style={{ padding: '12px' }}>Pressão do Óleo Lubrificante N/m²</th>
+                        <th style={{ padding: '12px' }}>Temperatura do Óleo Lubrificante °C</th>
+                        <th style={{ padding: '12px' }}>Pressão do Ar de Arrefecimento N/m²</th>
+                        <th style={{ padding: '12px' }}>Temperatura do Ar de Arrefecimento °C</th>
                         <th style={{ padding: '12px' }}>Excluir</th>
                     </tr>
                 </thead>
-                {/* // EngRPM, FuelP, LubOilP, LubOilT, AirP, AirT */}
                 <tbody>
                     {dataset.map((dataset) => (
                         <tr key={dataset.idDataset} style={{ borderBottom: '1px solid #ddd' }}>
@@ -81,7 +93,7 @@ const TabelaDataset = () => {
                                         borderRadius: '5px',
                                         cursor: 'pointer',
                                     }}
-                                    onClick={() => handleExcluirUsuario(dataset.id)}
+                                    onClick={() => handleExcluirUsuario(dataset.idDataset)}
                                 >
                                     Excluir
                                 </button>
@@ -96,6 +108,7 @@ const TabelaDataset = () => {
 };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 export default TabelaDataset;
 =======
 <<<<<<< HEAD
@@ -104,3 +117,6 @@ export default TabelaContato;
 export default TabelaDataset;
 >>>>>>> 5ddf4c6d82e5b2e3efae1c97c9e9b17e04adc38d
 >>>>>>> 031d7143dea04a8de23d4ea7aeb6be68bb1883d3
+=======
+export default TabelaDataset;
+>>>>>>> d193575c4d96d5c81cbf6a20605d5fbc9bb58c60

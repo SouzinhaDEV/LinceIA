@@ -11,10 +11,10 @@
   "license": "ISC",
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
-    "body-parser": "^1.20.2",
+    "body-parser": "^1.20.3",
     "bootstrap": "^5.3.3",
     "cors": "^2.8.5",
-    "express": "^4.19.2",
+    "express": "^4.21.1",
     "mysql2": "^3.9.6",
     "react-dom": "^18.3.1",
     "react-input-mask": "^2.0.4"

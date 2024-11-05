@@ -1,9 +1,9 @@
 //Contato
 import React from "react";
-import Formulario from "../Components/CadastroForm01"
+import Formulario from "../Components/CadastroForm"
 import '../CSS/cadastro.css'
 
-const Contato = () => {
+const Cadastro = () => {
     return (
         <>
         <Formulario />
@@ -11,4 +11,4 @@ const Contato = () => {
     );
 };
 
-export default Contato;
+export default Cadastro;

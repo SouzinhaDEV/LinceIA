@@ -7,7 +7,7 @@ const TabelaLogin = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data } = await axios.get("http://localhost:3001/login");
+        const { data } = await axios.get("http://localhost:3001/login/login");
         setCasdastros(data);
       } catch (error) {
         console.error("Erro ao buscar usuários:", error); // Adiciona este log de erro
@@ -17,10 +17,10 @@ const TabelaLogin = () => {
     fetchData();
   }, []);
 
-  const handleExcluirUsuario = async (id) => {
+  const handleExcluirUsuario = async (idLogin) => {
     try {
-      await axios.delete(`http://localhost:3001/login/${id}`);
-      const { data } = await axios.get("http://localhost:3001/login");
+      await axios.delete(`http://localhost:3001/login/login/${idLogin}`);
+      const { data } = await axios.get("http://localhost:3001/login/login");
       setCasdastros(data);
       console.log("Usuário excluído com sucesso!");
     } catch (error) {

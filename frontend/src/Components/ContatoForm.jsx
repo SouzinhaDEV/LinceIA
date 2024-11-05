@@ -12,12 +12,11 @@ const ContatoForm = () => {
     });
 
     const [rating, setRating] = useState(0);
-    const [comentario, setComentario] = useState('');
-    // PEGAR O COMPUTADOR DO VITÃO PARA COMPARAR ONDE FICA O "comment" DELE, o form não funciona!!!
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:3001/contato', formData);
+            await axios.post('http://localhost:3001/contato/contato', formData);
             alert('Cadastro criado com sucesso!');
             setFormData({
                 nome: '',
@@ -40,10 +39,6 @@ const ContatoForm = () => {
 
     const handleRatingChange = (newRating) => {
         setRating(newRating);
-    };
-
-    const handleComentarioChange = (e) => {
-        setComentario(e.target.value);
     };
 
     return (
@@ -79,7 +74,6 @@ const ContatoForm = () => {
                         </Form.Group>
 
                         {/* Card de Avaliação */}
-
                         <div className="rating-container mb-3">
                             <h2 className='espctt'>Avalie o Plano</h2>
                             <div className="star-rating">
@@ -96,22 +90,21 @@ const ContatoForm = () => {
                             </div>
                         </div>
 
-                        {/* Comentários  */}
-
+                        {/* Comentários */}
                         <Form.Group controlId="comentario" className="mt-3">
                             <Form.Label className='texte1'>Deixe um comentário:</Form.Label>
                             <Form.Control
+                                name="comentario"
                                 as="textarea"
                                 rows={3}
                                 value={formData.comentario}
-                                onChange={handleComentarioChange}
+                                onChange={handleChange}
                                 placeholder="Escreva seu comentário aqui"
                                 className='formctt'
                             />
                         </Form.Group>
 
-                        {/* Checkzinho P/Confirmar  */}
-
+                        {/* Checkzinho P/Confirmar */}
                         <Form.Group className="mb-3">
                             <Form.Check
                                 required
