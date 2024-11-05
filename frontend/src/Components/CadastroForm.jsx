@@ -43,13 +43,14 @@ const CadastroForm = () => {
   return (
     <div className="login-container">
       <Form className="login" onSubmit={handleSubmit}>
+        <h2 className='Titulocd'>Cadastre-se</h2>
         <Form.Group className="mb-3" controlId="formNomeCompleto">
-          <Form.Label className='login-label'>Nome Completo</Form.Label>
           <Form.Control
             name="nome"
             onChange={handleChange}
             value={formData.nome}
             type="text"
+            className='formlog'
             placeholder="Nome completo"
             pattern="[A-Za-zÀ-ÖØ-Ýà-öø-ÿ ]{1,}"
             title="Nome deve conter apenas letras e espaços."
@@ -58,34 +59,34 @@ const CadastroForm = () => {
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label className="login-label">Email</Form.Label>
           <Form.Control
             name="email"
             onChange={handleChange}
             value={formData.email}
             type="email"
+            className='formlog'
             placeholder="nome@exemplo.com"
             required
           />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label className="login-label">Senha</Form.Label>
           <Form.Control
             name="senha"
             onChange={handleChange}
             value={formData.senha}
             type="password"
             placeholder="Senha"
+            className='formlog'
             required
           />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formTelefone">
-          <Form.Label className='login-label'>Número de Telefone</Form.Label>
           <InputMask
             mask="(99) 99999-9999"
             value={formData.telefone}
+            className='formlog'
             placeholder="(11) 11111-1111"
             onChange={(e) =>
               setFormData({ ...formData, telefone: e.target.value })
@@ -98,10 +99,10 @@ const CadastroForm = () => {
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formCpf">
-          <Form.Label className='login-label'>CPF</Form.Label>
           <InputMask
             mask="999.999.999-99"
             value={formData.cpf}
+            className='formlog'
             placeholder="123.456.789-00"
             onChange={(e) =>
               setFormData({ ...formData, cpf: e.target.value })
@@ -116,6 +117,7 @@ const CadastroForm = () => {
         <Form.Group className="mb-3">
           <Form.Check
             required
+            className='login-text'
             label="Concordo com os termos de serviço"
             feedback="Você deve concordar antes de enviar."
             feedbackType="invalid"

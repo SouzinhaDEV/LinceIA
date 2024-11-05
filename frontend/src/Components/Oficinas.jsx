@@ -24,7 +24,7 @@ const MapPage = () => {
         <div className="overlay align-items-center justify-content-center branco text-center">
           <h2 className='tituloof'>Aviso Importante para a Utilização do Mapa de Oficinas</h2>
           <div>
-            <p className='textof'>É importante notar que as setas vermelhas indicam as Oficinas da região próxima, e aqui você pode procurar pela região pelo nosso patrocínio com google maps</p>
+            <p className='textof'>É importante notar que as setas vermelhas indicam as Oficinas da região próxima. E aqui você pode procurar pela região, por conta do nosso patrocínio com google maps</p>
             <button className="botao2" onClick={handleRemoveOverlay}>
               Remover Filtro
             </button>
