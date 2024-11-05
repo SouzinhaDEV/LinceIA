@@ -35,9 +35,9 @@ function Home() {
   ];
 
   const cardsData = [
-    { id: 1, price: '250', money: 'R$', title: 'Mensal', description: 'Acesso de um mês de plano' },
-    { id: 2, price: '2.200', money: 'R$', title: 'Anual', description: 'Acesso de um ano de plano' },
-    { id: 3, price: '900', money: 'R$', title: 'Semestral', description: 'Acesso semestral ao plano' },
+    { id: 1, price: '250', money: 'R$', title: 'Mensal', description: 'Acesso de um mês de plano', link: '/Planos' },
+    { id: 2, price: '2.200', money: 'R$', title: 'Anual', description: 'Acesso de um ano de plano', link: '/Planos' },
+    { id: 3, price: '900', money: 'R$', title: 'Semestral', description: 'Acesso semestral ao plano', link: '/Planos' },
   ];
 
   const itens = [
@@ -108,7 +108,7 @@ function Home() {
                   </Col>
                 </Row>
               </Carousel.Item>
-              <Carousel.Item className="esp1">  
+              <Carousel.Item className="esp1">
                 <Row className="fade-in-image">
                   <Col xs={12} md={4} className="d-flex justify-content-center">
                     <Image src={foto3} width="100%" />
@@ -158,7 +158,10 @@ function Home() {
               <h6>{card.money}</h6>
             </div>
             <p>{card.description}</p>
-            <Button className="botao">Saiba Mais</Button>
+            <Link to={card.link}>
+              <Button className="botao">Saiba Mais</Button>
+            </Link>
+
           </div>
         ))}
       </div>

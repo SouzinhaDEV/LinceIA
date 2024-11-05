@@ -21,7 +21,6 @@ const Header = () => {
             <Image src={logo} width={150} />
           </a>
 
-
           {/* Botão de Colapso */}
           <button
             className="navbar-toggler"

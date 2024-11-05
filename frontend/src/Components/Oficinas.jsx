@@ -1,148 +1,36 @@
-import React, { useState, useCallback, useMemo } from "react";
-import {
-  GoogleMap,
-  Marker,
-  LoadScript,
-  StandaloneSearchBox,
-  DirectionsService,
-  DirectionsRenderer,
-} from "@react-google-maps/api";
-import "../CSS/Oficina.css";
+import React, { useState } from 'react';
+import '../CSS/Oficina.css';
 
 const MapPage = () => {
-  const [map, setMap] = useState(null);
-  const [searchBoxA, setSearchBoxA] = useState(null);
-  const [searchBoxB, setSearchBoxB] = useState(null);
-  const [pointA, setPointA] = useState(null);
-  const [pointB, setPointB] = useState(null);
+  const [isOverlayVisible, setOverlayVisible] = useState(true);
 
-  const [origin, setOrigin] = useState(null);
-  const [destination, setDestination] = useState(null);
-  const [response, setResponse] = useState(null);
-
-  const position = {
-    lat: -27.590824,
-    lng: -48.551262,
+  const handleRemoveOverlay = () => {
+    setOverlayVisible(false);
   };
 
-  const onMapLoad = useCallback((map) => {
-    setMap(map);
-  }, []);
-  
-  const onLoadA = useCallback((ref) => {
-    setSearchBoxA(ref);
-  }, []);
-  
-  const onLoadB = useCallback((ref) => {
-    setSearchBoxB(ref);
-  }, []);
-
-  const onPlacesChangedA = useCallback(() => {
-    if (searchBoxA) {
-      const places = searchBoxA.getPlaces();
-      if (places && places[0]) {
-        const place = places[0];
-        const location = {
-          lat: place.geometry.location.lat(),
-          lng: place.geometry.location.lng(),
-        };
-        setPointA(location);
-        setOrigin(null);
-        setDestination(null);
-        setResponse(null);
-
-        // Centraliza o mapa na nova localização
-        if (map) map.panTo(location);
-      }
-    }
-  }, [searchBoxA, map]);
-
-  const onPlacesChangedB = useCallback(() => {
-    if (searchBoxB) {
-      const places = searchBoxB.getPlaces();
-      if (places && places[0]) {
-        const place = places[0];
-        const location = {
-          lat: place.geometry.location.lat(),
-          lng: place.geometry.location.lng(),
-        };
-        setPointB(location);
-        setOrigin(null);
-        setDestination(null);
-        setResponse(null);
-
-        // Centraliza o mapa na nova localização
-        if (map) map.panTo(location);
-      }
-    }
-  }, [searchBoxB, map]);
-
-  const traceRoute = useCallback(() => {
-    if (pointA && pointB) {
-      setOrigin(pointA);
-      setDestination(pointB);
-    }
-  }, [pointA, pointB]);
-
-  const directionsServiceOptions = useMemo(() => {
-    return {
-      origin,
-      destination,
-      travelMode: window.google ? window.google.maps.TravelMode.DRIVING : "DRIVING",
-    };
-  }, [origin, destination]);
-
-  const directionsCallback = useCallback((res) => {
-    if (res && res.status === "OK") {
-      setResponse(res);
-    } else {
-      console.log(res);
-    }
-  }, []);
-
-  const directionsRendererOptions = useMemo(() => {
-    return {
-      directions: response,
-    };
-  }, [response]);
-
   return (
-    <div className="map">
-      <LoadScript
-        googleMapsApiKey={process.env.REACT_APP_GOOGLE_API_KEY || ""}
-        libraries={["places"]}
-      >
-        <GoogleMap
-          onLoad={onMapLoad}
-          mapContainerStyle={{ width: "100%", height: "100%" }}
-          center={position}
-          zoom={15}
-        >
-          <div className="address">
-            <StandaloneSearchBox onLoad={onLoadA} onPlacesChanged={onPlacesChangedA}>
-              <input className="addressField" placeholder="Digite o endereço inicial" />
-            </StandaloneSearchBox>
-            <StandaloneSearchBox onLoad={onLoadB} onPlacesChanged={onPlacesChangedB}>
-              <input className="addressField" placeholder="Digite o endereço final" />
-            </StandaloneSearchBox>
-            <button onClick={traceRoute}>Traçar rota</button>
+    <div className="map-container fundoof">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d58477.35125944115!2d-46.59422855512046!3d-23.646098961976122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sOficinas%20e%20mec%C3%A2nicas!5e0!3m2!1spt-BR!2sbr!4v1730823981259!5m2!1spt-BR!2sbr"
+        width="100%"
+        height="400px"
+        allowFullScreen=""
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        title="Mapa de Oficinas e Mecânicas"
+      ></iframe>
+
+      {isOverlayVisible && (
+        <div className="overlay align-items-center justify-content-center branco text-center">
+          <h2 className='tituloof'>Aviso Importante para a Utilização do Mapa de Oficinas</h2>
+          <div>
+            <p className='textof'>É importante notar que as setas vermelhas indicam as Oficinas da região próxima, e aqui você pode procurar pela região pelo nosso patrocínio com google maps</p>
+            <button className="botao2" onClick={handleRemoveOverlay}>
+              Remover Filtro
+            </button>
           </div>
-
-          {!response && pointA && <Marker position={pointA} />}
-          {!response && pointB && <Marker position={pointB} />}
-
-          {origin && destination && window.google && (
-            <DirectionsService
-              options={directionsServiceOptions}
-              callback={directionsCallback}
-            />
-          )}
-
-          {response && directionsRendererOptions && (
-            <DirectionsRenderer options={directionsRendererOptions} />
-          )}
-        </GoogleMap>
-      </LoadScript>
+        </div>
+      )}
     </div>
   );
 };

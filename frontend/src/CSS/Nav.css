@@ -1,14 +1,18 @@
+/* Estilo dos links da navbar */
 .navbar-custom .nav-link {
-    color: white;
-  }
-  
-  .navbar-custom .nav-link:hover {
-    color: #ddd;
-  }
-  
-  /* Estilo para o header com efeito de sombra */
+  color: white;
+}
+
+.navbar-custom .nav-link:hover {
+  color: #ddd;
+}
+
+/* Estilo para o header com efeito de sombra */
 header.shadow-fade {
-  position: relative; /* Necessário para o posicionamento do pseudo-elemento */
+  position: fixed; /* Necessário para o posicionamento do pseudo-elemento */
+  top: 0; /* Fixa o header no topo */
+  left: 0; /* Alinha à esquerda */
+  width: 100%; /* Largura total */
   background: rgba(255, 255, 255, 0.8); /* Fundo com leve transparência (ajuste conforme necessário) */
   backdrop-filter: blur(50px); /* Desfoque do fundo (opcional) */
   z-index: 1000; /* Certifique-se de que o header esteja acima de outros elementos */
@@ -17,29 +21,32 @@ header.shadow-fade {
 /* Pseudo-elemento para criar o efeito de sombra vertical */
 header.shadow-fade::before {
   content: "";
-  position: fixed;
+  position: absolute; /* Alinha corretamente com o header */
   top: 0;
   left: 0;
   right: 0;
   height: 120px; /* Altura da sombra (ajuste conforme necessário) */
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.826), rgba(0, 0, 0, 0)); /* Gradiente de sombra vertical */
   pointer-events: none; /* Garante que o pseudo-elemento não interfira com a interação do usuário */
-  z-index: 1000; /* Coloca o pseudo-elemento atrás do conteúdo do header */
 }
 
+/* Estilo da navbar personalizada */
 .navbar-custom {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1030; /* Certifique-se de que a navbar esteja acima de outros elementos */
+  position: fixed; /* Fixa a navbar no topo */
+  top: 0; /* Posiciona no topo */
+  left: 0; /* Alinha à esquerda */
+  width: 100%; /* Largura total da página */
+  z-index: 1030; /* Acima de outros elementos */
   background: transparent; /* Inicialmente transparente */
   transition: background-color 0.3s ease; /* Transição suave */
 }
 
+/* Efeito de fundo quando a navbar é expandida */
 .navbar-custom.navbar-expanded {
   background-color: rgba(0, 0, 0, 0.8); /* Cor de fundo quando expandida */
 }
 
+/* Estilo do botão de alternância */
 .navbar-toggler {
   border-color: white; /* Borda do botão em branco */
 }

@@ -1,43 +1,57 @@
-.map {
-    height: 100vh;
-  }
-  
-  .map-marker {
-    margin-top: -30px;
-  }
-  
-  .address {
-    box-sizing: border-box;
-    margin-top: 150px !important;
-    width: 240px;
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 4px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-    font-size: 14px;
-    position: absolute;
-    left: 50%;
-    margin-left: -120px;
-    margin-top: 12px;
-  }
-  
-  .addressField {
-    box-sizing: border-box;
-    border: 1px solid transparent;
-    width: 100%;
-    height: 32px;
-    margin-bottom: 8px;
-    padding: 0 12px;
-    border-radius: 4px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-    font-size: 14px;
-    outline: none;
-    text-overflow: ellipses;
-  }
+.map-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
-  element.style{
-    margin-top: 150px !important;
-  }
+iframe {
+  border: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Filtro escuro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.remove-overlay-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: #333;
+}
+
+.tituloof{
+  color: white;
+}
+
+.textof{
+  color: #ffffff;
+  font-size: 15px !important;
+  margin-right: 20px;
+}
+
+.botao2{
+  padding: 10px;
+  border: none;
+  margin-right: 80px;
+  background-color: darkorange;
+  color: white;
+  border-radius: 20px;
+}
+
+.fundoof{
+  background-color: rgb(36, 36, 36);
+}

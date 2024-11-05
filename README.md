@@ -164,15 +164,8 @@ CREATE TABLE contato (
 	idContato INT AUTO_INCREMENT NOT NULL,
 	nome VARCHAR(150) NOT NULL,
 	email VARCHAR(150) NOT NULL,
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> cdbaf7baab883e1824cf6966342df011923048b8
-	CONSTRAINT `PRIMARY` PRIMARY KEY (idContato)
-=======
    comentario VARCHAR (300) NOT NULL,
 	CONSTRAINT PRIMARY KEY (idContato)
->>>>>>> 031d7143dea04a8de23d4ea7aeb6be68bb1883d3
 );
 
 CREATE TABLE login (
