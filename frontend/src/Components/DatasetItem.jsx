@@ -1,11 +1,6 @@
 import React from 'react';
 
-// ORDEM CORRETA:
-// EngRPM, FuelP, LubOilP, LubOilT, AirP, AirT
-
-// "dataset", como está na tabela do MySQL.
 const DatasetItem = ({ dataset, onDelete }) => {
-<<<<<<< HEAD
   return (
     <tr>
       <td>{dataset.idDataset}</td>
@@ -41,8 +36,4 @@ export default DatasetItem;
 };
 
 export default DatasetItem;
-<<<<<<< HEAD
->>>>>>> 917ad45e29b8ddda5fbd6e06054f836df5c00c05
-=======
 >>>>>>> 5ddf4c6d82e5b2e3efae1c97c9e9b17e04adc38d
->>>>>>> 031d7143dea04a8de23d4ea7aeb6be68bb1883d3

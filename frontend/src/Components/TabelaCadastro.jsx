@@ -7,7 +7,7 @@ const TabelaCadastros = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data } = await axios.get("http://localhost:3001/cadastros");
+        const { data } = await axios.get("http://localhost:3001/cadastros/cadastros");
         setCadastros(data);
       } catch (error) {
         console.error("Erro ao buscar cadastro:", error); // Adiciona este log de erro
@@ -19,9 +19,9 @@ const TabelaCadastros = () => {
 
   const handleExcluirUsuario = async (idCadastro) => {
     try {
-      await axios.delete(`http://localhost:3001/cadastros/${idCadastro}`);
+      await axios.delete(`http://localhost:3001/cadastros/cadastros/${idCadastro}`);
       // Atualiza a lista de cadastros após a exclusão
-      const { data } = await axios.get("http://localhost:3001/cadastros");
+      const { data } = await axios.get("http://localhost:3001/cadastros/cadastros");
       setCadastros(data);
       console.log("Cadastro excluído com sucesso!");
     } catch (error) {

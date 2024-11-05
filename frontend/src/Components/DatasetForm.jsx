@@ -18,7 +18,7 @@ const DatasetForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:3001/dataset', formData);
+            await axios.post('http://localhost:3001/dataset/dataset', formData);
             alert('Dados enviados para o cálculo...');
             setFormData({
                 EngRPM: '',

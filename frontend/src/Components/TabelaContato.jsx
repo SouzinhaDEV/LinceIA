@@ -2,26 +2,26 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const TabelaContato = () => {
-  const [contato, setCasdastros] = useState([]);
+  const [contato, setContato] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data } = await axios.get("http://localhost:3001/contato");
-        setCasdastros(data);
+        const { data } = await axios.get("http://localhost:3001/contato/contato");
+        setContato(data);
       } catch (error) {
-        console.error("Erro ao buscar usuários:", error); // Adiciona este log de erro
+        console.error("Erro ao buscar usuários:", error);
       }
     };
 
     fetchData();
   }, []);
 
-  const handleExcluirUsuario = async (id) => {
+  const handleExcluirUsuario = async (idContato) => {
     try {
-      await axios.delete(`http://localhost:3001/contato/${id}`);
-      const { data } = await axios.get("http://localhost:3001/contato");
-      setCasdastros(data);
+      await axios.delete(`http://localhost:3001/contato/contato/${idContato}`);
+      const { data } = await axios.get("http://localhost:3001/contato/contato");
+      setContato(data);
       console.log("Usuário excluído com sucesso!");
     } catch (error) {
       console.error("Erro ao excluir usuário:", error);
@@ -47,8 +47,8 @@ const TabelaContato = () => {
         </thead>
         <tbody>
           {contato.map((contato) => (
-            <tr key={contato.id} style={{ borderBottom: '1px solid #ddd' }}>
-              <td style={{ padding: '12px' }}>{contato.id}</td>
+            <tr key={contato.idContato} style={{ borderBottom: '1px solid #ddd' }}>
+              <td style={{ padding: '12px' }}>{contato.idContato}</td>
               <td style={{ padding: '12px' }}>{contato.nome}</td>
               <td style={{ padding: '12px' }}>{contato.email}</td>
               <td style={{ padding: '12px' }}>{contato.comentario}</td>
@@ -62,7 +62,7 @@ const TabelaContato = () => {
                     borderRadius: '5px',
                     cursor: 'pointer',
                   }}
-                  onClick={() => handleExcluirUsuario(contato.id)}
+                  onClick={() => handleExcluirUsuario(contato.idContato)}
                 >
                   Excluir
                 </button>

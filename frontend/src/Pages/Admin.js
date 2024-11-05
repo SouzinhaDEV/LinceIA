@@ -1,9 +1,11 @@
 import React from "react";
 import '../CSS/Admin.css';
-import { Container, Row, Col} from 'react-bootstrap';
-import TabelaLogin from '../Components/TabelaLogin';
+import { Container, Row, Col } from 'react-bootstrap';
+import CustomSidebar from "../Components/CustomSidebar"
 import TabelaCadastro from '../Components/TabelaCadastro';
 import TabelaCotato from '../Components/TabelaContato';
+import TabelaDataset from "../Components/TabelaDataset";
+
 
 
 const Admin = () => {
@@ -12,13 +14,16 @@ const Admin = () => {
             <Container>
                 <Row>
                     <Col>
-                        <TabelaLogin />
+                        <CustomSidebar />
                     </Col>
                     <Col>
                         <TabelaCadastro />
                     </Col>
                     <Col>
                         <TabelaCotato />
+                    </Col>
+                    <Col>
+                        <TabelaDataset />
                     </Col>
                 </Row>
             </Container>
