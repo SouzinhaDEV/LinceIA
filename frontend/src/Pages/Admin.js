@@ -3,8 +3,8 @@ import '../CSS/Admin.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import CustomSidebar from "../Components/CustomSidebar"
 import TabelaCadastro from '../Components/TabelaCadastro';
-import TabelaCotato from '../Components/TabelaContato';
-import TabelaDataset from "../Components/TabelaDataset";
+import TabelaContato from '../Components/TabelaContato';
+import TabelaDataset from "../Components/TabelaDataset"
 
 
 
@@ -20,7 +20,7 @@ const Admin = () => {
                         <TabelaCadastro />
                     </Col>
                     <Col>
-                        <TabelaCotato />
+                        <TabelaContato />
                     </Col>
                     <Col>
                         <TabelaDataset />

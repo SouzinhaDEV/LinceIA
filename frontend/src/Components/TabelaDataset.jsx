@@ -1,19 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 const TabelaDataset = () => {
-=======
-<<<<<<< HEAD
-const TabelaContato = () => {
-=======
-const TabelaDataset = () => {
->>>>>>> 5ddf4c6d82e5b2e3efae1c97c9e9b17e04adc38d
->>>>>>> 031d7143dea04a8de23d4ea7aeb6be68bb1883d3
-=======
-const TabelaDataset = () => {
->>>>>>> d193575c4d96d5c81cbf6a20605d5fbc9bb58c60
     const [dataset, setDataset] = useState([]);
 
     useEffect(() => {
@@ -25,27 +13,13 @@ const TabelaDataset = () => {
                 console.error("Erro ao buscar usuários:", error); // Adiciona este log de erro
             }
         };
-
         fetchData();
     }, []);
 
     const handleExcluirUsuario = async (idDataset) => {
         try {
-<<<<<<< HEAD
-<<<<<<< HEAD
             await axios.delete('http://localhost:3001/dataset/${id}');
-=======
-<<<<<<< HEAD
-            await axios.delete(`http://localhost:3001/dataset/${id}`);
-=======
-            await axios.delete('http://localhost:3001/dataset/${id}');
->>>>>>> 5ddf4c6d82e5b2e3efae1c97c9e9b17e04adc38d
->>>>>>> 031d7143dea04a8de23d4ea7aeb6be68bb1883d3
             const { data } = await axios.get("http://localhost:3001/dataset");
-=======
-            await axios.delete(`http://localhost:3001/dataset/dataset/${idDataset}`);
-            const { data } = await axios.get("http://localhost:3001/dataset/dataset");
->>>>>>> d193575c4d96d5c81cbf6a20605d5fbc9bb58c60
             setDataset(data);
             console.log("Usuário excluído com sucesso!");
         } catch (error) {
@@ -107,16 +81,5 @@ const TabelaDataset = () => {
     );
 };
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 export default TabelaDataset;
-=======
-<<<<<<< HEAD
-export default TabelaContato;
-=======
-export default TabelaDataset;
->>>>>>> 5ddf4c6d82e5b2e3efae1c97c9e9b17e04adc38d
->>>>>>> 031d7143dea04a8de23d4ea7aeb6be68bb1883d3
-=======
-export default TabelaDataset;
->>>>>>> d193575c4d96d5c81cbf6a20605d5fbc9bb58c60
