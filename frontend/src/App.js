@@ -1,22 +1,27 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
-//Bootstrap CSS
+import { BrowserRouter as Router, useLocation } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-//Importar complementos aqui
 import Rotas from "./Routes";
-//Importar componentes aqui
 import Navegacao from "./Components/Navegacao";
 import Rodape from './Components/Rodape';
 
 const App = () => {
-  return (
-    <>
-      <Router>
-        <Navegacao />
+  const Layout = () => {
+    const location = useLocation();
+    const isAdminPage = location.pathname === "/admin";
+
+    return (
+      <>
+        {!isAdminPage && <Navegacao />}
         <Rotas />
-        <Rodape />
-      </Router>
-    </>
+        {!isAdminPage && <Rodape />}
+      </>
+    );
+  };
+  return (
+    <Router>
+      <Layout />
+    </Router>
   );
 };
 

@@ -13,7 +13,6 @@ const TabelaDataset = () => {
                 console.error("Erro ao buscar usuários:", error); // Adiciona este log de erro
             }
         };
-
         fetchData();
     }, []);
 
@@ -82,4 +81,9 @@ const TabelaDataset = () => {
     );
 };
 
+<<<<<<< HEAD
 export default TabelaDataset;
+=======
+
+export default TabelaDataset;
+>>>>>>> f08d3300a8b63958bc26b97e899b8212de8e67e7

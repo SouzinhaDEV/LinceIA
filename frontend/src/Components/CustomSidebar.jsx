@@ -1,61 +1,56 @@
-"use client";
+import React from 'react';
+import {
+  CDBSidebar,
+  CDBSidebarContent,
+  CDBSidebarFooter,
+  CDBSidebarHeader,
+  CDBSidebarMenu,
+  CDBSidebarMenuItem,
+} from 'cdbreact';
+import { NavLink } from 'react-router-dom';
 
-import { Sidebar } from "flowbite-react";
-import { HiArrowSmRight, HiChartPie, HiInbox, HiShoppingBag, HiTable, HiUser } from "react-icons/hi";
-
-const CustomSidebar = () => {
+const Sidebar = () => {
   return (
-    <div style={{ display: 'flex' }}>
-      <Sidebar
-        aria-label="Sidebar with multi-level dropdown example"
-        style={{
-          width: '300px',        // Define a largura da barra lateral
-          minHeight: '100vh',     // Ajusta a altura para ocupar a tela toda
-          position: 'fixed',      // Fixa a barra lateral à esquerda
-          top: 0,
-          left: 0,
-          backgroundColor: '#1a202c',  // Cor de fundo escura para um estilo profissional
-          color: 'white',         // Cor do texto em branco
-          fontSize: '18px',       // Aumenta o tamanho da fonte
-          paddingTop: '20px',     // Espaçamento superior
-          paddingBottom: '20px',  // Espaçamento inferior
-          boxShadow: '2px 0 5px rgba(0, 0, 0, 0.1)', // Sombra sutil
-        }}
-      >
-        <Sidebar.Items>
-          <Sidebar.ItemGroup>
-            <Sidebar.Item href="#" icon={HiChartPie}>
-              Dashboard
-            </Sidebar.Item>
-            <Sidebar.Collapse icon={HiShoppingBag} label="E-commerce">
-              <Sidebar.Item href="#">Products</Sidebar.Item>
-              <Sidebar.Item href="#">Sales</Sidebar.Item>
-              <Sidebar.Item href="#">Refunds</Sidebar.Item>
-              <Sidebar.Item href="#">Shipping</Sidebar.Item>
-            </Sidebar.Collapse>
-            <Sidebar.Item href="#" icon={HiInbox}>
-              Inbox
-            </Sidebar.Item>
-            <Sidebar.Item href="#" icon={HiUser}>
-              Users
-            </Sidebar.Item>
-            <Sidebar.Item href="#" icon={HiShoppingBag}>
-              Products
-            </Sidebar.Item>
-            <Sidebar.Item href="#" icon={HiArrowSmRight}>
-              Sign In
-            </Sidebar.Item>
-            <Sidebar.Item href="#" icon={HiTable}>
-              Sign Up
-            </Sidebar.Item>
-          </Sidebar.ItemGroup>
-        </Sidebar.Items>
-      </Sidebar>
-      <div style={{ marginLeft: '320px', padding: '20px', width: '100%' }}>
-        {/* Área de conteúdo ao lado do Sidebar */}
-      </div>
+    <div style={{ display: 'flex', height: '100vh', overflow: 'scroll initial' }}>
+      <CDBSidebar textColor="#fff" backgroundColor="#333">
+        <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
+          <a href="/" className="text-decoration-none" style={{ color: 'inherit' }}>
+            LinceIA
+          </a>
+        </CDBSidebarHeader>
+
+        <CDBSidebarContent className="sidebar-content">
+          <CDBSidebarMenu>
+            <NavLink exact to="/GraficoLo" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="table">Dashboard</CDBSidebarMenuItem>
+            </NavLink>
+            <NavLink exact to="/GraficoLogin" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="table">Tables</CDBSidebarMenuItem>
+            </NavLink>
+            <NavLink exact to="/" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="table">Profile page</CDBSidebarMenuItem>
+            </NavLink>
+            <NavLink exact to="/analytics" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="chart-line">Analytics</CDBSidebarMenuItem>
+            </NavLink>
+
+            <NavLink exact to="/hero404" target="_blank" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="user">Admin</CDBSidebarMenuItem>
+            </NavLink>
+          </CDBSidebarMenu>
+        </CDBSidebarContent>
+
+        <CDBSidebarFooter style={{ textAlign: 'center' }}>
+          <div
+            style={{
+              padding: '20px 5px',
+            }}
+          >
+          </div>
+        </CDBSidebarFooter>
+      </CDBSidebar>
     </div>
   );
 };
 
-export default CustomSidebar;
+export default Sidebar;
