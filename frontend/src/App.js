@@ -6,21 +6,12 @@ import Navegacao from "./Components/Navegacao";
 import Rodape from './Components/Rodape';
 
 const App = () => {
-  const Layout = () => {
-    const location = useLocation();
-    const isAdminPage = location.pathname === "/admin";
 
-    return (
-      <>
-        {!isAdminPage && <Navegacao />}
-        <Rotas />
-        {!isAdminPage && <Rodape />}
-      </>
-    );
-  };
   return (
     <Router>
-      <Layout />
+      <Navegacao />
+      <Rotas />
+      <Rodape />
     </Router>
   );
 };
