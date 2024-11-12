@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import '../CSS/Admin.css';
 
 const TabelaCadastros = () => {
   const [cadastros, setCadastros] = useState([]);
@@ -31,10 +32,12 @@ const TabelaCadastros = () => {
 
   return (
     <div style={{ padding: '20px', maxWidth: '1000px', margin: '0 auto' }}>
+      <h2 className="titulotab">Tabela do Cadastro</h2>
       <table
         border={1}
         cellPadding={10}
         cellSpacing={0}
+        className="responsive-table"
         style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', backgroundColor: '#ff7300', boxShadow: '0 4px 8px rgba(0,0,0,0.1)' }}
       >
         <thead style={{ backgroundColor: '#ff7300', color: 'white' }}>
