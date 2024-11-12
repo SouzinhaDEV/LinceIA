@@ -22,16 +22,16 @@ const Sidebar = () => {
         <CDBSidebarContent className="sidebar-content">
           <CDBSidebarMenu>
             <NavLink exact to="/GraficoLo" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="table">Dashboard</CDBSidebarMenuItem>
+              <CDBSidebarMenuItem icon="table">Tabela Cadastro</CDBSidebarMenuItem>
             </NavLink>
             <NavLink exact to="/GraficoLogin" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="table">Tables</CDBSidebarMenuItem>
+              <CDBSidebarMenuItem icon="table">Tabela Login</CDBSidebarMenuItem>
             </NavLink>
             <NavLink exact to="/" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="table">Profile page</CDBSidebarMenuItem>
+              <CDBSidebarMenuItem icon="table">Tabela IA</CDBSidebarMenuItem>
             </NavLink>
             <NavLink exact to="/analytics" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="chart-line">Analytics</CDBSidebarMenuItem>
+              <CDBSidebarMenuItem icon="chart-line">Análise</CDBSidebarMenuItem>
             </NavLink>
 
             <NavLink exact to="/hero404" target="_blank" activeClassName="activeClicked">

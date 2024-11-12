@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import '../CSS/IA.css';
-import axios from 'axios';
+// import axios from 'axios';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { Row, Col } from 'react-bootstrap';
+import { toast, ToastContainer } from 'react-toastify'; // Importando o toast
+import 'react-toastify/dist/ReactToastify.css'; // Estilos do react-toastify
+import { FaCheckCircle, FaTimesCircle } from 'react-icons/fa'; // Importando os ícones
 
 const DatasetForm = () => {
     const [formData, setFormData] = useState({
@@ -18,8 +21,29 @@ const DatasetForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:3001/dataset/dataset', formData);
-            alert('Dados enviados para o cálculo...');
+            // await axios.post('http://localhost:3001/dataset/dataset', formData);
+            const randomValue = Math.floor(Math.random() * 2); // Aleatório entre 0 ou 1
+            const status = randomValue === 1 
+                ? 'O motor está em boas condições.' 
+                : 'O motor está ruim e precisa de manutenção! Procure a mecânica mais próxima.';
+            
+            const icon = randomValue === 1 
+                ? <FaCheckCircle className="status-icon good" />  // Ícone de "check" verde para motor bom
+                : <FaTimesCircle className="status-icon bad" />;    // Ícone de "x" vermelho para motor ruim
+            
+            // Exibe o pop-up com a mensagem e o ícone
+            toast(<div className="toast-content">{icon} {status}</div>, {
+                position: "top-right",
+                autoClose: 5000, 
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored", // Adiciona o tema colorido ao toast
+            });
+
+            // Limpa os campos após a submissão
             setFormData({
                 EngRPM: '',
                 FuelP: '',
@@ -30,7 +54,7 @@ const DatasetForm = () => {
             });
         } catch (error) {
             console.error('Erro no formulário.', error);
-            alert('Erro ao criar lógica. Verifique o console para mais detalhes.');
+            toast.error('Erro ao criar lógica. Verifique o console para mais detalhes.');
         }
     };
 
@@ -164,6 +188,9 @@ const DatasetForm = () => {
                     Analisar Estado do Motor
                 </Button>
             </Form>
+
+            {/* Container para os Toasts */}
+            <ToastContainer />
         </div>
     );
 };
