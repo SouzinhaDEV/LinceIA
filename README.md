@@ -15,10 +15,10 @@
 - **Atualização de Contatos:** Permite atualizar as informações de um contatante existente.
 - **Exclusão de Contatos:** Permite excluir um contatante do sistema.
 
-- 
-- 
-- 
-- 
+## Senha e Email - necessario para Acessar a página de Adiministrador
+
+- **Email:** admin@admin.com
+- **Senha:** 12345
 
 ## Pré-requisitos
 
