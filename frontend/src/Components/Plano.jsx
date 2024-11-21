@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col, Button, Image } from 'react-bootstrap';
 import QR from '../Img/qr code.jpg';
+import check from '../Img/check.png';
 import '../CSS/Planos.css';
 
 // Componente do Cartão de Crédito (Flip Card)
@@ -42,6 +43,15 @@ const PlansPage = () => {
     cardDate: "",
     cardCVV: "",
   });
+
+  const handleSubmit = () => {
+    alert('Pagamento efetuado com sucesso!');
+  };
+
+  const [showAlert, setShowAlert] = useState(false);
+
+  const handleShowAlert = () => setShowAlert(true);
+  const handleCloseAlert = () => setShowAlert(false);
 
   const plans = [
     {
@@ -188,10 +198,33 @@ const PlansPage = () => {
                           onChange={handleCardInputChange}
                         />
                       </div>
-                    </div><br/>
-                    <Button className="estilizacaoButton" variant="dark" type="submit">
-                      Enviar
-                    </Button>
+                    </div><br />
+                    <div>
+                      <Button
+                        className="estilizacaoButton"
+                        variant="dark"
+                        type="button"
+                        onClick={handleShowAlert}
+                      >
+                        Enviar
+                      </Button>
+
+                      {showAlert && (
+                        <div className="alert-overlay">
+                          <div className="alert-box">
+                            <Image src={check} width={200}/>
+                            <p>Pagamento Efetuado com Sucesso !!!</p>
+                            <Button
+                              className="alert-button"
+                              onClick={handleCloseAlert}
+                            >
+                              Fechar
+                            </Button>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+
                   </div>
                 )}
               </div>

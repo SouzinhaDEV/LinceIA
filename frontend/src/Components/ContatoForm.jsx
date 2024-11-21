@@ -17,7 +17,7 @@ const ContatoForm = () => {
         e.preventDefault();
         try {
             await axios.post('http://localhost:3001/contato/contato', formData);
-            alert('Cadastro criado com sucesso!');
+            alert('Contato enviado com sucesso!');
             setFormData({
                 nome: '',
                 email: '',
