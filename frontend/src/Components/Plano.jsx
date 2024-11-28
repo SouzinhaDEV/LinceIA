@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Container, Row, Col, Button, Image } from 'react-bootstrap';
 import QR from '../Img/qr code.jpg';
 import check from '../Img/check.png';
-import banner from '../Img/planos.png'
+import banner from '../Img/Planos.png'
 import '../CSS/Planos.css';
 
 // Componente do Cartão de Crédito (Flip Card)
@@ -113,10 +113,9 @@ const PlansPage = () => {
             zIndex: 1,
           }}
         />
-        <Image src={banner} alt="Banner" layout="responsive" width='100%' height={250} />
+        <Image src={banner} alt="Banner" layout="responsive" width='100%' height={480} />
       </div>
       <div className="container py-5">
-        <h2 className="text-center mb-4 tituloof">Nossos Planos</h2>
         <div className="row">
           {plans.map((plan, index) => (
             <div key={index} className="col-md-4">
