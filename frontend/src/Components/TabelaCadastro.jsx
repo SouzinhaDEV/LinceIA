@@ -11,7 +11,7 @@ const TabelaCadastros = () => {
         const { data } = await axios.get("http://localhost:3001/cadastros/cadastros");
         setCadastros(data);
       } catch (error) {
-        console.error("Erro ao buscar cadastro:", error); // Adiciona este log de erro
+        console.error("Erro ao buscar cadastro:", error);
       }
     };
 
@@ -38,7 +38,13 @@ const TabelaCadastros = () => {
         cellPadding={10}
         cellSpacing={0}
         className="responsive-table"
-        style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', backgroundColor: '#ff7300', boxShadow: '0 4px 8px rgba(0,0,0,0.1)' }}
+        style={{
+          width: '100%',
+          borderCollapse: 'collapse',
+          textAlign: 'left',
+          backgroundColor: '#ff7300',
+          boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+        }}
       >
         <thead style={{ backgroundColor: '#ff7300', color: 'white' }}>
           <tr>
@@ -51,34 +57,41 @@ const TabelaCadastros = () => {
           </tr>
         </thead>
         <tbody>
-          {cadastros.map((cadastros) => (
-            <tr key={cadastros.idCadastro} style={{ borderBottom: '1px solid #ddd' }}>
-              <td style={{ padding: '12px' }}>{cadastros.idCadastro}</td>
-              <td style={{ padding: '12px' }}>{cadastros.nome}</td>
-              <td style={{ padding: '12px' }}>{cadastros.email}</td>
-              <td style={{ padding: '12px' }}>{cadastros.telefone}</td>
-              <td style={{ padding: '12px' }}>{cadastros.cpf}</td>
-              <td style={{ padding: '12px' }}>
-                <button
-                  style={{
-                    backgroundColor: '#f44336',
-                    color: 'white',
-                    border: 'none',
-                    padding: '10px 15px',
-                    borderRadius: '5px',
-                    cursor: 'pointer',
-                  }}
-                  onClick={() => handleExcluirUsuario(cadastros.idCadastro)}
-                >
-                  Excluir
-                </button>
-              </td>
-            </tr>
+          {cadastros.map((cadastro, index) => (
+            <React.Fragment key={cadastro.idCadastro}>
+              <tr>
+                <td style={{ padding: '12px' }}>{cadastro.idCadastro}</td>
+                <td style={{ padding: '12px' }}>{cadastro.nome}</td>
+                <td style={{ padding: '12px' }}>{cadastro.email}</td>
+                <td style={{ padding: '12px' }}>{cadastro.telefone}</td>
+                <td style={{ padding: '12px' }}>{cadastro.cpf}</td>
+                <td style={{ padding: '12px' }}>
+                  <button
+                    style={{
+                      backgroundColor: '#f44336',
+                      color: 'white',
+                      border: 'none',
+                      padding: '10px 15px',
+                      borderRadius: '5px',
+                      cursor: 'pointer',
+                    }}
+                    onClick={() => handleExcluirUsuario(cadastro.idCadastro)}
+                  >
+                    Excluir
+                  </button>
+                </td>
+              </tr>
+              {/* Linha preta grossa entre os grupos */}
+              {index < cadastros.length - 1 && (
+                <tr>
+                  <td colSpan="6" style={{ borderBottom: '4px solid black' }}></td>
+                </tr>
+              )}
+            </React.Fragment>
           ))}
         </tbody>
       </table>
     </div>
-
   );
 };
 

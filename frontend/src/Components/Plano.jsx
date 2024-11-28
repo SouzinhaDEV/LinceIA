@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Container, Row, Col, Button, Image } from 'react-bootstrap';
 import QR from '../Img/qr code.jpg';
 import check from '../Img/check.png';
+import banner from '../Img/planos.png'
 import '../CSS/Planos.css';
 
 // Componente do Cartão de Crédito (Flip Card)
@@ -99,33 +100,49 @@ const PlansPage = () => {
   };
 
   return (
-    <div className="container py-5">
-      <h1 className="text-center mb-4">Nossos Planos</h1>
-      <div className="row">
-        {plans.map((plan, index) => (
-          <div key={index} className="col-md-4">
-            <div className="fundoplan">
-              <div className={`card ${plan.isPopular ? 'border-primary' : ''} mb-4 shadow-sm`}>
-                <div className={`card-header ${plan.isPopular ? 'bg-primary text-white' : ''}`}>
-                  <h4 className="my-0 font-weight-normal">{plan.title}</h4>
-                </div>
-                <div className="card-body">
-                  <h1 className="card-title pricing-card-title">
-                    {plan.price} <small className="text-muted">R$</small>
-                  </h1>
-                  <ul className="list-unstyled mt-3 mb-4">
-                    {plan.features.map((feature, index) => (
-                      <li key={index}>{feature}</li>
-                    ))}
-                  </ul>
-                  <Button variant="primary" className="botaopl" onClick={() => handlePlanSelect(plan)}>
-                    Selecionar
-                  </Button>
+    <div >
+      <div style={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            background: 'linear-gradient(to bottom, rgba(36, 36, 36, 0) 70%, rgb(36, 36, 36) 100%)',
+            zIndex: 1,
+          }}
+        />
+        <Image src={banner} alt="Banner" layout="responsive" width='100%' height={250} />
+      </div>
+      <div className="container py-5">
+        <h2 className="text-center mb-4 tituloof">Nossos Planos</h2>
+        <div className="row">
+          {plans.map((plan, index) => (
+            <div key={index} className="col-md-4">
+              <div className="fundoplan">
+                <div className={`card ${plan.isPopular ? 'border-primary' : ''} mb-4 shadow-sm`}>
+                  <div className={`card-header ${plan.isPopular ? 'bg-primary text-white' : ''}`}>
+                    <h4 className="my-0 font-weight-normal">{plan.title}</h4>
+                  </div>
+                  <div className="card-body">
+                    <h1 className="card-title pricing-card-title">
+                      {plan.price} <small className="text-muted">R$</small>
+                    </h1>
+                    <ul className="list-unstyled mt-3 mb-4">
+                      {plan.features.map((feature, index) => (
+                        <li key={index}>{feature}</li>
+                      ))}
+                    </ul>
+                    <Button variant="primary" className="botaopl" onClick={() => handlePlanSelect(plan)}>
+                      Selecionar
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
       {selectedPlan && (
@@ -212,7 +229,7 @@ const PlansPage = () => {
                       {showAlert && (
                         <div className="alert-overlay">
                           <div className="alert-box">
-                            <Image src={check} width={200}/>
+                            <Image src={check} width={200} />
                             <p>Pagamento Efetuado com Sucesso !!!</p>
                             <Button
                               className="alert-button"
